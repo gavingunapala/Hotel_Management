@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+  .homeCard{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 25x;
+    padding-left: 25px;
+  }
+
+  .homeCard :hover{
+    opacity: 0.9;
+  }
+
+
