@@ -5,6 +5,7 @@ import CustomerRegistration from "./Customer/CustomerRegistration";
 import EmployeeAdd from "./Employee/EmployeeAdd";
 import AdminEmployeeUpdate from "./Employee/AdminEmplooyeeUpdate";
 import PayPayments from "./Payment/PayPayment";
+import Home from "./Common/Home";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <div>
         <Router>
           <div className="App" />
+            <Route exact path="/" component={Home}/>
           <Route path="/a" component={CustomerRegistration}/>
 
 
