@@ -6,6 +6,7 @@ import EmployeeAdd from "./Employee/EmployeeAdd";
 import AdminEmployeeUpdate from "./Employee/AdminEmplooyeeUpdate";
 import PayPayments from "./Payment/PayPayment";
 import Home from "./Common/Home";
+import AddFood from "./Food/AddFood";
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <Router>
           <div className="App" />
             <Route exact path="/" component={Home}/>
+            <Route exact path="/addFood" component={AddFood}/>
+
           <Route path="/a" component={CustomerRegistration}/>
 
 
