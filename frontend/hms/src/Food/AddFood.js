@@ -51,9 +51,9 @@ const AddFood = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-6 image">
-                    <img src={img} loading="auto" alt="center" height="500"
-                         width="700"/>
+                <div className="col-md-1 image">
+                    <img src={img} loading="auto" alt="center" height="400"
+                         width="500"/>
                 </div>
 
 

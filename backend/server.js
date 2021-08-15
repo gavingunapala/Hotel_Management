@@ -31,6 +31,10 @@ connectio.once("open",()=>{
     console.log("mongoDB connection successful !!!");
 })
 
+//Food
+const foodRouter = require("./routes/FoodRoute.js");
+app.use("/food",foodRouter);
+
 
 //run the app using port
 app.listen(PORT, () =>{
