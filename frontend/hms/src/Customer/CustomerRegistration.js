@@ -12,20 +12,22 @@ const CustomerRegistration = () => {
                                 <div>
                                     <form method="post" class="card">
                                             <br />
-                                            <h2 class="text-center">Student Registration</h2>
+                                            <h2 class="text-center">Registration</h2>
                                             <br />
                                             <div className="container   ">
-                                                <div><label>Enter First Name</label><input class="form-control" type="text"/>
+                                                <div><label>Enter Name</label><input class="form-control" type="text"/>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div><label>Enter Last Name</label><input class="form-control" type="text"/>
+                                                    <div><label>Enter Address</label><input class="form-control" type="text"/>
                                                     </div>
-                                                    <div><label>Enter the Address</label><input class="form-control"
+                                                    <div><label>Enter Phone Number</label><input class="form-control"
                                                                                                 type="text"/></div>
-                                                    <div><label>Enter the Gaurdian Name</label><input class="form-control"
+                                                    <div><label>Enter NIC Number</label><input class="form-control"
                                                                                                       type="text"/></div>
-                                                    <div><label>Enter the Phone Number</label><input class="form-control"
+                                                    <div><label>Enter Email</label><input class="form-control"
                                                                                                      type="text"/></div>
+                                                    <div><label>Enter Password</label><input className="form-control"
+                                                                                          type="text"/></div>
                                                     <br/>
                                                     <button class="btn btn-primary" type="submit">&nbsp;Register</button>
                                                     <br />
@@ -38,8 +40,8 @@ const CustomerRegistration = () => {
                                 </div>
                             </div>
                         <div className="col-sm-6 image">
-                            <img src={img} loading="auto" alt="center" height="500"
-                                                                      width="600"/>
+                            <img src={img} loading="auto" alt="center" height="600"
+                                                                      width="500"/>
                         </div>
 
 
