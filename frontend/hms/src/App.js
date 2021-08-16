@@ -1,5 +1,7 @@
 import './App.css';
 import React from "react";
+
+
 import {BrowserRouter as Router, Route} from "react-router-dom"
 import CustomerRegistration from "./Customer/CustomerRegistration";
 import EmployeeAdd from "./Employee/EmployeeAdd";
@@ -10,6 +12,7 @@ import AddFood from "./Food/AddFood";
 import CustomerProfile from "./Customer/CustomerProfile";
 import CustomerProfileUpdate from "./Customer/CustomerProfileUpdate";
 import UpdateCustomers from "./Customer/UpdateCustomers";
+import EmployeeReport from "./Employee/EmployeeReport";
 
 
 
@@ -28,6 +31,8 @@ function App() {
 
             <Route path="/EmployeeAdd" component={EmployeeAdd}/>
             <Route path="/AdminEmployeeUpdate" component={AdminEmployeeUpdate}/>
+          <Route path="/EmployeeReport" component={EmployeeReport}/>
+
 
 
             <Route path="/PayPayments" component={PayPayments}/>
@@ -45,8 +50,6 @@ function App() {
 
 
 export default App;
-
-
 
 
 
