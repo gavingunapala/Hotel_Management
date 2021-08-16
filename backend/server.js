@@ -31,6 +31,9 @@ connectio.once("open",()=>{
     console.log("mongoDB connection successful !!!");
 })
 
+//Customer
+const customerRouter = require("./routes/CustomerRoute.js");
+app.use("/customer",customerRouter);
 //Food
 const foodRouter = require("./routes/FoodRoute.js");
 app.use("/food",foodRouter);

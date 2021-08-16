@@ -35,7 +35,7 @@ const CustomerProfile = () => {
                                         <div><label>Password</label><input className="form-control"
                                                                              type="text"/></div>
                                         <br/>
-                                        <button class="btn btn-danger" type="submit">&nbsp;Delete</button>&nbsp;
+                                        <button class="btn btn-danger" type="submit">&nbsp;Delete</button>&nbsp;&nbsp;
                                         <button className="btn btn-warning" type="submit">&nbsp;Update</button>
                                         <br />
                                         <br />
