@@ -31,6 +31,9 @@ connectio.once("open",()=>{
     console.log("mongoDB connection successful !!!");
 })
 
+//Customer
+const customerRouter = require("./routes/CustomerRoute.js");
+app.use("/customer",customerRouter);
 
 //run the app using port
 app.listen(PORT, () =>{
