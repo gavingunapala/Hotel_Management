@@ -1,20 +1,15 @@
 import React from 'react';
-import img from '../Images/undraw_logic_n6th.png';
+import '../CSS/Employee/Update.css';
 
 const AdminEmployeeUpdate = () => {
     return (
-        <div>
-            <div className="row">
-                <div className="col-sm-2"></div>
-                <div class=" col-sm-4">
-                    <div><strong></strong><label></label></div>
-                    <div class=" justify-content-center align-items-center">
-                        <div>
-                            <form method="post" class="card">
+            <div className={"containerUP"} >
+                    <div class=" justify-content-center align-items-center ">
+                            <form method="post" class="cardUpdate">
                                 <br />
-                                <h2 class="text-center">Add Employee</h2>
+                                <h2 class="text-center">Update Employee</h2>
                                 <br />
-                                <div className="container   ">
+                                <div className="container">
                                     <div><label>Full Name</label><input class="form-control" type="text"/>
                                     </div>
                                     <div class="form-group">
@@ -30,19 +25,12 @@ const AdminEmployeeUpdate = () => {
                                                                          type="text"/></div>
                                         <br/>
 
-                                        <button class="btn btn btn-warning " type="submit">UPDATE EMPLOYEE</button>
+                                        <button class="btn btnwar btn-warning " type="submit">UPDATE EMPLOYEE</button>
                                         <button class="btn-del btn btn-danger " type="submit">DELETE EMPLOYEE</button>
-
+                                        <br/>  <br/>
                                         </div>
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-sm-5 image">
-                    <img src={img} loading="auto" alt="center" height="500"
-                         width="600"/>
-                </div>
 
 
             </div>

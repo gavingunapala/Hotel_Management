@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../Images/undraw_logic_n6th.png';
+import img from '../Images/gift.png';
 
 const EmployeeAdd = () => {
     return (

@@ -1,0 +1,28 @@
+.cardUpdate{
+    position: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 2px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    width: auto;
+    height: auto;
+
+}
+.containerUP{
+    width: 50%;
+    margin-right:25% ;
+    margin-left:25%;
+    margin-top: 20px;
+}
+.btn-del {
+    /*position: relative;*/
+    display: inline;
+    margin-left: 15%;
+}
+.btnwar{
+    margin-left:35%;
+}
