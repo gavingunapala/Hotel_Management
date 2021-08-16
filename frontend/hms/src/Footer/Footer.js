@@ -12,7 +12,7 @@ const Footer = ()=>{
                     <div className="col-sm-6 col-md-4 footer-navigation">
                         <h3><a href="#">Fortune Inn & <span>Suites </span></a></h3>
                         <p className="links">
-                            <a href="#">Home</a><strong> · </strong>
+                            <a href="/">Home</a><strong> · </strong>
                             <a href="#">Book Rooms</a><strong> · </strong>
                             <a href="#">Order Foods</a><strong> · </strong>
                             <a href="#">Contact</a>
@@ -36,8 +36,8 @@ const Footer = ()=>{
                         <p> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu
                             auctor lacus vehicula sit amet. </p>
                         <div className="social-links social-icons"><a href="#"><i className="fa fa-facebook"></i></a><a
-                            href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-linkedin"></i></a><a
-                            href="#"><i className="fa fa-github"></i></a></div>
+                            href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-instagram"></i></a><a
+                            href="#"><i className="fa fa-whatsapp"></i></a></div>
                     </div>
                 </div>
                 <p className="copyright text-muted text-center" id='copyright'>SPM 2021 | Web Design by Runtime Terror</p>
