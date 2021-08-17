@@ -1,8 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import img from '../Images/addFood.png';
+import {useHistory} from 'react-router-dom';
 
 const AddFood = () => {
 
+    const history = useHistory();
+
+    const[Code, setCode] = useState("");
+    const[Image, setImage] = useState("");
+    const[Name, setName] = useState("");
+    const[Price, setPrice] = useState("");
+
+    const codeSetter = (e) => {
+        setCode(e.target.value);
+    }
+    const imageSetter = (e) => {
+        setImage(e.target.value);
+    }
+    const nameSetter = (e) => {
+        setName(e.target.value);
+    }
+    const priceSetter = (e) => {
+        setPrice(e.target.value);
+    }
 
     const onImageChange = (event) => {
         if (event.target.files && event.target.files[0]) {
@@ -11,6 +31,23 @@ const AddFood = () => {
             });
         }
     }
+
+    const onSubmit = (e) => {
+            e.preventDefault();
+            const newFood = {
+                Code: Code,
+                Image: Image,
+                Name: Name,
+                Price: Price
+            };
+            axios.post('http://localhost:8070/food/add', newFood).then(() => {
+                alert("Food item added");
+                history.push('/');
+            }).catch((err) => {
+                alert(err);
+            })
+    }
+
 
     return (
         <div>
@@ -25,7 +62,7 @@ const AddFood = () => {
                                 <h2 class="text-center">Add Food</h2>
                                 <br />
                                 <div className="container">
-                                    <div><label>Food Code</label><input class="form-control" type="text"/>
+                                    <div><label>Food Code</label><input class="form-control" type="text" onChange={codeSetter}/>
                                     </div>
                                     <div class="form-group">
                                         <div><label for='image' className='custom-file-upload btn btn-primary'>
@@ -33,13 +70,9 @@ const AddFood = () => {
                                             Add Image
                                         </label>
                                             Select image
-                                            <input id='image' class="form-control" type="file" onChange={onImageChange}/>
-
-                                        </div>
-                                        <div><label>Name</label><input class="form-control"
-                                                                                    type="text"/></div>
-                                        <div><label>Price(Rs)</label><input class="form-control"
-                                                                                          type="text"/></div>
+                                            <input id='image' class="form-control" type="file" onChange={imageSetter}/></div>
+                                        <div><label>Name</label><input class="form-control" type="text" onChange={nameSetter}/></div>
+                                        <div><label>Price(Rs)</label><input class="form-control" type="text" onChange={priceSetter}/></div>
                                         <br/>
                                         <button class="btn btn-primary" type="submit">&nbsp;Add Food</button>
                                         <br />
