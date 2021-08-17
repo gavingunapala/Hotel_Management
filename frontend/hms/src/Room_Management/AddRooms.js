@@ -18,7 +18,7 @@ const AddRooms = () => {
                                 <h2 className="text-center">Add Rooms</h2>
                                 <br/>
                                 <div className="container   ">
-                                    <div className="form-group">
+                                    <div className="" id='group'>
                                             <br/>
                                             <div className="dropdown">
                                                 <button className="form-control" id='select'>Room Type</button>
@@ -28,7 +28,7 @@ const AddRooms = () => {
                                                     <a href="#">Link 3</a>
                                                 </div>
                                             </div>
-                                        <div><label>Sleeps</label><input className="form-control" type="text"/></div>
+                                        <div><label>Sleeps</label><input id='left' className="form-control" type="text"/></div>
                                         <div><label>Current Price</label><input className="form-control" type="text"/></div>
                                         <div><label>Facilities</label><input className="form-control" type="text"/></div>
                                         <div><label>Description</label><textarea id="w3review" className="form-control" rows="4" cols="50"/></div>

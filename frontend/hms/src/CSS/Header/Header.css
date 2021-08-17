@@ -11,9 +11,17 @@
 
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
-    font-size: 15px;
+    font-size: 18px;
 }
 .company-name{
     color: #fff;
     font-size: 35px;
+    margin-left: -291px;
+}
+#log{
+
+    padding-top: 18px;
+}
+#sign{
+    padding-top: 18px;
 }
