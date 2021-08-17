@@ -12,19 +12,10 @@ const Header = () => {
                         className="navbar-toggler-icon"></span></button>
                     <div className="collapse navbar-collapse" id="navcol-1">
                         <ul className="navbar-nav flex-grow-1 justify-content-between">
-                            <img src="https://img.icons8.com/nolan/64/star.png"/>
-                            {/*<li className="nav-item"><a className="nav-link" href="#"><i*/}
-                            {/*    className="fa fa-apple apple-logo"></i></a></li>*/}
-                            <li className="company-name">Fortune Inn & Suites</li>
-                            <li className="nav-item"><a className="nav-link" href="#">Login</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#">Sign Up</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#">Watch</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#">TV</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#">Music</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#">Support</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#">
-                                <i className="icon ion-ios-search-strong"></i></a></li>
-                            <li className="nav-item"><a className="nav-link" href="#"><i className="fa fa-shopping-bag"></i></a></li>
+                            <div className="logo"><img src="https://img.icons8.com/nolan/64/star.png"/></div>
+                            <li className="company-name" id='company'>Fortune Inn & Suites</li>
+                            <li className="nav-item"><a className="nav-link" id='log' href="#">Login</a></li>
+                            <li className="nav-item"><a className="nav-link" id='sign' href="#">Sign Up</a></li>
                         </ul>
                     </div>
                 </div>
