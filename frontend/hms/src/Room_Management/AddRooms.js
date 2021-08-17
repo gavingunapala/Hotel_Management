@@ -13,19 +13,27 @@ const AddRooms = () => {
                     <div><strong></strong><label></label></div>
                     <div className=" justify-content-center align-items-center">
                         <div>
-                            <form method="post" className="card">
+                            <form method="post" className="card" id="room">
                                 <br/>
                                 <h2 className="text-center">Add Rooms</h2>
                                 <br/>
                                 <div className="container   ">
                                     <div className="form-group">
-                                        <div><label>Room Type</label><input className="form-control" type="text"/></div>
+                                            <br/>
+                                            <div className="dropdown">
+                                                <button className="form-control" id='select'>Room Type</button>
+                                                <div className="dropdown-content">
+                                                    <a href="#">Link 1</a>
+                                                    <a href="#">Link 2</a>
+                                                    <a href="#">Link 3</a>
+                                                </div>
+                                            </div>
                                         <div><label>Sleeps</label><input className="form-control" type="text"/></div>
                                         <div><label>Current Price</label><input className="form-control" type="text"/></div>
                                         <div><label>Facilities</label><input className="form-control" type="text"/></div>
                                         <div><label>Description</label><textarea id="w3review" className="form-control" rows="4" cols="50"/></div>
                                         <br/>
-                                        <button className="btn btn-primary" type="submit">&nbsp;Add Rooms</button>&nbsp;&nbsp;
+                                        <button className="btn btn-primary" type="submit" id="addrooms">&nbsp;Add Rooms</button>&nbsp;&nbsp;
                                         <br/>
                                         <br/>
 

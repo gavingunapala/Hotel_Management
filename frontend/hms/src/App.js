@@ -18,6 +18,7 @@ import ViewRooms from "./Room_Management/ViewRooms";
 import UpdateRooms from "./Room_Management/UpdateRooms";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import ManageRoomsDashboard from "./Room_Management/ManageRoomsDashboard";
 
 function App() {
   return (
@@ -49,6 +50,8 @@ function App() {
           <Route exact path="/AddRooms" component={AddRooms}/>
           <Route exact path="/ViewRooms" component={ViewRooms}/>
           <Route exact path="/UpdateRooms" component={UpdateRooms}/>
+          <Route exact path="/ManageRoomsDashboard" component={ManageRoomsDashboard}/>
+
 
       </Router>
         <Footer/>
