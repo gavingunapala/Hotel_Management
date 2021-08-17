@@ -1,6 +1,7 @@
 .navbar.navbar-dark.navbar-expand-md.fixed-top.bg-dark {
     background-color: #000000 !important;
     opacity: 0.8;
+    position: relative;
 }
 
 .navbar-dark .navbar-nav .nav-link .apple-logo {
