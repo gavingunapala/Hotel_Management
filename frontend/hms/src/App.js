@@ -26,7 +26,7 @@ function App() {
       <div>
         <Router>
           <div className="App" />
-            <Header/>
+          <Header/>
             <Route exact path="/" component={Home}/>
             <Route exact path="/addFood" component={AddFood}/>
 

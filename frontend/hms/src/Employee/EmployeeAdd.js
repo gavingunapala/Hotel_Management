@@ -4,7 +4,7 @@ import img from '../Images/gift.png';
 const EmployeeAdd = () => {
     return (
         <div>
-            <div className="row">
+            <div className="row1">
                 <div className="col-sm-2"></div>
                 <div class=" col-sm-3">
                     <div><strong></strong><label></label></div>

@@ -1,15 +1,17 @@
 import React from 'react';
 import '../CSS/Employee/employee.css';
+import img from "../Images/undraw_Add_user_re_5oib.png";
 
 
 const EmployeeReport = () => {
     return (
+        <div ><img src={img} />
         <div className={"container"}>
             <br />
             <div className="card-employee ">
             <h1 className="text-center">Bonus Report</h1>
                 <br/>
-            <div className="row">
+            <div className="row1">
                 <div className="col-sm-2"></div>
                 <div className="col-sm-4">
                     <div className=" justify-content-center align-items-center">
@@ -64,6 +66,7 @@ const EmployeeReport = () => {
                 </div>
             </div>
             </div>
+        </div>
         </div>
     )
 }
