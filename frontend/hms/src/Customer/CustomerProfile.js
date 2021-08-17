@@ -1,7 +1,45 @@
-import React from 'react';
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 import img from '../Images/CustomerProfile.png';
+import {useHistory} from "react-router-dom";
 
 const CustomerProfile = () => {
+
+    // const [Customer, setCustomer] = useState([]);
+    // const history = useHistory();
+    //
+    // const Logout = () => {
+    //     localStorage.clear();
+    //     history.push('/login');
+    // };
+    //
+    // //get logged Customer
+    // useEffect(() => {
+    //     const loggedInUser = localStorage.getItem("user");
+    //     console.log(loggedInUser);
+    //
+    //     function getCustomer() {
+    //         axios.get("http://localhost:8070/customer/get/" + loggedInUser).then((res) => {
+    //             setCustomer(res.data);
+    //             console.log(res.data);
+    //         }).catch((err) => {
+    //         })
+    //     }
+    //
+    //     getCustomer();
+    // }, []);
+    //
+    // function deleteCustomer() {
+    //     const loggedInUser = localStorage.getItem("user");
+    //     console.log(loggedInUser);
+    //     axios.delete('http://localhost:8070/customer/delete/' + loggedInUser).then(() => {
+    //         localStorage.clear();
+    //         history.push('/login');
+    //     }).catch((err) => {
+    //         alert(err);
+    //     })
+    // }
+
     return (
         <div>
             <br></br>
