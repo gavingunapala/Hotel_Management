@@ -18,7 +18,9 @@ import ViewRooms from "./Room_Management/ViewRooms";
 import UpdateRooms from "./Room_Management/UpdateRooms";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import Login from "./Login/Login";
 
+import ManageRoomsDashboard from "./Room_Management/ManageRoomsDashboard";
 function App() {
   return (
 
@@ -45,10 +47,13 @@ function App() {
           <Route path="/CustomerProfileUpdate" component={CustomerProfileUpdate}/>
           <Route path="/CustomerRegistration" component={CustomerRegistration}/>
           <Route path="/UpdateCustomers" component={UpdateCustomers}/>
+            <Route path="/Login" component={Login}/>
 
           <Route exact path="/AddRooms" component={AddRooms}/>
           <Route exact path="/ViewRooms" component={ViewRooms}/>
           <Route exact path="/UpdateRooms" component={UpdateRooms}/>
+          <Route exact path="/ManageRoomsDashboard" component={ManageRoomsDashboard}/>
+
 
       </Router>
         <Footer/>

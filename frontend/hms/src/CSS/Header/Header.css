@@ -1,5 +1,5 @@
 .navbar.navbar-dark.navbar-expand-md.fixed-top.bg-dark {
-    background-color: #000000 !important;
+    background-color: #1a2639 !important;
     opacity: 0.8;
     position: relative;
 }
@@ -11,9 +11,17 @@
 
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
-    font-size: 15px;
+    font-size: 18px;
 }
 .company-name{
     color: #fff;
     font-size: 35px;
+    margin-left: -291px;
+}
+#log{
+
+    padding-top: 18px;
+}
+#sign{
+    padding-top: 18px;
 }
