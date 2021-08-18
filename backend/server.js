@@ -40,6 +40,9 @@ app.use("/food",foodRouter);
 //Employee
 const EmployeeRouter = require("./routes/EmployeeRoute.js");
 app.use("/Employee",EmployeeRouter);
+//Rooms
+const RoomRouter = require("./routes/RoomRoute.js");
+app.use("/Room",RoomRouter);
 
 
 //run the app using port
