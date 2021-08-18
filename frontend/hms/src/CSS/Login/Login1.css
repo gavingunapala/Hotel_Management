@@ -9,7 +9,7 @@
     border-radius: 5px;
     position: relative;
     box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
-    opacity: 0.80;
+    opacity: 0.75;
 }
 
 .login-one {
@@ -29,13 +29,24 @@
 /*    text-align: center;*/
 /*}*/
 
+
+
 #input {
-    margin: 10px;
+    margin: 2px;
+    border-bottom-color: #000000;
+    border-left-color: #000000;
+    border-right-color: #000000;
+    border-top-color: #000000;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+
 }
 
 #button {
     width: 100%;
-    margin: 10px;
+    margin: 2px;
 }
 
 #heading {

@@ -161,7 +161,7 @@ const CustomerProfile = () => {
                         <div>
                             <form method="post" class="card">
                                 <br />
-                                {/*<h2 class="text-center">Student Registration</h2>*/}
+                                {/*<h2 class="text-center">Customer Registration</h2>*/}
 
                                 <div className="container   ">
                                     {/*<div><label>Enter First Name</label><input class="form-control" type="text"/>*/}

@@ -17,12 +17,12 @@ const Login = () => {
                             </div>
                             <div><label><b>Email</b></label>
                             </div>
-                            <input className="form-control" type="text" id="input" placeholder=" "/>
+                            <input className="form-control" type="text" id="input" placeholder=" "/><br></br>
                             <div><label><b>Password</b></label>
                             </div>
-                            <input className="form-control" type="password" id="input" placeholder=" "/>
+                            <input className="form-control" type="password" id="input" placeholder=" "/><br></br>
                                 <button className="btn btn-primary" id="button" type="submit">Log in</button>
-
+                            <a href={"/CustomerRegistration"} type="submit"><center>&nbsp;Sign Up</center></a>
                         </div>
                     </div>
                 </form>
