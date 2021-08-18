@@ -14,8 +14,8 @@ const Header = () => {
                         <ul className="navbar-nav flex-grow-1 justify-content-between">
                             <div className="logo"><img src="https://img.icons8.com/nolan/64/star.png"/></div>
                             <li className="company-name" id='company'>Fortune Inn & Suites</li>
-                            <li className="nav-item"><a className="nav-link" id='log' href="#">Login</a></li>
-                            <li className="nav-item"><a className="nav-link" id='sign' href="#">Sign Up</a></li>
+                            <li className="nav-item"><a className="nav-link" id='log' href="/Login">Login</a></li>
+                            <li className="nav-item"><a className="nav-link" id='sign' href="/CustomerRegistration">Sign Up</a></li>
                         </ul>
                     </div>
                 </div>
