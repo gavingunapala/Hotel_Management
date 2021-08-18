@@ -58,7 +58,7 @@ const AddFood = () => {
                     <div><strong></strong><label></label></div>
                     <div class=" justify-content-center align-items-center" >
                         <div>
-                            <form class="card" style={{opacity: '0.95'}}>
+                            <form class="card" style={{opacity: '0.95', marginTop:'100px'}}>
                                 <br />
                                 <h2 class="text-center">Add Food</h2>
                                 <br />
