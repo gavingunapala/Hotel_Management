@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import img from '../Images/addFood.png';
 import {useHistory} from 'react-router-dom';
+import axios from "axios";
 
 const AddFood = () => {
 
@@ -50,14 +51,14 @@ const AddFood = () => {
 
 
     return (
-        <div>
-            <div className="row">
-                <div className="col-sm-2"></div>
-                <div class=" col-sm-3">
+        <div className="addFood" style={{paddingBottom: '200px'}}>
+            <div >
+                {/*<div className="col-sm-2"></div>*/}
+                <div class=" col-sm-3 " style={{marginLeft: '550px'}}>
                     <div><strong></strong><label></label></div>
-                    <div class=" justify-content-center align-items-center">
+                    <div class=" justify-content-center align-items-center" >
                         <div>
-                            <form method="post" class="card">
+                            <form class="card" style={{opacity: '0.95'}}>
                                 <br />
                                 <h2 class="text-center">Add Food</h2>
                                 <br />
@@ -65,16 +66,14 @@ const AddFood = () => {
                                     <div><label>Food Code</label><input class="form-control" type="text" onChange={codeSetter}/>
                                     </div>
                                     <div class="form-group">
-                                        <div><label for='image' className='custom-file-upload btn btn-primary'>
-                                            <i className='fa fa-plus'></i>
+                                        <div><label >
                                             Add Image
                                         </label>
-                                            Select image
                                             <input id='image' class="form-control" type="file" onChange={imageSetter}/></div>
                                         <div><label>Name</label><input class="form-control" type="text" onChange={nameSetter}/></div>
                                         <div><label>Price(Rs)</label><input class="form-control" type="text" onChange={priceSetter}/></div>
                                         <br/>
-                                        <button class="btn btn-primary" type="submit">&nbsp;Add Food</button>
+                                        <button class="btn btn-primary" type="submit" onClick={onSubmit}>&nbsp;Add Food</button>
                                         <br />
                                         <br />
 
@@ -84,10 +83,10 @@ const AddFood = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-1 image">
-                    <img src={img} loading="auto" alt="center" height="400"
-                         width="500"/>
-                </div>
+                {/*<div className="col-md-1 image">*/}
+                {/*    <img src={img} loading="auto" alt="center" height="400"*/}
+                {/*         width="500" style={{paddingTop: '100px'}}/>*/}
+                {/*</div>*/}
 
 
             </div>
