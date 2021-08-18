@@ -1,3 +1,9 @@
+.bodyyy{
+    background: url("../../Images/undraw_Add_user_re_5oib.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
 .cardUpdate{
     position: center;
     display: flex;
@@ -10,6 +16,7 @@
     border-radius: .25rem;
     width: auto;
     height: auto;
+    opacity: 0.92;
 
 }
 .containerUP{

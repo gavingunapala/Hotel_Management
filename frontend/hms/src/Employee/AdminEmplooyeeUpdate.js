@@ -3,6 +3,7 @@ import '../CSS/Employee/Update.css';
 
 const AdminEmployeeUpdate = () => {
     return (
+        <div className={"bodyyy"}>
             <div className={"containerUP"} >
                     <div class=" justify-content-center align-items-center ">
                             <form method="post" class="cardUpdate">
@@ -12,7 +13,7 @@ const AdminEmployeeUpdate = () => {
                                 <div className="container">
                                     <div><label>Full Name</label><input class="form-control" type="text"/>
                                     </div>
-                                    <div class="form-group">
+
                                         <div><label>Address</label><br/><textarea class="form-control" id="Address" name="Address" width="100% "/>
                                         </div>
                                         <div><label>Phone Number</label><input class="form-control"
@@ -28,12 +29,11 @@ const AdminEmployeeUpdate = () => {
                                         <button class="btn btnwar btn-warning " type="submit">UPDATE EMPLOYEE</button>
                                         <button class="btn-del btn btn-danger " type="submit">DELETE EMPLOYEE</button>
                                         <br/>  <br/>
-                                        </div>
+
                                 </div>
                             </form>
-
-
             </div>
+        </div>
         </div>
     )
 }
