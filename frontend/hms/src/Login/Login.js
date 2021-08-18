@@ -13,10 +13,14 @@ const Login = () => {
                         <div className="login-one-ico"><i className="fa fa-unlock-alt" id="lockico"></i></div>
                         <div className="form-group mb-3">
                             <div>
-                                <h3 id="heading">Log in:</h3>
+                                <h3 id="heading"><center>Log in</center></h3>
                             </div>
-                            <input className="form-control" type="text" id="input" placeholder="Username"/>
-                            <input className="form-control" type="password" id="input" placeholder="Password"/>
+                            <div><label><b>Email</b></label>
+                            </div>
+                            <input className="form-control" type="text" id="input" placeholder=" "/>
+                            <div><label><b>Password</b></label>
+                            </div>
+                            <input className="form-control" type="password" id="input" placeholder=" "/>
                                 <button className="btn btn-primary" id="button" type="submit">Log in
                                 </button>
                         </div>
