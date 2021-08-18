@@ -1,8 +1,80 @@
-import React from 'react';
+import React, {useState} from 'react';
 import img from '../Images/undraw_Sync_files_re_ws4c.png';
 import '../CSS/Room_Management/AddRooms.css';
+import {useHistory} from 'react-router-dom';
+import axios from "axios";
+import ProgressBar from "../comps/ProgressBar.js";
+import '../CSS/ProgressBar/ProgressBar.css'
 
 const AddRooms = () => {
+
+    const history = useHistory();
+
+    const [file, setFile] = useState(null);
+    const [error, setError] = useState(null);
+    const [url, setUrl] = useState(null);
+    const types = ['image/png', 'image/jpeg', 'image/jpg'];
+
+    const handleChange = (e) => {
+        let selected = e.target.files[0];
+
+        if (selected && types.includes(selected.type)) {
+            setFile(selected);
+            setError('');
+        } else {
+            setFile(null);
+            setError('Please select an image(.png, .jpeg, .jpg)');
+        }
+    };
+
+    const [RoomType, setRoomType] = useState("");
+    const [avatar, setAvatar] = useState("");
+    const [Sleeps, setSleeps] = useState("");
+    const [CurrentPrice, setCurrentPrice] = useState(null);
+    const [Facilities, setFacilities] = useState(null);
+    const [Description, setDescription] = useState(null);
+
+
+    const roomtypeSetter = (e) => {
+        setRoomType(e.target.value);
+    }
+    const avatarSetter = (e) => {
+        setAvatar(e.target.value);
+    }
+    const sleepsSetter = (e) => {
+        setSleeps(e.target.value);
+    }
+    const currentpriceSetter = (e) => {
+        setCurrentPrice(e.target.value);
+    }
+    const facilitiesSetter = (e) => {
+        setFacilities(e.target.value);
+    }
+    const descriptionSetter = (e) => {
+        setDescription(e.target.value);
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const newRoom = {
+            RoomType: RoomType,
+            avatar: url,
+            Sleeps: Sleeps,
+            CurrentPrice: CurrentPrice,
+            Facilities:Facilities,
+            Description:Description
+
+        };
+        axios.post('http://localhost:8070/Room/add', newRoom).then(() => {
+            alert("New Room added successfully!");
+            console.log(url);
+            // history.push('/');
+        }).catch((err) => {
+            alert(err);
+        })
+    }
+    console.log(url);
+
     return (
         <div>
             <br></br>
@@ -20,21 +92,37 @@ const AddRooms = () => {
                                 <div className="container   ">
                                     <div className="" id='group'>
                                             <br/>
-                                            <div className="dropdown">
-                                                <button className="form-control" id='select'><strong>Room Type</strong></button>
-                                                <div className="dropdown-content">
-                                                    <a href="#">Link 1</a>
-                                                    <a href="#">Link 2</a>
-                                                    <a href="#">Link 3</a>
-                                                </div>
-                                            </div>
-                                        <div><label>Room Image</label><input id='left' className="form-control" type="text"/></div>
-                                        <div><label>Sleeps</label><input id='left' className="form-control" type="text"/></div>
-                                        <div><label>Current Price</label><input className="form-control" type="text"/></div>
-                                        <div><label>Facilities</label><input className="form-control" type="text"/></div>
-                                        <div><label>Description</label><textarea id="w3review" className="form-control" rows="4" cols="50"/></div>
+                                        <div><label for="type">Room Type</label>
+                                                <select className="form-control"
+                                                        name="type"
+                                                        id="type" onChange={RoomType}>
+                                                    <option>Choose</option>
+                                                    <option>Premium Double Room</option>
+                                                    <option>Cilantro Suite</option>
+                                                    <option>Executive Room with Lounge Access</option>
+                                                    <option>Superior Twin Room</option>
+                                                    <option>Superior King Room</option>
+                                                </select>
+                                        </div>
+                                        <div><label>Room Image</label></div>
+                                        <div>
+                                        <label className={"mylabel"}>
+                                            <input type="file" onChange={handleChange} />
+                                            <span>+</span>
+                                        </label>
+                                        <div className="output">
+                                            {error && <div className="error">{ error }</div>}
+                                            {file && <div>{ file.name }</div> }
+                                            {file && <ProgressBar file={file} setFile={setFile} setUrl={setUrl}/> }
+                                            {file && <div> {file.url}</div>}
+                                        </div>
+                                        </div>
+                                        <div><label>Sleeps</label><input id='left' className="form-control" type="text" onChange={Sleeps} /></div>
+                                        <div><label>Current Price</label><input className="form-control" type="text" onChange={CurrentPrice} /></div>
+                                        <div><label>Facilities</label><textarea id="w3review" className="form-control" rows="4" cols="50" onChange={Facilities} /></div>
+                                        <div><label>Description</label><textarea id="w3review" className="form-control" rows="4" cols="50" onChange={Description} /></div>
                                         <br/>
-                                        <button className="btn btn-primary" type="submit" id="addrooms">&nbsp;Add Rooms</button>&nbsp;&nbsp;
+                                        <button className="btn btn-primary" type="submit" id="addrooms" onClick={onSubmit}>&nbsp;Add Rooms</button>&nbsp;&nbsp;
                                         <br/>
                                         <br/>
 
@@ -47,8 +135,6 @@ const AddRooms = () => {
                 <div className="col-sm-6 image">
                     <img src={img} loading="auto" alt="center" height="500" width="500"/>
                 </div>
-
-
             </div>
         </div>
     )
