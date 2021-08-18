@@ -4,7 +4,7 @@ import '../CSS/Employee/Update.css';
 const AdminEmployeeUpdate = () => {
     return (
         <div className={"bodyyy"}>
-            <div className={"containerUP"} >
+            <div className={"col-sm-4"} style={{marginLeft: '550px', marginTop: '100px'}} >
                     <div class=" justify-content-center align-items-center ">
                             <form method="post" class="cardUpdate">
                                 <br />
