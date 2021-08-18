@@ -16,7 +16,8 @@
 .company-name{
     color: #fff;
     font-size: 35px;
-    margin-left: -291px;
+    margin-left: -45px;
+    margin-top: 4px;
 }
 #log{
 
@@ -24,4 +25,5 @@
 }
 #sign{
     padding-top: 18px;
+    margin-left: -71px;
 }
