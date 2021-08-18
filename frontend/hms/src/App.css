@@ -47,9 +47,9 @@
     opacity: 0.9;
   }
 
-/*input[type="file"] {*/
-/*  display: none;*/
-/*}*/
+input[type="file"] {
+  display: none;
+}
 /*.custom-file-upload {*/
 /*  margin-top: 10px;*/
 /*  border: 1px solid #ccc;*/
@@ -71,4 +71,27 @@
 .addFood{
   background: url("Images/addFood.png");
   background-size: cover;
+}
+
+.mylabel{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  margin: 10px auto;
+  line-height: 30px;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 24px;
+}
+.mylabel:hover{
+  background: var(--primary);
+  color: white;
+}
+/* progress bar styles */
+.progress-bar{
+  height: 5px;
+  background: var(--primary);
+  margin-top: 20px;
 }
