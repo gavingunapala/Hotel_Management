@@ -8,7 +8,7 @@ const Foodschema = new schema({
     },
     Image : {
         type : String,
-        required : true
+        // required : true
     },
     Name : {
         type : String,
