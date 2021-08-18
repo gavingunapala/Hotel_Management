@@ -20,13 +20,14 @@ const ViewRooms = () => {
                                 <div className="container   ">
                                     <div class="form-group">
                                         <div className="dropdown">
-                                            <button className="form-control" id='select'>Room Type</button>
+                                            <button className="form-control" id='select'><strong>Room Type</strong></button>
                                             <div className="dropdown-content">
                                                 <a href="#">Link 1</a>
                                                 <a href="#">Link 2</a>
                                                 <a href="#">Link 3</a>
                                             </div>
                                         </div>
+                                        <div><label>Room Image</label><input id='left' className="form-control" type="text"/></div>
                                         <div><label>Sleeps</label><input class="form-control" type="text"/></div>
                                         <div><label>Current Price</label><input class="form-control" type="text"/></div>
                                         <div><label>Facilities</label><input class="form-control" type="text"/></div>
