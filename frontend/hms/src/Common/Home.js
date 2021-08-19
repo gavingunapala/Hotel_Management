@@ -22,7 +22,7 @@ const Home = () => {
                         </a>
                     </div>
                     <div className="col-md-6">
-                        <a href="/addFood" style={{color: 'inherit', textDecoration: 'none'}}>
+                        <a href="/customerViewFood" style={{color: 'inherit', textDecoration: 'none'}}>
                         <div className='card'>
                             <div className='homeCard'>
                                 <img src={food} loading="auto" alt="center" height="500"

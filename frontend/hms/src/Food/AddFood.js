@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
 import ProgressBar from "../comps/ProgressBar";
+import '../CSS/ProgressBar/ProgressBar.css'
 
 const AddFood = () => {
 
@@ -58,7 +59,7 @@ const AddFood = () => {
         <div className="addFood" style={{paddingBottom: '200px'}}>
             <div >
                 {/*<div className="col-sm-2"></div>*/}
-                <div class=" col-sm-6 " style={{marginLeft: '550px'}}>
+                <div class=" col-sm-3 " style={{marginLeft: '550px'}}>
                     <div><strong></strong><label></label></div>
                     <div class=" justify-content-center align-items-center" >
                         <div>

@@ -21,6 +21,7 @@ import Footer from "./Footer/Footer";
 import Login from "./Login/Login";
 
 import ManageRoomsDashboard from "./Room_Management/ManageRoomsDashboard";
+import CustomerViewFood from "./Food/CustomerViewFood";
 function App() {
   return (
 
@@ -31,6 +32,7 @@ function App() {
           <Header/>
             <Route exact path="/" component={Home}/>
             <Route exact path="/addFood" component={AddFood}/>
+            <Route exact path="/customerViewFood" component={CustomerViewFood}/>
 
           <Route path="/a" component={CustomerRegistration}/>
 
