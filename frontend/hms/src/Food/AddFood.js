@@ -57,6 +57,9 @@ const AddFood = () => {
 
     return (
         <div className="addFood" style={{paddingBottom: '200px'}}>
+            <a className="btn btn-default foodPrices" href={"/foodManagement"} >
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
+            </a>
             <div >
                 {/*<div className="col-sm-2"></div>*/}
                 <div class=" col-sm-3 " style={{marginLeft: '550px'}}>
@@ -73,12 +76,16 @@ const AddFood = () => {
                                     <div class="form-group">
                                         <div><label >
                                             Add Image
-                                        </label></div>
-                                        <label className={"mylabel"}>
-                                            <input type="file" onChange={handleChange} />
-                                            <span>+</span>
                                         </label>
+                                        <label className={"mylabel1"}>
+                                            <input type="file" onChange={handleChange} />
+                                            <i id="image" className="fa fa-plus-circle" size="large" />
+                                        </label>
+                                        </div>
+                                        <br />
+                                        <img width="200px " src={url} />
                                         <div className="output">
+
                                             { error && <div className="error">{ error }</div>}
                                             { file && <div>{ file.name }</div> }
                                             { file && <ProgressBar file={file} setFile={setFile} setUrl={setUrl}/> }
