@@ -69,7 +69,7 @@ const FoodManagement = () => {
                                         <th className="text-center">Code</th>
                                         <th className="text-center ">Name</th>
                                         <th className="text-center col-lg-4">Image</th>
-                                        <th className="text-center">Price</th>
+                                        <th className="text-center">Price (Rs)</th>
                                         <th className="text-center">Actions</th>
 
                                     </tr>
@@ -81,7 +81,7 @@ const FoodManagement = () => {
                                                 <td>{food.Code}</td>
                                                 <td>{food.Name}</td>
                                                 <td><img width="200px "src={food.Image} /></td>
-                                                <td>{food.Price}</td>
+                                                <td>{food.Price}.00</td>
                                                 <br />
 
                                                 <Link className="btn btn-success" role="button" to={ `/updateFood/${food._id}`} style={{marginRight:"10px"}}>
