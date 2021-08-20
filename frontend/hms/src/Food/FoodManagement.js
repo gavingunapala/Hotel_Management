@@ -8,7 +8,6 @@ import Search from "../Common/Search";
 
 const FoodManagement = () => {
 
-
     let his = useHistory();
     const [Food, setFood] = useState([]);
 
