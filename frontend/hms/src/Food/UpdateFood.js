@@ -70,6 +70,14 @@ const UpdateFood = () => {
         }
     };
 
+    const deleteFood = (id) =>{
+        history.push('/foodManagement');
+        axios.delete('http://localhost:8070/food/delete/' + id).then(()=>{
+        }).catch((err)=>{
+            alert(err);
+        })
+    };
+
     return (
         <div className="addFood" style={{paddingBottom: '200px'}}>
             <a className="btn btn-default foodPrices" href={"/foodManagement"} >
@@ -111,7 +119,12 @@ const UpdateFood = () => {
                                         <div><label>Price(Rs)</label><input class="form-control" placeholder={food.Price} type="text" onChange={priceSetter}/></div>
                                         <br/>
                                         <button class="btn  btn-warning" type="submit" onClick={onSubmit}>&nbsp;Update Food</button>
-                                        <button className="btn-del btn btn-danger " type="submit">Delete Food</button>
+                                        <button className="btn-del btn btn-danger " type="submit" onClick={() => {
+                                            if (window.confirm("Are you sure you want to delete this food item?")) {
+                                                deleteFood(food._id)
+                                            }
+                                            ;
+                                        }}>Delete Food</button>
                                         <br />
                                         <br />
 

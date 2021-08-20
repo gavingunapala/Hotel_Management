@@ -83,6 +83,7 @@ const FoodManagement = () => {
                                                 <td><img width="200px "src={food.Image} /></td>
                                                 <td>{food.Price}.00</td>
                                                 <br />
+                                                <br />
 
                                                 <Link className="btn btn-success" role="button" to={ `/updateFood/${food._id}`} style={{marginRight:"10px"}}>
                                                     <em className="fa fa-edit" id="icon"></em>
@@ -98,7 +99,7 @@ const FoodManagement = () => {
                                                 <br /><br />
                                             </tr>
                                         );
-                                    })};
+                                    })}
 
                                     </tbody>
                                 </table>
