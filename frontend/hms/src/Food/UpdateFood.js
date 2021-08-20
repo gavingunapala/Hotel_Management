@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
-import {useHistory} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {useHistory, useParams} from 'react-router-dom';
 import axios from "axios";
 import ProgressBar from "../comps/ProgressBar";
 import '../CSS/ProgressBar/ProgressBar.css'
 
-const AddFood = () => {
+const UpdateFood = () => {
 
+    const { id} = useParams();
     const history = useHistory();
 
     const[Code, setCode] = useState("");
@@ -14,7 +15,22 @@ const AddFood = () => {
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
     const [url, setUrl] = useState(null);
+    const [food, setFood] = useState([]);
     const types = ['image/png', 'image/jpeg', 'image/jpg'];
+
+    useEffect(() => {
+
+        function getFood() {
+            axios.get("http://localhost:8070/food/get/" + id ).then((res) => {
+                setFood(res.data);
+                console.log(food);
+            }).catch((err) => {
+            })
+        }
+
+        getFood();
+    }, []);
+
 
     const codeSetter = (e) => {
         setCode(e.target.value);
@@ -27,20 +43,19 @@ const AddFood = () => {
     }
 
     const onSubmit = (e) => {
-            e.preventDefault();
-            const newFood = {
-                Code: Code,
-                Image: url,
-                Name: Name,
-                Price: Price
-            };
-            axios.post('http://localhost:8070/food/add', newFood).then(() => {
-                alert("Food item added");
-                console.log(url);
-                 history.push('/foodManagement');
-            }).catch((err) => {
-                alert(err);
-            })
+        e.preventDefault();
+        const updatedFood = {
+            Code: Code,
+            Image: url,
+            Name: Name,
+            Price: Price
+        };
+        axios.put('http://localhost:8070/food/updateOne/' + id, updatedFood).then(() => {
+            alert("Food item updated");
+             history.push('/foodManagement');
+        }).catch((err) => {
+            alert(err);
+        })
     }
 
     const handleChange = (e) => {
@@ -53,6 +68,14 @@ const AddFood = () => {
             setFile(null);
             setError('Please select an image(.png, .jpeg, .jpg)');
         }
+    };
+
+    const deleteFood = (id) =>{
+        history.push('/foodManagement');
+        axios.delete('http://localhost:8070/food/delete/' + id).then(()=>{
+        }).catch((err)=>{
+            alert(err);
+        })
     };
 
     return (
@@ -68,34 +91,40 @@ const AddFood = () => {
                         <div>
                             <form class="card" style={{opacity: '0.95', marginTop:'100px'}}>
                                 <br />
-                                <h2 class="text-center">Add Food</h2>
+                                <h2 class="text-center">{food.Name}</h2>
                                 <br />
                                 <div className="container">
-                                    <div><label>Food Code</label><input class="form-control" type="text" onChange={codeSetter}/>
+                                    <div><label>Food Code</label><input class="form-control" placeholder={food.Code} type="text" onChange={codeSetter}/>
                                     </div>
-                                    <div class="form-group">
-                                        <div><label >
-                                            Add Image
+                                    <div className="form-group" >
+                                        <div ><label >
+                                            Update Image
                                         </label>
-                                        <label className={"mylabel1"}>
+
+                                        <label   className={"mylabel1"}>
                                             <input type="file" onChange={handleChange} />
                                             <i id="image" className="fa fa-plus-circle" size="large" />
                                         </label>
                                         </div>
-                                        <br />
-                                        <img width="200px " src={url} />
+                                        <div className="text-center" >
+                                            <img width="200px " src={url} /></div>
                                         <div className="output">
-
                                             { error && <div className="error">{ error }</div>}
                                             { file && <div>{ file.name }</div> }
                                             { file && <ProgressBar file={file} setFile={setFile} setUrl={setUrl}/> }
                                             {file && <div> {file.url}</div>}
                                         </div>
 
-                                        <div><label>Name</label><input class="form-control" type="text" onChange={nameSetter}/></div>
-                                        <div><label>Price(Rs)</label><input class="form-control" type="text" onChange={priceSetter}/></div>
+                                        <div><label>Name</label><input class="form-control" placeholder={food.Name} type="text" onChange={nameSetter}/></div>
+                                        <div><label>Price(Rs)</label><input class="form-control" placeholder={food.Price} type="text" onChange={priceSetter}/></div>
                                         <br/>
-                                        <button class="btn btn-primary" type="submit" onClick={onSubmit}>&nbsp;Add Food</button>
+                                        <button class="btn  btn-warning" type="submit" onClick={onSubmit}>&nbsp;Update Food</button>
+                                        <button className="btn-del btn btn-danger " type="submit" onClick={() => {
+                                            if (window.confirm("Are you sure you want to delete this food item?")) {
+                                                deleteFood(food._id)
+                                            }
+                                            ;
+                                        }}>Delete Food</button>
                                         <br />
                                         <br />
 
@@ -105,14 +134,9 @@ const AddFood = () => {
                         </div>
                     </div>
                 </div>
-                {/*<div className="col-md-1 image">*/}
-                {/*    <img src={img} loading="auto" alt="center" height="400"*/}
-                {/*         width="500" style={{paddingTop: '100px'}}/>*/}
-                {/*</div>*/}
-
 
             </div>
         </div>
     )
 }
-export default AddFood;
+export default UpdateFood;

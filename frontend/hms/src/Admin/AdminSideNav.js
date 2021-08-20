@@ -19,7 +19,7 @@ const AdminSideNav = () => {
                 </div>
                 <ul className="list-unstyled components">
                     <li>
-                        <a href="/admin">Foods</a>
+                        <a href="/foodManagement">Foods</a>
                         <a href="/ManageAdmins">Rooms</a>
                         <a href="/ManageReviewers">Customers</a>
                         <a href="/EmployeeView">Employee</a>

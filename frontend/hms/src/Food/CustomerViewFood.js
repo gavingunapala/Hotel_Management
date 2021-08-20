@@ -35,7 +35,8 @@ const CustomerViewFood = () => {
                     <br/>
 
                 <div className="foodPrices">Rs. {food.Price}</div>
-                    <br/>
+
+                    <input className="foodQuantity" type="Number" defaultValue="1"></input>
                     <div className="p-2 ">
                         <div className="text-center" >
                             <a href={food.Image}
