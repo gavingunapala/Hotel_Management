@@ -50,13 +50,7 @@
 input[type="file"] {
   display: none;
 }
-/*.custom-file-upload {*/
-/*  margin-top: 10px;*/
-/*  border: 1px solid #ccc;*/
-/*  display: inline-block;*/
-/*  padding: 6px 12px;*/
-/*  cursor: pointer;*/
-/*}*/
+
 
 .row1{
   --bs-gutter-x: 0;
@@ -111,6 +105,10 @@ input[type="file"] {
 }
 .foodPrices{
   font-size: x-large;
+  font-weight: bolder;
+}
+.foodQuantity{
+  font-size: large;
   font-weight: bolder;
 }
 
