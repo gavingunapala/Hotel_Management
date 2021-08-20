@@ -37,7 +37,7 @@ const AddFood = () => {
             axios.post('http://localhost:8070/food/add', newFood).then(() => {
                 alert("Food item added");
                 console.log(url);
-                // history.push('/');
+                 history.push('/foodManagement');
             }).catch((err) => {
                 alert(err);
             })
