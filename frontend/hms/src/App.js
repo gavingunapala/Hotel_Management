@@ -25,6 +25,7 @@ import CustomerViewFood from "./Food/CustomerViewFood";
 import EmployeeView from "./Admin/EmployeeView";
 import AdminSideNav from "./Admin/AdminSideNav";
 import FoodManagement from "./Food/FoodManagement";
+import UpdateFood from "./Food/UpdateFood";
 function App() {
   return (
 
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/addFood" component={AddFood}/>
             <Route exact path="/customerViewFood" component={CustomerViewFood}/>
             <Route exact path="/foodManagement" component={FoodManagement}/>
+            <Route exact path="/updateFood/:id" component={UpdateFood}/>
 
           <Route path="/a" component={CustomerRegistration}/>
 

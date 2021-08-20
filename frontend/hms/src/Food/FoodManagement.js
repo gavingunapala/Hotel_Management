@@ -17,7 +17,6 @@ const FoodManagement = () => {
         function getFood() {
             axios.get("http://localhost:8070/food" ).then((res) => {
                 setFood(res.data);
-                console.log(res.data);
             }).catch((err) => {
             })
         }
@@ -33,6 +32,10 @@ const FoodManagement = () => {
             alert(err);
         })
     };
+
+    const editFood = (id, path) => {
+        // his.push(path);
+    }
 
     return (
         <div className="row1">
@@ -77,11 +80,11 @@ const FoodManagement = () => {
                                             <tr>
                                                 <td>{food.Code}</td>
                                                 <td>{food.Name}</td>
-                                                <td>{food.Image}</td>
+                                                <td><img width="200px "src={food.Image} /></td>
                                                 <td>{food.Price}</td>
                                                 <br />
 
-                                                <Link className="btn btn-success" role="button" to={`/update/${food._id}`} style={{marginRight:"10px"}}>
+                                                <Link className="btn btn-success" role="button" to={ `/updateFood/${food._id}`} style={{marginRight:"10px"}}>
                                                     <em className="fa fa-edit" id="icon"></em>
                                                 </Link>
                                                 <a className="btn btn-danger" id="icon">
@@ -99,14 +102,7 @@ const FoodManagement = () => {
 
                                     </tbody>
                                 </table>
-                                {/*<button className="btn btn-primary">*/}
-                                {/*    <Link to="/">+ Back to Home</Link>*/}
-                                {/*</button>*/}
-                                <div className="col-12 col-sm-6 col-md-6">
-                                    <a href="/" className="btn btn-primary" role="button">
-                                        <i className="fa fa-plus"></i>Back to Home
-                                    </a>
-                                </div>
+
                                 <br/>
                             </div>
                         </div>
