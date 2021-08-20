@@ -1,11 +1,12 @@
 import React,{useEffect, useState} from 'react';
 import '../CSS/Employee/Update.css';
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import axios from "axios";
 
-const AdminEmployeeUpdate = () => {
-    const id ="611c9bc828933616582c7595";
-    console.log(id)
+const AdminEmployeeUpdate = ({match}) => {
+    console.log(match.params.id);
+    const id = match.params.id;
+
 
     let his = useHistory();
     const [Employee, setEmployee] = useState([]);

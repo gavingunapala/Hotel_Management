@@ -22,6 +22,7 @@ import Login from "./Login/Login";
 
 import ManageRoomsDashboard from "./Room_Management/ManageRoomsDashboard";
 import CustomerViewFood from "./Food/CustomerViewFood";
+import EmployeeView from "./Admin/EmployeeView";
 function App() {
   return (
 
@@ -38,7 +39,7 @@ function App() {
 
 
             <Route path="/EmployeeAdd" component={EmployeeAdd}/>
-            <Route path="/AdminEmployeeUpdate" component={AdminEmployeeUpdate}/>
+            <Route path="/AdminEmployeeUpdate/:id" component={AdminEmployeeUpdate}/>
           <Route path="/EmployeeReport" component={EmployeeReport}/>
 
 
@@ -55,6 +56,7 @@ function App() {
           <Route exact path="/ViewRooms" component={ViewRooms}/>
           <Route exact path="/UpdateRooms" component={UpdateRooms}/>
           <Route exact path="/ManageRoomsDashboard" component={ManageRoomsDashboard}/>
+          <Route exact path="/EmployeeView" component={EmployeeView}/>
 
 
       </Router>
