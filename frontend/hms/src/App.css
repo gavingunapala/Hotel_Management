@@ -61,11 +61,12 @@ input[type="file"] {
 .row1{
   --bs-gutter-x: 0;
   --bs-gutter-y: 0;
+
   display: flex;
   flex-wrap: wrap;
-  margin-top: calc(var(--bs-gutter-y) * -1);
-  margin-right: calc(var(--bs-gutter-x) * -.5);
-  margin-left: calc(var(--bs-gutter-x) * -.5);
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
 .addFood{

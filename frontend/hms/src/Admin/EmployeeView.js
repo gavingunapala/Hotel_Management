@@ -1,6 +1,10 @@
 import React,{useEffect, useState} from 'react';
 import {Link, useHistory} from "react-router-dom";
 import axios from "axios";
+import AdminSideNav from "./AdminSideNav";
+import '../CSS/Admin/tableEmployee.css';
+import Search from "../Common/Search";
+
 
 const EmployeeView = () => {
 
@@ -37,91 +41,91 @@ const EmployeeView = () => {
 
 
     return (
-        <div>
-            <div>
-                <br/><br/>
-                <div className="container-fluid">
-                    <div className="row">
+            <div className="row1">
+                <div className="col-2"> <AdminSideNav/></div>
+                <div className="col-10"> <br/>
+                    <Search/>
+                    <div className="">
+                        <div className="row1">
 
-                        <div className="col-12 col-sm-6 col-md-6">
+                            <div className="col-12 col-sm-6 col-md-6">
+                            </div>
+                            <span className="counter pull-right"></span>
+                            <br/><br/>
+                        </div>
+
+
                             <a href="/EmployeeAdd" className="btn btn-primary" role="button">
                                 <i className="fa fa-plus"></i>Add New Employee
                             </a>
-                        </div>
-                        <div className="form-group pull-right col-lg-4">
-                            <input type="text" id='search' className="search form-control"
-                                   placeholder="Search by typing here.."/>
-                        </div>
-                        <span className="counter pull-right"></span>
-                        <br/> <br/><br/>
-                    </div>
-                    <div className="card" id="TableSorterCard">
-                        <div className="card-header">
-                            <div className="form-group pull-right col-lg-4">
-                                <button className="btn btn-primary" type="submit" id="fa">Generate Report</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="table-responsive">
-                                <table className="table  table-hover table-bordered table-striped table tablesorter"
-                                       id="ipi-table">
-                                    <thead className="thead-dark">
-                                    <tr>
-                                        <th className="text-center">Name</th>
-                                        <th className="text-center col-lg-4">Address</th>
-                                        <th className="text-center">Phone number</th>
-                                        <th className="text-center">Nic Number</th>
-                                        <th className="text-center">Job Title</th>
-                                        <th className="text-center">Salary</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody className="text-center">
-                                    {Employee.map((employee) => {
-                                        return (
-                                            <tr>
-                                                <td>{employee.Name}</td>
-                                                <td>{employee.Address}</td>
-                                                <td>{employee.PhoneNumber}</td>
-                                                <td>{employee.NICNumber}</td>
-                                                <td>{employee.Jobtitle}</td>
-                                                <td>{employee.Salary}</td>
+                                    <button className="btn btn-success btngena" type="submit" >Generate Report</button>
 
-                                                <Link class="btn btn-primary" role="button" to={`AdminEmployeeUpdate/${employee._id}`}>
-                                                    <em className="fa fa-eye" id="icon"></em>
-                                                </Link>
-                                                <Link class="btn btn-success" role="button" to={`/update/${employee._id}`}>
-                                                    <em className="fa fa-edit" id="icon"></em>
-                                                </Link>
-                                                <a className="btn btn-danger" id="icon">
-                                                    <em className="fa fa-trash"
-                                                        onClick={() => {
-                                                            if (window.confirm("Are you sure you want to delete this Room?")) {
-                                                                deleteRoom(employee._id)
-                                                            }
-                                                            ;
-                                                        }}/></a>
-                                            </tr>
-                                        );
-                                    })}
-                                    </tbody>
-                                </table>
-                                {/*<button className="btn btn-primary">*/}
-                                {/*    <Link to="/">+ Back to Home</Link>*/}
-                                {/*</button>*/}
-                                <div className="col-12 col-sm-6 col-md-6">
-                                    <a href="/" className="btn btn-primary" role="button">
-                                        <i className="fa fa-plus"></i>Back to Home
-                                    </a>
+
+                        <br /><br />
+                        <div className="row1">
+                            <div className="col-12">
+                                <div className="table-responsive">
+                                    <table className="table1  table-hover table-bordered table-striped  tablesorter"
+                                           id="ipi-table">
+                                        <thead className="thead-dark">
+                                        <tr>
+                                            <th className="text-center">Name</th>
+                                            <th className="text-center col-lg-4">Address</th>
+                                            <th className="text-center">Phone number</th>
+                                            <th className="text-center">Nic Number</th>
+                                            <th className="text-center">Job Title</th>
+                                            <th className="text-center">Salary</th>
+                                            <th className="text-center">Actions</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody className="text-center">
+                                        {Employee.map((employee) => {
+                                            return (
+                                                <tr>
+                                                    <td>{employee.Name}</td>
+                                                    <td>{employee.Address}</td>
+                                                    <td>{employee.PhoneNumber}</td>
+                                                    <td>{employee.NICNumber}</td>
+                                                    <td>{employee.Jobtitle}</td>
+                                                    <td>{employee.Salary}</td>
+                                                    <br />
+                                                    <Link class="btn btn-primary" role="button"    to={`AdminEmployeeUpdate/${employee._id}`}>
+
+                                                        <em className="fa fa-eye" id="icon"></em>
+                                                    </Link>
+                                                    <Link class="btn btn-success" role="button" to={`/update/${employee._id}`}>
+                                                        <em className="fa fa-edit" id="icon"></em>
+                                                    </Link>
+                                                    <a className="btn btn-danger" id="icon">
+                                                        <em className="fa fa-trash"
+                                                            onClick={() => {
+                                                                if (window.confirm("Are you sure you want to delete this Room?")) {
+                                                                    deleteRoom(employee._id)
+                                                                }
+                                                                ;
+                                                            }}/></a>
+                                                    <br /><br />
+                                                </tr>
+                                            );
+                                        })}
+
+                                        </tbody>
+                                    </table>
+                                    {/*<button className="btn btn-primary">*/}
+                                    {/*    <Link to="/">+ Back to Home</Link>*/}
+                                    {/*</button>*/}
+                                    <div className="col-12 col-sm-6 col-md-6">
+                                        <a href="/" className="btn btn-primary" role="button">
+                                            <i className="fa fa-plus"></i>Back to Home
+                                        </a>
+                                    </div>
+                                    <br/>
                                 </div>
-                                <br/>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div></div>
             </div>
-        </div>
     )
 }
 export default EmployeeView;

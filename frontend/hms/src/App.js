@@ -23,6 +23,7 @@ import Login from "./Login/Login";
 import ManageRoomsDashboard from "./Room_Management/ManageRoomsDashboard";
 import CustomerViewFood from "./Food/CustomerViewFood";
 import EmployeeView from "./Admin/EmployeeView";
+import AdminSideNav from "./Admin/AdminSideNav";
 function App() {
   return (
 
@@ -57,6 +58,7 @@ function App() {
           <Route exact path="/UpdateRooms" component={UpdateRooms}/>
           <Route exact path="/ManageRoomsDashboard" component={ManageRoomsDashboard}/>
           <Route exact path="/EmployeeView" component={EmployeeView}/>
+          <Route exact path="/AdminSideNav" component={AdminSideNav}/>
 
 
       </Router>
