@@ -90,11 +90,7 @@ const EmployeeView = () => {
                                                     <td>{employee.Jobtitle}</td>
                                                     <td>{employee.Salary}</td>
                                                     <br />
-                                                    <Link class="btn btn-primary" role="button"    to={`AdminEmployeeUpdate/${employee._id}`}>
-
-                                                        <em className="fa fa-eye" id="icon"></em>
-                                                    </Link>
-                                                    <Link class="btn btn-success" role="button" to={`/update/${employee._id}`}>
+                                                    <Link class="btn btn-success" role="button" to={`AdminEmployeeUpdate/${employee._id}`}>
                                                         <em className="fa fa-edit" id="icon"></em>
                                                     </Link>
                                                     <a className="btn btn-danger" id="icon">

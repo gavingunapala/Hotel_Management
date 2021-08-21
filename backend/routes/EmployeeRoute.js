@@ -98,8 +98,8 @@ router.route("/updateOne/:id").put(async (req, res) => {
         Address: req.body.Address || Employee.Address,
         PhoneNumber: req.body.PhoneNumber || Employee.PhoneNumber,
         NICNumber: req.body.NICNumber || Employee.NICNumber,
-        Jobtitle: req.body.Email || Employee.Jobtitle,
-        Salary: req.body.Password || Employee.Salary,
+        Jobtitle: req.body.Jobtitle || Employee.Jobtitle,
+        Salary: req.body.Salary || Employee.Salary,
 
 
     };
