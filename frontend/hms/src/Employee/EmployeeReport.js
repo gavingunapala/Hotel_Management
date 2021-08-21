@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import '../CSS/Employee/employee.css';
 import axios from "axios";
 import {Link} from "react-router-dom";
+import jsPDF from "jspdf";
 
 
 
@@ -43,6 +44,17 @@ const EmployeeReport = () => {
         valueofcal =a*b/100
         calc = a +++ valueofcal;
     }
+    const genaratePDF =()=>{
+    let doc= new jsPDF('p','pt');
+     doc.text(20,20 ,"your bonus is"+ valueofcal);
+     doc.text(20,25 ,`your Full salary is`+ calc);
+
+
+
+     doc.save("genarated.pdf");
+    }
+
+
 
     return (
         <div className={'body'}>
@@ -84,7 +96,7 @@ const EmployeeReport = () => {
                                 <div><label>Bonus</label><br/><input className="form-control" type="number" value={valueofcal}/></div><br/>
                                 <div><label>Salary with bonus</label><input className="form-control" type="number" value={calc}/></div>
                             <br />
-                            <Link class="btn btn-success" role="button" to={``}>
+                            <Link class="btn btn-success" role="button" onClick={genaratePDF}>
                                 Genarate report for bonus .
                                 <em className="fa fa-file-pdf-o" id="icon"></em>
                             </Link>
