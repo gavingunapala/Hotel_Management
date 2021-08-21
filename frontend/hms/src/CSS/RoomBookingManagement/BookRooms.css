@@ -14,7 +14,8 @@
     text-align: left;
 }
 #addrooms{
-    margin-left: 88px;
+    margin-left: 100px;
+    width: 96px;
 }
 
 #room:hover {

@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
-// import img from '../Images/undraw_Sync_files_re_ws4c.png';
-import '../CSS/Room_Management/AddRooms.css';
-
+import '../CSS/RoomBookingManagement/BookRooms.css';
 import img from "../Images/undraw_Sync_files_re_ws4c.png";
 
 const BookRooms = () => {
     return (
         <div>
             <br></br>
-
+            <a className="btn btn-default foodPrices" href={"/RoomBookingDashboard"} >
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
+            </a>
             <div className="row">
                 <div className="col-sm-2"></div>
                 <div class=" col-sm-3">
@@ -34,12 +34,12 @@ const BookRooms = () => {
                                                 <option>Superior King Room</option>
                                             </select>
                                         </div>
-                                        <div><label>No Of People</label><input id='left' className="form-control" type="text"  /></div>
-                                        <div><label>Check In Date</label><input className="form-control" type="text" /></div>
-                                        <div><label>Check Out Date</label><textarea id="w3review" className="form-control" rows="4" cols="50" /></div>
+                                        <div><label>No Of People</label><input id='left' className="form-control" type="number"  /></div>
+                                        <div><label>Check In Date</label><input className="form-control" type="date" /></div>
+                                        <div><label>Check Out Date</label><input className="form-control" type="date" /></div>
 
                                         <br/>
-                                        <button className="btn btn-primary" type="submit" id="addrooms" >&nbsp;Book </button>&nbsp;&nbsp;
+                                        <button className="btn btn-primary" type="submit" id="addrooms" >&nbsp;Book</button>&nbsp;&nbsp;
                                         <br/>
                                         <br/>
 
