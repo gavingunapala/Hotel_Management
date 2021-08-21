@@ -27,6 +27,12 @@ import AdminSideNav from "./Admin/AdminSideNav";
 import FoodManagement from "./Food/FoodManagement";
 import UpdateFood from "./Food/UpdateFood";
 import AdminPanelCustomers from "./Admin/AdminPanlCustomers";
+import BookRooms from "./RoomBookingManagement/BookRooms";
+import ViewBookedRooms from "./RoomBookingManagement/ViewBookedRooms";
+import UpdateBookedRooms from "./RoomBookingManagement/UpdateBookedRooms";
+import RoomBookingDashboard from "./RoomBookingManagement/RoomBookingDashboard";
+import ViewAllRooms from "./RoomBookingManagement/ViewAllRooms";
+import ViewOneRoom from "./RoomBookingManagement/ViewOneRoom"
 
 
 
@@ -68,10 +74,12 @@ function App() {
           <Route exact path="/ManageRoomsDashboard" component={ManageRoomsDashboard}/>
           <Route exact path="/EmployeeView" component={EmployeeView}/>
           <Route exact path="/AdminSideNav" component={AdminSideNav}/>
-
-
-
-
+          <Route exact path="/BookRooms" component={BookRooms}/>
+          <Route exact path="/ViewBookedRooms" component={ViewBookedRooms}/>
+          <Route exact path="/UpdateBookedRooms" component={UpdateBookedRooms}/>
+          <Route exact path="/RoomBookingDashboard" component={RoomBookingDashboard}/>
+          <Route exact path="/ViewAllRooms" component={ViewAllRooms}/>
+          <Route exact path="/ViewOneRoom" component={ViewOneRoom}/>
       </Router>
         <Footer/>
 </div>
