@@ -29,13 +29,15 @@ button {
 
 
 #sidebar {
-    position: fixed;
+    position: relative;
     min-width: 240px;
     max-width: 240px;
     background: #1a2639 !important;
     opacity: 0.9;
     color: #fff;
     transition: all 0.3s;
+    height: 1042px;
+    margin-bottom: -88px;
 }
 
 #sidebar ul li a {
