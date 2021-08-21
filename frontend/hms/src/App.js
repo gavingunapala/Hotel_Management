@@ -64,7 +64,7 @@ function App() {
 
           <Route exact path="/AddRooms" component={AddRooms}/>
           <Route exact path="/ViewRooms/:id" component={ViewRooms}/>
-          <Route exact path="/UpdateRooms" component={UpdateRooms}/>
+          <Route exact path="/UpdateRooms/:id" component={UpdateRooms}/>
           <Route exact path="/ManageRoomsDashboard" component={ManageRoomsDashboard}/>
           <Route exact path="/EmployeeView" component={EmployeeView}/>
           <Route exact path="/AdminSideNav" component={AdminSideNav}/>
