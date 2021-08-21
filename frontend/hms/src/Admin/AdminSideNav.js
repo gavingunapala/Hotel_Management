@@ -21,7 +21,7 @@ const AdminSideNav = () => {
                     <li>
                         <a href="/foodManagement">Foods</a>
                         <a href="/ManageAdmins">Rooms</a>
-                        <a href="/ManageReviewers">Customers</a>
+                        <a href="/AdminPanelCustomers">Customers</a>
                         <a href="/EmployeeView">Employee</a>
                         <a href="/ManageUsers">Payments</a>
                         <a href="/#">Room Bookings</a>

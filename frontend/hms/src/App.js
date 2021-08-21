@@ -26,6 +26,7 @@ import EmployeeView from "./Admin/EmployeeView";
 import AdminSideNav from "./Admin/AdminSideNav";
 import FoodManagement from "./Food/FoodManagement";
 import UpdateFood from "./Food/UpdateFood";
+import AdminPanelCustomers from "./Admin/AdminPanlCustomers";
 function App() {
   return (
 
@@ -54,8 +55,9 @@ function App() {
             <Route path="/CustomerProfile" component={CustomerProfile}/>
           <Route path="/CustomerProfileUpdate" component={CustomerProfileUpdate}/>
           <Route path="/CustomerRegistration" component={CustomerRegistration}/>
-          <Route path="/UpdateCustomers" component={UpdateCustomers}/>
+          <Route path="/UpdateCustomers/:id" component={UpdateCustomers}/>
             <Route path="/Login" component={Login}/>
+          <Route path="/AdminPanelCustomers" component={AdminPanelCustomers}/>
 
           <Route exact path="/AddRooms" component={AddRooms}/>
           <Route exact path="/ViewRooms" component={ViewRooms}/>
