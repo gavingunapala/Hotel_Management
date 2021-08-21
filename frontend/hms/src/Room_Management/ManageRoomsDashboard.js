@@ -89,7 +89,7 @@ const ManageRoomsDashboard = () => {
                                             <td>{Room.Facilities}</td>
                                             <td>{Room.Description}</td>
                                             <br />
-                                            <Link class="btn btn-primary" role="button" to={`/get/${Room._id}`}>
+                                            <Link class="btn btn-primary" role="button" to={`/ViewRooms/${Room._id}`}>
                                                 <em className="fa fa-eye"  id="icon"></em>
                                             </Link>
                                             <Link class="btn btn-success" role="button" to={`/update/${Room._id}`}>
