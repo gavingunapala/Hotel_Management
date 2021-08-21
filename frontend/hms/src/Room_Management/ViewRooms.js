@@ -82,6 +82,9 @@ const ViewRooms = ({match}) => {
     return (
         <div>
             <br></br>
+            <a className="btn btn-default foodPrices" href={"/ManageRoomsDashboard"} >
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
+            </a>
             <div className="row1">
                 <div className="col-sm-2"></div>
                 <div class=" col-sm-3">
@@ -134,7 +137,7 @@ const ViewRooms = ({match}) => {
                     </div>
                 </div>
                 <div className="col-sm-6 image">
-                    <img src={img} loading="auto" alt="center" height="500" width="500"/>
+                    <img src={img} loading="auto" alt="center" height="700" width="600" margin-top="70"/>
                 </div>
             </div>
         </div>

@@ -5,7 +5,10 @@ import {useHistory} from "react-router-dom";
 import axios from "axios";
 import ProgressBar from "../comps/ProgressBar";
 
-const UpdateRooms = () => {
+const UpdateRooms = ({match}) => {
+    console.log(match.params.id);
+    const id = match.params.id;
+    console.log(id)
 
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
@@ -24,7 +27,7 @@ const UpdateRooms = () => {
         }
     };
 
-    const id ="611d817da6fcc32cf090ed51";
+
     console.log(id)
     let his = useHistory();
 
@@ -81,19 +84,21 @@ const UpdateRooms = () => {
             Facilities:Facilities,
             Description:Description
         };
-
+        his.push('/ViewRooms');
         axios.put('http://localhost:8070/Room/updateOne/' + id, UpdateRoom).then(() => {
             alert("Room details Updated successfully!!!");
         }).catch((err) => {
             alert(err);
         })
-        his.push('/ViewRooms');
+        // his.push('/ViewRooms');
     }
 
     return (
         <div>
             <br></br>
-
+            <a className="btn btn-default foodPrices" href={"/ManageRoomsDashboard"} >
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
+            </a>
             <div className="row">
                 <div className="col-sm-2"></div>
                 <div class=" col-sm-3">
@@ -149,7 +154,7 @@ const UpdateRooms = () => {
                     </div>
                 </div>
                 <div className="col-sm-6 image">
-                    <img src={img} loading="auto" alt="center" height="500" width="500"/>
+                    <img src={img} loading="auto" alt="center" height="700" width="600"/>
                 </div>
 
 
