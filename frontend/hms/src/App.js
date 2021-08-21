@@ -63,6 +63,7 @@ function App() {
           <Route exact path="/ViewRooms" component={ViewRooms}/>
           <Route exact path="/UpdateRooms" component={UpdateRooms}/>
           <Route exact path="/ManageRoomsDashboard" component={ManageRoomsDashboard}/>
+
           <Route exact path="/BookRooms" component={BookRooms}/>
           <Route exact path="/EmployeeView" component={EmployeeView}/>
           <Route exact path="/AdminSideNav" component={AdminSideNav}/>
