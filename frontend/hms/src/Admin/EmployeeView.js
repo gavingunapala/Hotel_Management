@@ -90,6 +90,9 @@ const EmployeeView = () => {
                                                     <td>{employee.Jobtitle}</td>
                                                     <td>{employee.Salary}</td>
                                                     <br />
+                                                    <Link class="btn btn-success" role="button"  to={`/EmployeeReport`}> bonus<br />
+                                                        <em className="fa fa-calculator" id="icon"></em>
+                                                    </Link>
                                                     <Link class="btn btn-success" role="button" to={`AdminEmployeeUpdate/${employee._id}`}>
                                                         <em className="fa fa-edit" id="icon"></em>
                                                     </Link>
@@ -121,6 +124,7 @@ const EmployeeView = () => {
                             </div>
                         </div>
                     </div></div>
+
             </div>
     )
 }

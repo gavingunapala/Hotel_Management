@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import '../CSS/Employee/employee.css';
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 
 
@@ -82,6 +83,11 @@ const EmployeeReport = () => {
                                 </center>
                                 <div><label>Bonus</label><br/><input className="form-control" type="number" value={valueofcal}/></div><br/>
                                 <div><label>Salary with bonus</label><input className="form-control" type="number" value={calc}/></div>
+                            <br />
+                            <Link class="btn btn-success" role="button" to={``}>
+                                Genarate report for bonus .
+                                <em className="fa fa-file-pdf-o" id="icon"></em>
+                            </Link>
                               <br/>  <br/>  <br/>
                         </form>
 
@@ -90,6 +96,7 @@ const EmployeeReport = () => {
                 </div>
             </div>
         </div>
+
         </div>
     )
 }
