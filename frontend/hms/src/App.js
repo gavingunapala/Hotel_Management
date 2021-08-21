@@ -27,6 +27,9 @@ import AdminSideNav from "./Admin/AdminSideNav";
 import FoodManagement from "./Food/FoodManagement";
 import UpdateFood from "./Food/UpdateFood";
 import AdminPanelCustomers from "./Admin/AdminPanlCustomers";
+
+
+
 function App() {
   return (
 
@@ -60,11 +63,13 @@ function App() {
           <Route path="/AdminPanelCustomers" component={AdminPanelCustomers}/>
 
           <Route exact path="/AddRooms" component={AddRooms}/>
-          <Route exact path="/ViewRooms" component={ViewRooms}/>
+          <Route exact path="/ViewRooms/:id" component={ViewRooms}/>
           <Route exact path="/UpdateRooms" component={UpdateRooms}/>
           <Route exact path="/ManageRoomsDashboard" component={ManageRoomsDashboard}/>
           <Route exact path="/EmployeeView" component={EmployeeView}/>
           <Route exact path="/AdminSideNav" component={AdminSideNav}/>
+
+
 
 
       </Router>
