@@ -64,12 +64,13 @@ const AdminEmployeeUpdate = ({match}) => {
             Jobtitle: Jobtitle,
             Salary: Salary
         };
-        his.push('/Employee');
+        his.push('/EmployeeView');
         // const loggedInUser = localStorage.getItem("user");
         // console.log(loggedInUser);
         axios.put('http://localhost:8070/Employee/updateOne/' + id, UpdateEmployee).then(() => {
 
             alert("Updated successfully!!!");
+
         }).catch((err) => {
             alert(err);
         })
@@ -99,7 +100,7 @@ const AdminEmployeeUpdate = ({match}) => {
                                         <div><label>Job Title</label><input class="form-control"
                                                                             type="text" placeholder={Employee.Jobtitle} onChange={JobtitleSetter}/></div>
                                         <div><label>Salary</label><input className="form-control"
-                                                                         type="text" placeholder={Employee.Salary} onChange={SalarySetter}/></div>
+                                                                         type="number" placeholder={Employee.Salary} onChange={SalarySetter}/></div>
                                         <br/>
 
                                         <button class="btn btnwar btn-warning " type="submit" onClick={onSubmit}>UPDATE EMPLOYEE</button>

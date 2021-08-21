@@ -5,11 +5,11 @@ import img from '../Images/undraw_Update_re_swkp.png';
 import '../CSS/Room_Management/ViewRooms.css';
 import {useHistory} from "react-router-dom";
 
-const ViewRooms = () => {
+const ViewRooms = ({match}) => {
 
-    // console.log(match.params.id);
+    console.log(match.params.id);
     // const {roomId} = useParams();
-    const id ="611d817da6fcc32cf090ed51";
+    const id = match.params.id;
     console.log(id)
     let his = useHistory();
     const [Room, setRoom] = useState([]);
@@ -82,8 +82,7 @@ const ViewRooms = () => {
     return (
         <div>
             <br></br>
-
-            <div className="row">
+            <div className="row1">
                 <div className="col-sm-2"></div>
                 <div class=" col-sm-3">
                     <div><strong></strong><label></label></div>
@@ -120,18 +119,16 @@ const ViewRooms = () => {
                                         <div><label>Description</label><textarea id="w3review" className="form-control" rows="4" cols="50" placeholder={Room.Description}
                                                                                  /></div>
                                         <br/>
-                                        <a href={"/UpdateRooms"} className="btn btn-warning" id='war' type="reset">&nbsp;Update Room</a>&nbsp;&nbsp;
+                                        <a href={"/UpdateRooms"} className="btn btn-warning" id='war' type="reset">Update Room</a>
                                         <button className="btn btn-danger" type="reset" id='danger' onClick={() => {
                                             if (window.confirm("Are you sure you want to delete this room details?")) {
                                                 deleteRoom()
                                             };
-                                        }}>&nbsp;Delete Room</button>&nbsp;&nbsp;
+                                        }}>Delete Room</button>
                                         <br/>
                                         <br/>
                                     </div>
-
                                 </div>
-
                             </form>
                         </div>
                     </div>
