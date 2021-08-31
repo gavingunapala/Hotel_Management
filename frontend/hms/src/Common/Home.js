@@ -8,7 +8,7 @@ const Home = () => {
             <div className='container'>
                 <div className='row'>
                     <div className="col-md-6">
-                        <a href="/a" style={{color: 'inherit', textDecoration: 'none'}}>
+                        <a href="/ViewAllRooms" style={{color: 'inherit', textDecoration: 'none'}}>
                         <div className='card'>
                             <div className='homeCard '>
                                 <img src={bed} loading="auto" alt="center" height="500"
