@@ -90,7 +90,7 @@ const UpdateRooms = ({match}) => {
         }).catch((err) => {
             alert(err);
         })
-        // his.push('/ViewRooms');
+        his.push('/ManageRoomsDashboard');
     }
 
     return (
@@ -138,8 +138,8 @@ const UpdateRooms = ({match}) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div><label>Sleeps</label><input class="form-control" type="text" onChange={sleepsSetter} placeholder={Room.Sleeps} /></div>
-                                        <div><label>Current Price</label><input class="form-control" type="text" onChange={currentpriceSetter} placeholder={Room.CurrentPrice} /></div>
+                                        <div><label>Sleeps</label><input class="form-control" type="number" onChange={sleepsSetter} placeholder={Room.Sleeps} /></div>
+                                        <div><label>Current Price</label><input class="form-control" type="number" onChange={currentpriceSetter} placeholder={Room.CurrentPrice} /></div>
                                         <div><label>Facilities</label><input class="form-control" type="text" onChange={facilitiesSetter} placeholder={Room.Facilities} /></div>
                                         <div><label>Description</label><textarea id="w3review" className="form-control" rows="4" cols="50" onChange={descriptionSetter} placeholder={Room.Description} /></div>
                                         <br/>

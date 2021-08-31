@@ -9,7 +9,7 @@ const ViewAllRooms = () => {
 
     return (
         <div>
-            <a className="btn btn-default foodPrices" href={"/"} >
+            <a className="btn btn-default foodPrices" href={"/RoomBookingDashboard"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
             </a>
             <Search />

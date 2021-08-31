@@ -113,9 +113,9 @@ const ViewRooms = ({match}) => {
                                             </label>
                                         </div>
 
-                                        <div><label>Sleeps</label><input id='left' className="form-control" type="text" placeholder={Room.Sleeps}
+                                        <div><label>Sleeps</label><input id='left' className="form-control" type="number" placeholder={Room.Sleeps}
                                                                          /></div>
-                                        <div><label>Current Price</label><input className="form-control" type="text" placeholder={Room.CurrentPrice}
+                                        <div><label>Current Price</label><input className="form-control" type="number" placeholder={Room.CurrentPrice}
                                                                                 /></div>
                                         <div><label>Facilities</label><textarea id="w3review" className="form-control" rows="4" cols="50" placeholder={Room.Facilities}
                                                                                 /></div>
