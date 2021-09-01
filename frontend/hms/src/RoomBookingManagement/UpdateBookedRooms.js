@@ -7,7 +7,8 @@ import img from "../Images/undraw_Sync_files_re_ws4c.png";
 const UpdateBookedRooms = () => {
     return (
         <div>
-            <br></br>
+            <br>
+            </br>
             <a className="btn btn-default foodPrices" href={"/RoomBookingDashboard"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
             </a>

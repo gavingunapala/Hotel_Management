@@ -38,6 +38,7 @@ const BookRooms = () => {
                                         <div><label>Check In Date</label><input className="form-control" type="date" /></div>
                                         <div><label>Check Out Date</label><input className="form-control" type="date" /></div>
 
+
                                         <br/>
                                         <button className="btn btn-primary" type="submit" id="addrooms" >&nbsp;Book</button>&nbsp;&nbsp;
                                         <br/>

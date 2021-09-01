@@ -63,6 +63,7 @@ const RoomBookingDashboard = () => {
                                                 <em className="fa fa-trash"/></a>
                                             <br /><br />
                                         </tr>
+                                
                                 </tbody>
                             </table>
                             <br/>
