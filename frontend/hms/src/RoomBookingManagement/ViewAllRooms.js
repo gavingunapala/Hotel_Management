@@ -14,6 +14,7 @@ const ViewAllRooms = () => {
             </a>
             <Search />
             <br/><br />
+
             <div className="center" style={{marginLeft: "100px"}} >
                 <div className="blog-card" >
                     <div className="roomLabels"></div>
