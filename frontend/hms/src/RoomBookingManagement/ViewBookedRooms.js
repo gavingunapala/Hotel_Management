@@ -1,10 +1,39 @@
-import React, {useState} from 'react';
-// import img from '../Images/undraw_Sync_files_re_ws4c.png';
+import React, {useState, useEffect} from 'react';
+import img from '../Images/undraw_Sync_files_re_ws4c.png';
 import '../CSS/RoomBookingManagement/ViewBookedRooms.css';
+import axios from "axios";
+import {useHistory} from "react-router-dom";
 
-import img from "../Images/undraw_Sync_files_re_ws4c.png";
+const ViewBookedRooms = ({match}) => {
 
-const ViewBookedRooms = () => {
+    console.log(match.params.id);
+    const id = match.params.id;
+    console.log(id)
+    let his = useHistory();
+    const [Roombooking, setRoomBooking] = useState([]);
+
+    useEffect(() => {
+        function getRoomBooking() {
+            axios.get("http://localhost:8070/RoomBooking/get/" + id).then((res) => {
+                setRoomBooking(res.data);
+                console.log(res.data);
+            }).catch((err) => {
+            })
+        }
+
+        getRoomBooking();
+    }, []);
+
+    function deleteRoomBooking() {
+        axios.delete('http://localhost:8070/RoomBooking/delete/' + id).then(() => {
+            localStorage.clear();
+            his.push('/Login');
+        }).catch((err) => {
+            alert(err);
+        })
+    }
+
+
     return (
         <div>
             <br></br>
@@ -24,25 +53,23 @@ const ViewBookedRooms = () => {
                                 <div className="container   ">
                                     <div className="" id='group'>
                                         <br/>
-                                        <div><label for="type">Room Type</label>
-                                            <select className="form-control"
-                                                    name="type"
-                                                    id="type" >
-                                                <option>Choose</option>
-                                                <option>Premium Double Room</option>
-                                                <option>Cilantro Suite</option>
-                                                <option>Executive Room with Lounge Access</option>
-                                                <option>Superior Twin Room</option>
-                                                <option>Superior King Room</option>
-                                            </select>
+                                        <div><label htmlFor="type">Room Type</label>
+
+                                            <li className="form-control">{Roombooking.RoomType}</li>
                                         </div>
-                                        <div><label>No Of People</label><input id='left' className="form-control" type="number"  /></div>
-                                        <div><label>Check In Date</label><input className="form-control" type="date" /></div>
-                                        <div><label>Check Out Date</label><input className="form-control" type="date" /></div>
+                                        <div><label>No Of People</label><input id='left' className="form-control" type="number" placeholder={Roombooking.NoOfPeople} /></div>
+                                        <div><label>Check In Date</label><input className="form-control" type="date" placeholder={Roombooking.CheckInDate}/></div>
+                                        <div><label>Check Out Date</label><input className="form-control" type="date" placeholder={Roombooking.CheckOutDate}/></div>
 
                                         <br/>
-                                        <button className="btn btn-warning" type="submit" id='war' >&nbsp;Update</button>&nbsp;&nbsp;
-                                        <button className="btn btn-danger" type="submit" id='danger'>&nbsp;Delete</button>&nbsp;&nbsp;
+                                        <a href={"/UpdateBookedRooms"} className="btn btn-warning" id='war' type="reset">Update</a>
+                                        <button className="btn btn-danger" type="reset" id='danger' onClick={() => {
+                                            if (window.confirm("Are you sure you want to delete this booking?")) {
+                                                deleteRoomBooking()
+                                            };
+                                        }}>Delete</button>
+                                        {/*<button className="btn btn-warning" type="submit" id='war' >&nbsp;Update</button>&nbsp;&nbsp;*/}
+                                        {/*<button className="btn btn-danger" type="submit" id='danger'>&nbsp;Delete</button>&nbsp;&nbsp;*/}
                                         <br/>
                                         <br/>
 
