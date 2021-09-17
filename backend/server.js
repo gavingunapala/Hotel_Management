@@ -37,6 +37,9 @@ app.use("/customer",customerRouter);
 //Food
 const foodRouter = require("./routes/FoodRoute.js");
 app.use("/food",foodRouter);
+//Cart
+const cartRouter = require("./routes/CartRoute.js");
+app.use("/cart",cartRouter);
 //Employee
 const EmployeeRouter = require("./routes/EmployeeRoute.js");
 app.use("/Employee",EmployeeRouter);
