@@ -34,6 +34,7 @@ import RoomBookingDashboard from "./RoomBookingManagement/RoomBookingDashboard";
 import ViewAllRooms from "./RoomBookingManagement/ViewAllRooms";
 import ViewOneRoom from "./RoomBookingManagement/ViewOneRoom"
 import CustomerReport from "./Customer/CustomerReport";
+import PayPaymentsRooms from "./Payment/PayPaymentsRooms";
 
 
 
@@ -62,6 +63,8 @@ function App() {
 
             <Route path="/PayPayments" component={PayPayments}/>
           <Route path="/CustomerReport" component={CustomerReport}/>
+          <Route exact path="/PayPaymentsRooms" component={PayPaymentsRooms}/>
+
             <Route path="/CustomerProfile" component={CustomerProfile}/>
           <Route path="/CustomerProfileUpdate" component={CustomerProfileUpdate}/>
           <Route path="/CustomerRegistration" component={CustomerRegistration}/>

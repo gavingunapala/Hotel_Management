@@ -56,7 +56,7 @@ const EmployeeReport = () => {
 
 const genaratePDF=()=>{
         let doc =new jsPDF('p','pt','a1');
-        doc.html(document.querySelector('#root'),{
+        doc.html(document.querySelector('#body'),{
             callback:function (doc) {
                 doc.save('abc.pdf');
             },
@@ -68,10 +68,10 @@ const genaratePDF=()=>{
 }
 
     return (
-        <div className={'body'}>
+        <div className={'body'} >
         <div className={"container "}>
             <br />
-            <div className="card-employee ">
+            <div className="card-employee " id={'body'}>
             <h1 className="text-center">Bonus Report</h1>
                 <br/>
                 <div className="row1">
@@ -99,7 +99,7 @@ const genaratePDF=()=>{
                             <h2 className="text-center">Generate bonus</h2>
                             <br/>
 
-                                <div><label>Enter Bonus Percentage</label><input className="form-control" type="number" onChange={BonusSetter}  /></div>
+                                <div><label>Bonus Percentage</label><input className="form-control" type="number" placeholder={'Enter Bonus Percentage'} onChange={BonusSetter}  /></div>
                                 <br/>
                                 <center>
                                     <button type="submit" className="btn " onClick={calculate(Employee.Salary,Bonus)}></button>
@@ -107,17 +107,25 @@ const genaratePDF=()=>{
                                 <div><label>Bonus</label><br/><input className="form-control" type="number" value={valueofcal}/></div><br/>
                                 <div><label>Salary with bonus</label><input className="form-control" type="number" value={calc}/></div>
                             <br />
-                            <Link class="btn btn-success" role="button" id={"generate"}onClick={genaratePDF}>
-                                Genarate report for bonus .
-                                <em className="fa fa-file-pdf-o" id="icon"></em>
-                            </Link>
+                            {/*<Link class="btn btn-success" role="button" id={"generate"}onClick={genaratePDF}>*/}
+                            {/*    Genarate report for bonus .*/}
+                            {/*    <em className="fa fa-file-pdf-o" id="icon"></em>*/}
+                            {/*</Link>*/}
                               <br/>  <br/>  <br/>
                         </form>
 
+
                     </div>
+
                     <div className="col-sm-1"></div>
+
                 </div>
+
             </div>
+            <Link class="btn btn-success" role="button" id={"generate"}onClick={genaratePDF}>
+                Genarate report for bonus .
+                <em className="fa fa-file-pdf-o" id="icon"></em>
+            </Link>
         </div>
 
 
