@@ -27,7 +27,7 @@ const ViewAllRooms = () => {
             <Search />
             <br/><br />
 
-            <div className="center" id="all" style={{marginLeft: "30px"}} >
+            <div className="center" id="all" style={{marginLeft: "200px"}} >
                 {Room?.map((Room) => (
                 <div className="blog-card" key={Room._id} >
                     <div className="roomLabels"></div>

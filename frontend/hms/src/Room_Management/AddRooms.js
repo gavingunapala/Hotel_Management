@@ -112,6 +112,7 @@ const AddRooms = () => {
                                             <input type="file" onChange={handleChange} />
                                             <i id="image" className="fa fa-plus-circle" size="large" style={{marginLeft:"146px",color:"#2d6cdf"}} />
                                         </label>
+                                            <img width="320px" height="200px" src={url} />
                                         <div className="output">
                                             {error && <div className="error">{ error }</div>}
                                             {file && <div>{ file.name }</div> }
