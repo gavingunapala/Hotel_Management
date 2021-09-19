@@ -27,14 +27,14 @@ const ViewAllRooms = () => {
             <Search />
             <br/><br />
 
-            <div className="center" style={{marginLeft: "100px"}} >
+            <div className="center" id="all" style={{marginLeft: "30px"}} >
                 {Room?.map((Room) => (
                 <div className="blog-card" key={Room._id} >
                     <div className="roomLabels"></div>
                     <Link class="" role="button" to={`/ViewOneRoom/${Room._id}`} >
                     <embed src={Room.avatar} href=""
                            alt="img" width={"100%"}
-                           height={150} width={"auto"}/>
+                           height={150} width={200}/>
                     </Link>
                     <br/>
                     <div><label htmlFor="type">{Room.RoomType} Rs. {Room.CurrentPrice}</label></div>
