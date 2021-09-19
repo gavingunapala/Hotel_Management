@@ -5,8 +5,8 @@ import axios from "axios";
 
 const CustomerProfile = () => {
 
-    const id ="611d45fbee6c741e4c0d4e83";
-    console.log(id)
+    // const id ="611d45fbee6c741e4c0d4e83";
+    // console.log(id)
 
     let his = useHistory();
     const [Customer, setCustomer] = useState([]);
@@ -19,11 +19,11 @@ const CustomerProfile = () => {
 
     //get logged Customer
     useEffect(() => {
-        // const loggedInUser = localStorage.getItem("user");
-        // console.log(loggedInUser);
+        const loggedInUser = localStorage.getItem("user");
+        console.log(loggedInUser);
 
         function getCustomer() {
-            axios.get("http://localhost:8070/customer/get/" + id).then((res) => {
+            axios.get("http://localhost:8070/customer/get/" + loggedInUser).then((res) => {
                 setCustomer(res.data);
                 console.log(res.data);
             }).catch((err) => {
@@ -65,15 +65,16 @@ const CustomerProfile = () => {
             Password: Password,
         };
 
-        // const loggedInUser = localStorage.getItem("user");
-        // console.log(loggedInUser);
-        axios.put('http://localhost:8070/customer/updateOne/' + id, UpdateCustomer).then(() => {
+        const loggedInUser = localStorage.getItem("user");
+        console.log(loggedInUser);
+        axios.put('http://localhost:8070/customer/updateOne/' + loggedInUser, UpdateCustomer).then(() => {
             alert("Updated successfully!!!");
         }).catch((err) => {
             alert(err);
         })
         his.push('/CustomerProfile');
     }
+
 
 
 
@@ -97,7 +98,7 @@ const CustomerProfile = () => {
     //
     //     getCustomer();
     // }, []);
-
+    //
     // //updateOne
     // const [Name, setName] = useState("");
     // const [Address, setAddress] = useState("");
@@ -138,7 +139,7 @@ const CustomerProfile = () => {
     //
     //     const loggedInUser = localStorage.getItem("user");
     //     console.log(loggedInUser);
-    //     axios.put('http://localhost:8070/customer/updateOne/' + loggedInUser, newAttendee).then(() => {
+    //     axios.put('http://localhost:8070/customer/updateOne/' + loggedInUser, newCustomer).then(() => {
     //         alert("Updated successfully!!!");
     //         his.push('/CustomerProfile')
     //
