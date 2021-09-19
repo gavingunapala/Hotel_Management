@@ -63,7 +63,7 @@ const ViewOneRoom = ({match}) => {
                                         <div className="form-group mb-1">
                                             <br/>
                                             {/*<label className="form-label">Lastname </label>*/}
-                                            <input className="form-control" type="text" name="lastname" placeholder={Room.Sleeps}/>
+                                            <input className="form-control" type="text" name="lastname" placeholder={Room.RoomType}/>
                                         </div>
                                     </div>
                                 </div>
