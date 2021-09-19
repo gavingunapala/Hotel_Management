@@ -80,8 +80,8 @@ const RoomBookingDashboard = () => {
                                         <tr>
                                             <td>{Roombooking.RoomType}</td>
                                             <td>{Roombooking.NoOfPeople}</td>
-                                            <td>{Roombooking.CheckInDate}</td>
-                                            <td>{Roombooking.CheckOutDate}</td>
+                                            <td>{Roombooking.CheckInDate.split('T')[0]}</td>
+                                            <td>{Roombooking.CheckOutDate.split('T')[0]}</td>
                                             <br />
                                             <Link class="btn btn-primary" role="button" to={`/ViewBookedRooms/${Roombooking._id}`}>
                                                 <em className="fa fa-eye"  id="icon"></em>
