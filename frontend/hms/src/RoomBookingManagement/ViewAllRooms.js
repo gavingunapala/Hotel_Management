@@ -9,11 +9,12 @@ const ViewAllRooms = () => {
 
     return (
         <div>
-            <a className="btn btn-default foodPrices" href={"/"} >
+            <a className="btn btn-default foodPrices" href={"/RoomBookingDashboard"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
             </a>
             <Search />
             <br/><br />
+
             <div className="center" style={{marginLeft: "100px"}} >
                 <div className="blog-card" >
                     <div className="roomLabels"></div>

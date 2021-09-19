@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 import jsPDF from "jspdf";
 
 
-
 const EmployeeReport = () => {
     const id = '611f3d814fa93940d035a83e';
     let valueofcal;
@@ -16,7 +15,6 @@ const EmployeeReport = () => {
     const [Bonus, setBonus] = useState("");
     const [Bonus1, setBonus1] = useState(0);
     const [Bonus2, setBonus2] = useState(0);
-
 
 
     //get logged Reviewer
@@ -40,21 +38,34 @@ const EmployeeReport = () => {
     }
 
     const calculate =(a,b)=>{
+        // console.log(a)
+        // console.log(b)
         // console.log(a*b/100);
         valueofcal =a*b/100
         calc = a +++ valueofcal;
     }
-    const genaratePDF =()=>{
-    let doc= new jsPDF('p','pt');
-     doc.text(20,20 ,"your bonus is"+ valueofcal);
-     doc.text(20,25 ,`your Full salary is`+ calc);
+    // const genaratePDF =()=>{
+    // let doc= new jsPDF('p','pt','A4');
+    //     doc.text(30,30 , Employee.Name);
+    //     doc.text(20,50 ,"your basic salary is "+ Employee.Salary);
+    //     doc.text(20,70 ,"your bonus is "+ valueofcal);
+    //     doc.text(20,90 ,`your Full salary is `+ calc);
+    //
+    //  doc.save("genarated.pdf");
+    // }
 
+const genaratePDF=()=>{
+        let doc =new jsPDF('p','pt','a1');
+        doc.html(document.querySelector('#root'),{
+            callback:function (doc) {
+                doc.save('abc.pdf');
+            },
+            margin:[60,60,60,60],
+            x:32,
+            y:32
+        });
 
-
-     doc.save("genarated.pdf");
-    }
-
-
+}
 
     return (
         <div className={'body'}>
@@ -91,12 +102,12 @@ const EmployeeReport = () => {
                                 <div><label>Enter Bonus Percentage</label><input className="form-control" type="number" onChange={BonusSetter}  /></div>
                                 <br/>
                                 <center>
-                                    <button type="submit" className="btn btn-primary" onClick={calculate(Employee.Salary,Bonus)}>Pay</button>
+                                    <button type="submit" className="btn " onClick={calculate(Employee.Salary,Bonus)}></button>
                                 </center>
                                 <div><label>Bonus</label><br/><input className="form-control" type="number" value={valueofcal}/></div><br/>
                                 <div><label>Salary with bonus</label><input className="form-control" type="number" value={calc}/></div>
                             <br />
-                            <Link class="btn btn-success" role="button" onClick={genaratePDF}>
+                            <Link class="btn btn-success" role="button" id={"generate"}onClick={genaratePDF}>
                                 Genarate report for bonus .
                                 <em className="fa fa-file-pdf-o" id="icon"></em>
                             </Link>
@@ -108,6 +119,7 @@ const EmployeeReport = () => {
                 </div>
             </div>
         </div>
+
 
         </div>
     )
