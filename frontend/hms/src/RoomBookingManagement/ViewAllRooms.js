@@ -37,7 +37,9 @@ const ViewAllRooms = () => {
                            height={150} width={200}/>
                     </Link>
                     <br/>
-                    <div><label htmlFor="type">{Room.RoomType} Rs. {Room.CurrentPrice}</label></div>
+                    <div><label htmlFor="type">{Room.RoomType}</label></div>
+
+                    <div><label htmlFor="type">LKR {Room.CurrentPrice}</label></div>
                     <div className="p-2 ">
                         <br/>
                     </div>
