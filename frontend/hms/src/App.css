@@ -67,6 +67,13 @@ input[type="file"] {
   background: url("Images/addFood.png");
   background-size: cover;
 }
+.shoppingCart{
+  background: url("Images/shoppingCart.png");
+  background-size: 1200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 350px;
+}
 
 .mylabel1 {
   color: #103eb5;
@@ -122,3 +129,19 @@ input[type="file"] {
  margin-right: 25rem;
  margin-left: 25rem;
 }
+
+.cartTable {
+  --bs-table-bg: transparent;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: #212529;
+  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+  --bs-table-active-color: #212529;
+  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+  --bs-table-hover-color: #212529;
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+}
+

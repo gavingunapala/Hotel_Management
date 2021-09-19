@@ -27,6 +27,7 @@ import AdminSideNav from "./Admin/AdminSideNav";
 import FoodManagement from "./Food/FoodManagement";
 import UpdateFood from "./Food/UpdateFood";
 import AdminPanelCustomers from "./Admin/AdminPanlCustomers";
+import ShoppingCart from "./ShoppingCart/ShoppingCart";
 
 
 
@@ -43,6 +44,7 @@ function App() {
             <Route exact path="/customerViewFood" component={CustomerViewFood}/>
             <Route exact path="/foodManagement" component={FoodManagement}/>
             <Route exact path="/updateFood/:id" component={UpdateFood}/>
+            <Route exact path="/shoppingCart" component={ShoppingCart}/>
 
           <Route path="/a" component={CustomerRegistration}/>
 
