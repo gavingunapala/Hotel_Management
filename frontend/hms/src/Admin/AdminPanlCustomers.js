@@ -11,6 +11,7 @@ const AdminPanelCustomers = () => {
 
     let his = useHistory();
     const [Customer, setCustomer] = useState([]);
+    const [SearchWord, setSearchWord] = useState('');
 
 
     //get logged Customer
@@ -44,7 +45,13 @@ const AdminPanelCustomers = () => {
         <div className="row1">
             <div className="col-2"> <AdminSideNav/></div>
             <div className="col-10"> <br/>
-                <Search/>
+                {/*<Search/>*/}
+                <div className="col-xs-6">
+                    <div className="searchBar">
+                        <input type="search" className="form-control" placeholder="Search Name or NIC NUMBER" onChange={event =>{setSearchWord(event.target.value)}}/>
+                    </div>
+                </div>
+                {/*end*/}
                 <div className="">
                     <div className="row1">
 
@@ -80,7 +87,13 @@ const AdminPanelCustomers = () => {
                                     </tr>
                                     </thead>
                                     <tbody className="text-center">
-                                    {Customer.map((customer) => {
+                                    {Customer.filter((val)=>{
+                                        if(SearchWord ==""){
+                                            return val
+                                        }else if(val.Name.toLowerCase().includes(SearchWord.toLowerCase())||val.NICNumber.toLowerCase().includes(SearchWord.toLowerCase()) ){
+                                            return val
+                                        }
+                                    }).map((customer) => {
                                         return (
                                             <tr>
                                                 <td>{customer.Name}</td>
