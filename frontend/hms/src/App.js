@@ -35,6 +35,15 @@ import ViewAllRooms from "./RoomBookingManagement/ViewAllRooms";
 import ViewOneRoom from "./RoomBookingManagement/ViewOneRoom"
 import CustomerReport from "./Customer/CustomerReport";
 import PayPaymentsRooms from "./Payment/PayPaymentsRooms";
+import ShoppingCart from "./ShoppingCart/ShoppingCart";
+
+
+
+
+
+
+
+
 
 
 
@@ -51,6 +60,7 @@ function App() {
             <Route exact path="/customerViewFood" component={CustomerViewFood}/>
             <Route exact path="/foodManagement" component={FoodManagement}/>
             <Route exact path="/updateFood/:id" component={UpdateFood}/>
+            <Route exact path="/shoppingCart" component={ShoppingCart}/>
 
           <Route path="/a" component={CustomerRegistration}/>
 
