@@ -101,7 +101,8 @@ const CustomerReport = () => {
                             </div>
                         </div>
                     </div></div>
-                </div>
+
+            </div>
             <Link className="btn btn-success btngena" role="button" id={"generate"}onClick={genaratePDF}>
                 Generate Report&nbsp;&nbsp;
                 <em className="fa fa-file-pdf-o" id="icon"></em>
