@@ -89,11 +89,11 @@ function App() {
           <Route exact path="/EmployeeView" component={EmployeeView}/>
           <Route exact path="/AdminSideNav" component={AdminSideNav}/>
           <Route exact path="/BookRooms" component={BookRooms}/>
-          <Route exact path="/ViewBookedRooms" component={ViewBookedRooms}/>
-          <Route exact path="/UpdateBookedRooms" component={UpdateBookedRooms}/>
+          <Route exact path="/ViewBookedRooms/:id" component={ViewBookedRooms}/>
+          <Route exact path="/UpdateBookedRooms/:id" component={UpdateBookedRooms}/>
           <Route exact path="/RoomBookingDashboard" component={RoomBookingDashboard}/>
           <Route exact path="/ViewAllRooms" component={ViewAllRooms}/>
-          <Route exact path="/ViewOneRoom" component={ViewOneRoom}/>
+          <Route exact path="/ViewOneRoom/:id" component={ViewOneRoom}/>
       </Router>
         <Footer/>
 </div>

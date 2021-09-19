@@ -115,7 +115,7 @@ const UpdateRooms = ({match}) => {
                                         <div><label htmlFor="type">Room Type</label>
                                             <select className="form-control"
                                                     name="type"
-                                                    id="type" onChange={roomtypeSetter} placeholder={Room.RoomType}>
+                                                    id="type" onChange={roomtypeSetter} value={Room.RoomType}>
                                                 <option>Choose</option>
                                                 <option>Premium Double Room</option>
                                                 <option>Cilantro Suite</option>

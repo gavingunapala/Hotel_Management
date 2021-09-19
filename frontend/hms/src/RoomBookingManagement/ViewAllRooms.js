@@ -6,6 +6,18 @@ import {Link} from "react-router-dom";
 
 
 const ViewAllRooms = () => {
+    const [Room, setRoom] = useState([]);
+
+    useEffect(() => {
+        const getRooms = async () => {
+            const res = await fetch(`http://localhost:8070/Room/`);
+            const data = await res.json();
+            setRoom(data);
+        };
+        getRooms();
+    }, []);
+
+    console.log(Room)
 
     return (
         <div>
@@ -16,96 +28,21 @@ const ViewAllRooms = () => {
             <br/><br />
 
             <div className="center" style={{marginLeft: "100px"}} >
-                <div className="blog-card" >
+                {Room?.map((Room) => (
+                <div className="blog-card" key={Room._id} >
                     <div className="roomLabels"></div>
-                    <Link class="" role="button" to="/ViewOneRoom" >
-                    <embed src={img} href=""
+                    <Link class="" role="button" to={`/ViewOneRoom/${Room._id}`} >
+                    <embed src={Room.avatar} href=""
                            alt="img" width={"100%"}
                            height={150} width={"auto"}/>
                     </Link>
                     <br/>
-                    <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
+                    <div><label htmlFor="type">{Room.RoomType} Rs. {Room.CurrentPrice}</label></div>
                     <div className="p-2 ">
                         <br/>
                     </div>
                 </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
+                ))}
             </div>
 
         </div>
