@@ -5,6 +5,36 @@ import axios from "axios";
 import '../../src/CSS/Login/Login1.css'
 
 const Login = () => {
+
+    const history = useHistory();
+    const [Email, setEmail] = useState('');
+    const [Password, setPassword] = useState('');
+
+    const EmailSetter = (e) => {
+        setEmail(e.target.value);
+    }
+    const PasswordSetter = (e) => {
+        setPassword(e.target.value);
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if (Email == "admin@gmail.com" && Password == "123") {
+            history.push('/AdminPanelCustomers');
+        } else {
+            const newCustomer = {
+                Email: Email,
+                Password: Password
+            };
+            axios.post('http://localhost:8070/customer/login', newCustomer).then((res) => {
+                history.push('/CustomerProfile');
+                localStorage.setItem('user', res.data._id);
+            }).catch((err) => {
+                alert(err);
+            })
+        }
+    }
+
     return (
         <div>
             <div id="login-one" className="login-one">
@@ -17,11 +47,11 @@ const Login = () => {
                             </div>
                             <div><label><b>Email</b></label>
                             </div>
-                            <input className="form-control" type="text" id="input" placeholder=" "/><br></br>
+                            <input className="form-control" type="text" id="input" placeholder=" " onChange={EmailSetter}/><br></br>
                             <div><label><b>Password</b></label>
                             </div>
-                            <input className="form-control" type="password" id="input" placeholder=" "/><br></br>
-                                <button className="btn btn-primary" id="button" type="submit">Log in</button>
+                            <input className="form-control" type="password" id="input" placeholder=" " onChange={PasswordSetter} /><br></br>
+                            <button className="btn btn-primary" id="button" type="submit" onClick={onSubmit} >Log in</button>
                             <a href={"/CustomerRegistration"} type="submit"><center>&nbsp;Sign Up</center></a>
                         </div>
                     </div>
@@ -31,3 +61,4 @@ const Login = () => {
     )
 }
 export default Login;
+
