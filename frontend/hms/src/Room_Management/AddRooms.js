@@ -110,7 +110,7 @@ const AddRooms = () => {
                                         <div>
                                         <label className={"mylabel"}>
                                             <input type="file" onChange={handleChange} />
-                                            <span>+</span>
+                                            <i id="image" className="fa fa-plus-circle" size="large" style={{marginLeft:"146px",color:"#2d6cdf"}} />
                                         </label>
                                         <div className="output">
                                             {error && <div className="error">{ error }</div>}
