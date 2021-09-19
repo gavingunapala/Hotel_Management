@@ -5,53 +5,18 @@ import {useHistory} from "react-router-dom";
 
 const CustomerProfile = () => {
 
-    const id ="611d45fbee6c741e4c0d4e83";
-    console.log(id)
-    let his = useHistory();
-    const [Customer, setCustomer] = useState([]);
-
-    //get logged Customer
-    useEffect(() => {
-        // const loggedInUser = localStorage.getItem("user");
-        // console.log(loggedInUser);
-
-        function getCustomer() {
-            axios.get("http://localhost:8070/customer/get/" + id).then((res) => {
-                setCustomer(res.data);
-                console.log(res.data);
-            }).catch((err) => {
-            })
-        }
-
-        getCustomer();
-    }, []);
-
-    function deleteCustomer() {
-        // const loggedInUser = localStorage.getItem("user");
-        // console.log(loggedInUser);
-        axios.delete('http://localhost:8070/customer/delete/' + id).then(() => {
-            localStorage.clear();
-            his.push('/Login');
-        }).catch((err) => {
-            alert(err);
-        })
-    }
-
+    // const id ="611d45fbee6c741e4c0d4e83";
+    // console.log(id)
+    // let his = useHistory();
     // const [Customer, setCustomer] = useState([]);
-    // const history = useHistory();
-    //
-    // const Logout = () => {
-    //     localStorage.clear();
-    //     history.push('/login');
-    // };
-    //
-    // //get logged Customer
+
+    // // get logged Customer
     // useEffect(() => {
-    //     const loggedInUser = localStorage.getItem("user");
-    //     console.log(loggedInUser);
+    //     // const loggedInUser = localStorage.getItem("user");
+    //     // console.log(loggedInUser);
     //
     //     function getCustomer() {
-    //         axios.get("http://localhost:8070/customer/get/" + loggedInUser).then((res) => {
+    //         axios.get("http://localhost:8070/customer/get/" + id).then((res) => {
     //             setCustomer(res.data);
     //             console.log(res.data);
     //         }).catch((err) => {
@@ -62,22 +27,63 @@ const CustomerProfile = () => {
     // }, []);
     //
     // function deleteCustomer() {
-    //     const loggedInUser = localStorage.getItem("user");
-    //     console.log(loggedInUser);
-    //     axios.delete('http://localhost:8070/customer/delete/' + loggedInUser).then(() => {
+    //     // const loggedInUser = localStorage.getItem("user");
+    //     // console.log(loggedInUser);
+    //     axios.delete('http://localhost:8070/customer/delete/' + id).then(() => {
     //         localStorage.clear();
-    //         history.push('/login');
+    //         his.push('/Login');
     //     }).catch((err) => {
     //         alert(err);
     //     })
     // }
+
+    const [Customer, setCustomer] = useState([]);
+    const history = useHistory();
+
+    const Logout = () => {
+        localStorage.clear();
+        history.push('/login');
+    };
+
+    //get logged Customer
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem("user");
+        console.log(loggedInUser);
+
+        function getCustomer() {
+            axios.get("http://localhost:8070/customer/get/" + loggedInUser).then((res) => {
+                setCustomer(res.data);
+                console.log(res.data);
+            }).catch((err) => {
+            })
+        }
+
+        getCustomer();
+    }, []);
+
+    function deleteCustomer() {
+        const loggedInUser = localStorage.getItem("user");
+        console.log(loggedInUser);
+        axios.delete('http://localhost:8070/customer/delete/' + loggedInUser).then(() => {
+            localStorage.clear();
+            history.push('/login');
+        }).catch((err) => {
+            alert(err);
+        })
+    }
 
     return (
         <div>
             <br></br>
             <h2 className="text-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello {Customer.Name}</h2>
+                &nbsp;&nbsp;&nbsp;Hello {Customer.Name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button onClick={Logout} className="btn btn-success form-btn" type="submit">Logout
+                </button></h2>
             <div className="row">
                 <div className="col-sm-2"></div>
                 <div className=" col-sm-3">
