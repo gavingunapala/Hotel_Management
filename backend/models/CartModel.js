@@ -16,7 +16,8 @@ const CartSchema = new schema({
     },
     Quantity:{
         type : Number,
-        required : true}
+        // required : true
+    }
 })
 
 // table and path
