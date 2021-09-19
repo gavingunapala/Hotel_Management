@@ -9,8 +9,10 @@ import Search from "../Common/Search";
 const EmployeeView = () => {
 
 
-    let his = useHistory();
+    // let his = useHistory();
     const [Employee, setEmployee] = useState([]);
+    const [SearchWord, setSearchWord] = useState('');
+
 
 
     //get logged Reviewer
@@ -44,7 +46,13 @@ const EmployeeView = () => {
             <div className="row1">
                 <div className="col-2"> <AdminSideNav/></div>
                 <div className="col-10"> <br/>
-                    <Search/>
+                    {/*<Search/>*/}
+                    <div className="col-xs-6">
+                        <div className="searchBar">
+                            <input type="search" className="form-control" placeholder="Search Name or NIC NUMBER" onChange={event =>{setSearchWord(event.target.value)}}/>
+                        </div>
+                    </div>
+                    {/*end*/}
                     <div className="">
                         <div className="row1">
 
@@ -80,7 +88,13 @@ const EmployeeView = () => {
                                         </tr>
                                         </thead>
                                         <tbody className="text-center">
-                                        {Employee.map((employee) => {
+                                        {Employee.filter((val)=>{
+                                            if(SearchWord ==""){
+                                                return val
+                                            }else if(val.Name.toLowerCase().includes(SearchWord.toLowerCase())||val.NICNumber.toLowerCase().includes(SearchWord.toLowerCase()) ){
+                                                return val
+                                            }
+                                        }).map((employee) => {
                                             return (
                                                 <tr>
                                                     <td>{employee.Name}</td>

@@ -49,7 +49,7 @@ const EmployeeAdd = () => {
         };
         axios.post('http://localhost:8070/Employee/add', newEmployee).then(() => {
             alert("newEmployee added");
-            history.push('/');
+            history.push('/EmployeeView');
         }).catch((err) => {
             alert(err);
         })
@@ -83,7 +83,7 @@ const EmployeeAdd = () => {
                                         <div><label>Job Title</label><input class="form-control"
                                                                                          type="text"onChange={JobtitleSetter}/></div>
                                         <div><label>Salary</label><input className="form-control"
-                                                                            type="text"onChange={SalarySetter}/></div>
+                                                                            type="number"onChange={SalarySetter}/></div>
                                         <br/><center>
                                         <button class="btn btn-primary " type="submit" onClick={onSubmit}>ADD EMPLOYEE</button></center>
                                         <br />

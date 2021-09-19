@@ -20,15 +20,14 @@ const AdminSideNav = () => {
                 <ul className="list-unstyled components">
                     <li>
                         <a href="/foodManagement">Foods</a>
-                        <a href="/ManageAdmins">Rooms</a>
+                        <a href="/ViewAllRooms">Rooms</a>
                         <a href="/AdminPanelCustomers">Customers</a>
                         <a href="/EmployeeView">Employee</a>
-                        <a href="/ManageUsers">Payments</a>
-                        <a href="/ViewRoomBookings">Room Bookings</a>
-                        <a href="/BookRoom">Book Room</a>
-                        <a href="/AddRooms">Add Rooms</a>
+                        <a href="/BookRooms">Book Room</a>
+                        <a href="/UpdateBookedRooms">Update Booked Room</a>
                         <a href="/ManageRoomsDashboard">Rooms Dashboard</a>
-                        <a href="/ViewRoomBookingDashboard">Room Bookings Dashboard</a>
+                        <a href="/RoomBookingDashboard">Room Bookings Dashboard</a>
+                        <a href="/ManageUsers">Payments</a>
 
                     </li>
                     <li>

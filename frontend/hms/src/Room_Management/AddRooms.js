@@ -68,7 +68,7 @@ const AddRooms = () => {
         axios.post('http://localhost:8070/Room/add', newRoom).then(() => {
             alert("New Room added successfully!");
             console.log(url);
-            // history.push('/');
+            history.push('/ManageRoomsDashboard');
         }).catch((err) => {
             alert(err);
         })
@@ -78,7 +78,9 @@ const AddRooms = () => {
     return (
         <div>
             <br></br>
-
+            <a className="btn btn-default foodPrices" href={"/ManageRoomsDashboard"} >
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
+            </a>
             <div className="row">
                 <div className="col-sm-2"></div>
                 <div class=" col-sm-3">
@@ -95,7 +97,7 @@ const AddRooms = () => {
                                         <div><label for="type">Room Type</label>
                                                 <select className="form-control"
                                                         name="type"
-                                                        id="type" onChange={RoomType}>
+                                                        id="type" onChange={roomtypeSetter}>
                                                     <option>Choose</option>
                                                     <option>Premium Double Room</option>
                                                     <option>Cilantro Suite</option>
@@ -117,12 +119,12 @@ const AddRooms = () => {
                                             {file && <div> {file.url}</div>}
                                         </div>
                                         </div>
-                                        <div><label>Sleeps</label><input id='left' className="form-control" type="text" onChange={Sleeps} /></div>
-                                        <div><label>Current Price</label><input className="form-control" type="text" onChange={CurrentPrice} /></div>
-                                        <div><label>Facilities</label><textarea id="w3review" className="form-control" rows="4" cols="50" onChange={Facilities} /></div>
-                                        <div><label>Description</label><textarea id="w3review" className="form-control" rows="4" cols="50" onChange={Description} /></div>
+                                        <div><label>Sleeps</label><input id='left' className="form-control" type="number" onChange={sleepsSetter} /></div>
+                                        <div><label>Current Price</label><input className="form-control" type="text" onChange={currentpriceSetter} /></div>
+                                        <div><label>Facilities</label><textarea id="w3review" className="form-control" rows="4" cols="50" onChange={facilitiesSetter} /></div>
+                                        <div><label>Description</label><textarea id="w3review" className="form-control" rows="4" cols="50" onChange={descriptionSetter} /></div>
                                         <br/>
-                                        <button className="btn btn-primary" type="submit" id="addrooms" onClick={onSubmit}>&nbsp;Add Rooms</button>&nbsp;&nbsp;
+                                        <button className="btn btn-primary" type="submit" id="addrooms" onClick={onSubmit} style={{width:"113px"}}>&nbsp;Add Rooms</button>&nbsp;&nbsp;
                                         <br/>
                                         <br/>
 

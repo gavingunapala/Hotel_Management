@@ -46,6 +46,9 @@ app.use("/Employee",EmployeeRouter);
 //Rooms
 const RoomRouter = require("./routes/RoomRoute.js");
 app.use("/Room",RoomRouter);
+//BookRooms
+const RoomBookingRouter = require("./routes/RoomBookingRoute");
+app.use("/RoomBooking",RoomBookingRouter);
 
 
 //run the app using port
