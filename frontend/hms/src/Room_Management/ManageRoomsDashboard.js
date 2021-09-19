@@ -83,7 +83,7 @@ const ManageRoomsDashboard = () => {
                                     return (
                                         <tr>
                                             <td>{Room.RoomType}</td>
-                                            <td>{Room.avatar}</td>
+                                            <td><img width="200px "src={Room.avatar} /></td>
                                             <td>{Room.Sleeps}</td>
                                             <td>{Room.CurrentPrice}</td>
                                             <td>{Room.Facilities}</td>
