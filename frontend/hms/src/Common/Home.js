@@ -5,6 +5,7 @@ import bed from "../Images/homeRoom.jpg";
 const Home = () => {
     return (
         <div>
+            <br /><br />
             <div className='container'>
                 <div className='row'>
                     <div className="col-md-6">
@@ -12,7 +13,7 @@ const Home = () => {
                         <div className='card'>
                             <div className='homeCard '>
                                 <img src={bed} loading="auto" alt="center" height="500"
-                                     width="590" border='20'/>
+                                     width="560" border='20'/>
                                      <br /><br />
                                      <div className='text-center'>
                                     <h3 className='btn btn-primary'>Book Rooms</h3>
@@ -26,7 +27,7 @@ const Home = () => {
                         <div className='card'>
                             <div className='homeCard'>
                                 <img src={food} loading="auto" alt="center" height="500"
-                                     width="590" border='20'/>
+                                     width="560" border='20'/>
                                      <br /><br />
                                 <div className='text-center'>
                                      <h3 className='btn btn-primary'>Order Food</h3>
