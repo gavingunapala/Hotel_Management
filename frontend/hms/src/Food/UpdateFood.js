@@ -81,7 +81,7 @@ const UpdateFood = () => {
     return (
         <div className="addFood" style={{paddingBottom: '200px'}}>
             <a className="btn btn-default foodPrices" href={"/foodManagement"} >
-                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
+                <i className="fa fa-home" style={{fontWeight: "bold"}}></i> Home
             </a>
             <div >
                 {/*<div className="col-sm-2"></div>*/}
@@ -118,8 +118,8 @@ const UpdateFood = () => {
                                         <div><label>Name</label><input class="form-control" placeholder={food.Name} type="text" onChange={nameSetter}/></div>
                                         <div><label>Price(Rs)</label><input class="form-control" placeholder={food.Price} type="text" onChange={priceSetter}/></div>
                                         <br/>
-                                        <button class="btn  btn-warning" type="submit" onClick={onSubmit}>&nbsp;Update Food</button>
-                                        <button className="btn-del btn btn-danger " type="submit" onClick={() => {
+                                        <button class="btn  btn-warning" type="submit" style={{fontWeight: "bold"}} onClick={onSubmit}>&nbsp;Update Food</button>
+                                        <button className="btn-del btn btn-danger " style={{fontWeight: "bold"}} type="submit" onClick={() => {
                                             if (window.confirm("Are you sure you want to delete this food item?")) {
                                                 deleteFood(food._id)
                                             }

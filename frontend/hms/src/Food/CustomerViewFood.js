@@ -10,6 +10,7 @@ const CustomerViewFood = () => {
     // const [price, setPrice] = useState("")
     const name = useState("");
     const price = useState("");
+    const [SearchWord, setSearchWord] = useState('');
 
     const quantitySetter = (e) => {
         setQuantity(e.target.value);
@@ -69,14 +70,26 @@ const CustomerViewFood = () => {
         <div>
             <br />
             <a className="foodPrices" href={"/"} >
-                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
+                <i className="fa fa-home" style={{fontWeight: "bold"}}>
+                </i> Home
             </a>
-            <Search />
+            <div className="col-xs-6">
+                <div className="searchBar">
+                    <i className="fa fa-search"></i>
+                    <input type="search" className="form-control" placeholder="Search..." onChange={event =>{setSearchWord(event.target.value)}}/>
+                </div>
+            </div>
             <a className="foodPrices " href={"/shoppingCart"} style={{float: "right", marginRight:"120px"}}>
                 Cart <i className="fa fa-shopping-cart foodPrices"></i>
             </a>
             <br/><br />
-            {food?.map((food) => (
+            {food?.filter((val)=>{
+                if(SearchWord ==""){
+                    return val
+                }else if(val.Name.toLowerCase().includes(SearchWord.toLowerCase())) {
+                    return val
+                }
+            }).map((food) => (
                 <div className="viewFoodCard " key={food._id}>
                     <div className="foodLabels" >{food.Name}</div>
                     <embed src={food.Image}
@@ -90,9 +103,10 @@ const CustomerViewFood = () => {
                     <input className="foodQuantity" type="Number" defaultValue="1" onChange={quantitySetter}></input>
                     <div className="p-2 ">
                         <div className="text-center" >
-                            <button className={"btn btn-primary btn-large"} onClick={()=>onSubmit(food.Name, food.Price)} >
+                            <button className={"btn qtyAdd btn-large"} onClick={()=>onSubmit(food.Name, food.Price)} >
                                 ADD TO CART
                             </button>
+                            <br />
 
                         </div>
                         <br/>

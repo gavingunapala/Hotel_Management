@@ -4,12 +4,14 @@ import axios from "axios";
 import AdminSideNav from "../Admin/AdminSideNav";
 import '../CSS/Admin/tableEmployee.css';
 import Search from "../Common/Search";
+import jsPDF from "jspdf";
 
 
 const FoodManagement = () => {
 
     let his = useHistory();
     const [Food, setFood] = useState([]);
+    const [SearchWord, setSearchWord] = useState('');
 
     useEffect(() => {
 
@@ -36,11 +38,29 @@ const FoodManagement = () => {
         // his.push(path);
     }
 
+    const generatePDF=()=>{
+        let doc =new jsPDF('p','pt','a1');
+        doc.html(document.querySelector('#body'),{
+            callback:function (doc) {
+                doc.save('abc.pdf');
+            },
+            margin:[60,60,60,60],
+            x:32,
+            y:32
+        });
+
+    }
+
     return (
         <div className="row1">
             <div className="col-2"> <AdminSideNav/></div>
             <div className="col-10"> <br/>
-                <Search/>
+                <div className="col-xs-6">
+                    <div className="searchBar">
+                        <i className="fa fa-search"></i>
+                        <input type="search" className="form-control" placeholder="Search..." onChange={event =>{setSearchWord(event.target.value)}}/>
+                    </div>
+                </div>
                 <div className="">
                     <div className="row1">
 
@@ -51,16 +71,16 @@ const FoodManagement = () => {
                     </div>
 
 
-                    <a href="/addFood" className="btn btn-primary" role="button">
-                        <i className="fa fa-plus"></i>Add New Food
+                    <a href="/addFood" className="btn btn-primary" role="button" style={{fontWeight: "bold"}}>
+                        <i className="fa fa-plus"></i> Add New Food
                     </a>
-                    <button className="btn btn-success btngena" type="submit" >Generate Report</button>
+                    <button className="btn btn-success btngena" type="submit" style={{fontWeight: "bold"}} onClick={generatePDF} >Generate Report</button>
 
 
                     <br /><br />
                     <div className="row1">
                         <div className="col-12">
-                            <div className="table-responsive">
+                            <div id="body"  className="table-responsive">
                                 <table className="table1  table-hover table-bordered table-striped  tablesorter"
                                        id="ipi-table">
                                     <thead className="thead-dark">
@@ -68,19 +88,25 @@ const FoodManagement = () => {
                                         <th className="text-center">Code</th>
                                         <th className="text-center ">Name</th>
                                         <th className="text-center col-lg-4">Image</th>
-                                        <th className="text-center">Price (Rs)</th>
+                                        <th className="text-center">Price</th>
                                         <th className="text-center">Actions</th>
 
                                     </tr>
                                     </thead>
                                     <tbody className="text-center">
-                                    {Food.map((food) => {
+                                    {Food.filter((val)=>{
+                                        if(SearchWord ==""){
+                                        return val
+                                    }else if(val.Name.toLowerCase().includes(SearchWord.toLowerCase())) {
+                                            return val
+                                        }
+                                    }).map((food) => {
                                         return (
                                             <tr>
                                                 <td>{food.Code}</td>
                                                 <td>{food.Name}</td>
                                                 <td><img width="200px "src={food.Image} /></td>
-                                                <td>{food.Price}.00</td>
+                                                <td>Rs. {food.Price}.00</td>
                                                 <br />
                                                 <br />
 
