@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 const RoomBookingDashboard = () => {
     const {roomBookingId} = useParams();
     const [Roombooking, setRoomBooking] = useState([]);
+    const [SearchWord, setSearchWord] = useState('');
 
     function getRoomBooking() {
         axios
@@ -48,7 +49,7 @@ const RoomBookingDashboard = () => {
                         </a>
                     </div>
                     <div className="form-group pull-right col-lg-4">
-                        <input type="text" id='search' className="search form-control" placeholder="Search by typing here.."/>
+                        <input type="text" id='search' className="search form-control" placeholder="Search by typing here.." onChange={event =>{setSearchWord(event.target.value)}}/>
                     </div>
                     <span className="counter pull-right"></span>
                     <br/> <br/><br/>
@@ -74,7 +75,13 @@ const RoomBookingDashboard = () => {
 
                                 </thead>
                                 <tbody class="text-center">
-                                {Roombooking.map((Roombooking) => {
+                                {Roombooking.filter((val)=>{
+                                    if(SearchWord ==""){
+                                        return val
+                                    }else if(val.RoomType.toLowerCase().includes(SearchWord.toLowerCase())){
+                                        return val
+                                    }
+                                }).map((Roombooking) => {
                                     return (
 
                                         <tr>

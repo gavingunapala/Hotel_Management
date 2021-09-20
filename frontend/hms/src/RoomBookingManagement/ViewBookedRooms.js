@@ -48,7 +48,7 @@ const ViewBookedRooms = ({match}) => {
                         <div>
                             <form method="post" className="card" id="room">
                                 <br/>
-                                <h2 className="text-center">Book Rooms</h2>
+                                <h2 className="text-center">View Booked Rooms</h2>
                                 <br/>
                                 <div className="container   ">
                                     <div className="" id='group'>

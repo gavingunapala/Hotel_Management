@@ -37,6 +37,8 @@ import CustomerReport from "./Customer/CustomerReport";
 import PayPaymentsRooms from "./Payment/PayPaymentsRooms";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
 import PaymentView from "./Payment/ViewAllPayment";
+import RoomManagementReport from "./Room_Management/RoomManagementReport";
+import RoomBookingManagementReport from "./RoomBookingManagement/RoomBookingManagementReport";
 
 
 
@@ -88,6 +90,9 @@ function App() {
           <Route exact path="/ViewAllRooms" component={ViewAllRooms}/>
           <Route exact path="/ViewOneRoom/:id" component={ViewOneRoom}/>
           <Route exact path="/PaymentView" component={PaymentView}/>
+          <Route path="/RoomManagementReport" component={RoomManagementReport}/>
+          <Route path="/RoomBookingManagementReport" component={RoomBookingManagementReport}/>
+
 
       </Router>
         <Footer/>

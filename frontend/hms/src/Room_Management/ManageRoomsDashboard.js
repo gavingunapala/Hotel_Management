@@ -10,6 +10,7 @@ const ManageRoomsDashboard = () => {
 
     const {roomId} = useParams();
     const [Room, setRoom] = useState([]);
+    const [SearchWord, setSearchWord] = useState('');
 
     function getRoom() {
         axios
@@ -68,7 +69,7 @@ const ManageRoomsDashboard = () => {
                             <table class="table1  table-hover table-bordered table-striped  tablesorter" id="ipi-table">
                                 <thead class="thead-dark">
                                 <tr>
-                                    <th class="text-center">Room Type</th>
+                                    <th class="text-center col-lg-2">Room Type</th>
                                     <th className="text-center col-lg-3">Room Image</th>
                                     <th class="text-center">Sleeps</th>
                                     <th className="text-center">Current Price</th>
@@ -79,11 +80,17 @@ const ManageRoomsDashboard = () => {
 
                                 </thead>
                                 <tbody class="text-center">
-                                {Room.map((Room) => {
+                                {Room.filter((val)=>{
+                                    if(SearchWord ==""){
+                                        return val
+                                    }else if(val.RoomType.toLowerCase().includes(SearchWord.toLowerCase())){
+                                        return val
+                                    }
+                                }).map((Room) => {
                                     return (
                                         <tr>
                                             <td>{Room.RoomType}</td>
-                                            <td><img width="200px "src={Room.avatar} /></td>
+                                            <td><img width="200px" height="150px" src={Room.avatar} /></td>
                                             <td>{Room.Sleeps}</td>
                                             <td>{Room.CurrentPrice}</td>
                                             <td>{Room.Facilities}</td>
