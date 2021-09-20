@@ -60,7 +60,8 @@ const ManageRoomsDashboard = () => {
                             <a href="/AddRooms" className="btn btn-primary" role="button">
                                 <i className="fa fa-plus"></i>&nbsp;Add New Room
                             </a>
-                        <button className="btn btn-success btngenarate" type="submit" >Generate Report</button>
+                        <a href={"/RoomManagementReport"} className="btn btn-success btngenarate" >Generate Report</a>
+
                     </div>
 
                 <div class="row1">

@@ -57,7 +57,7 @@ const RoomBookingDashboard = () => {
 
                 <div class="card-header">
 
-                    <button className="btn btn-success btngenarate" type="submit" >Generate Report</button>
+                    <a href={"/RoomBookingManagementReport"} className="btn btn-success btngenarate" >Generate Report</a>
                 </div>
 
                 <div class="row1">
