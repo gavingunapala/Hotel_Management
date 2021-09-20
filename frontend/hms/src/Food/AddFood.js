@@ -58,7 +58,7 @@ const AddFood = () => {
     return (
         <div className="addFood" style={{paddingBottom: '200px'}}>
             <a className="btn btn-default foodPrices" href={"/foodManagement"} >
-                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
+                <i className="fa fa-home" style={{fontWeight: "bold"}}> </i> Home
             </a>
             <div >
                 {/*<div className="col-sm-2"></div>*/}

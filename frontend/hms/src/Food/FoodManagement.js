@@ -57,10 +57,10 @@ const FoodManagement = () => {
                     </div>
 
 
-                    <a href="/addFood" className="btn btn-primary" role="button">
-                        <i className="fa fa-plus"></i>Add New Food
+                    <a href="/addFood" className="btn btn-primary" role="button" style={{fontWeight: "bold"}}>
+                        <i className="fa fa-plus"></i> Add New Food
                     </a>
-                    <button className="btn btn-success btngena" type="submit" >Generate Report</button>
+                    <button className="btn btn-success btngena" type="submit" style={{fontWeight: "bold"}} >Generate Report</button>
 
 
                     <br /><br />
