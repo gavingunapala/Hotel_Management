@@ -25,8 +25,8 @@ const ShoppingCart = () => {
 
 
     const deleteFood = (id) =>{
-        axios.delete('http://localhost:8070/food/delete/' + id).then(()=>{
-            alert("Food item deleted successfully!!");
+        axios.delete('http://localhost:8070/cart/delete/' + id).then(()=>{
+            alert("Cart item deleted successfully!!");
         }).catch((err)=>{
             alert(err);
         })
@@ -86,7 +86,7 @@ const ShoppingCart = () => {
                                                 <td>Rs. {cart.Price}.00</td>
                                                 <td>
                                                     <div className="row">
-                                                        <div className="col-md-4"> <em className="fa fa-minus "  onClick={()=>{updateFood(cart._id, cart.UserID, cart.Name, cart.Price, cart.Quantity, -1)}}/> </div>
+                                                        <div className="col-md-4"> <em className=" fa fa-minus "  onClick={()=>{updateFood(cart._id, cart.UserID, cart.Name, cart.Price, cart.Quantity, -1)}}/> </div>
                                                         <div className="col-md-4">{cart.Quantity}</div>
                                                         <div className="col-md-4"> <em className="fa fa-plus" onClick={()=>{updateFood(cart._id, cart.UserID, cart.Name, cart.Price, cart.Quantity, 1)}}/> </div>
                                                     </div>
@@ -99,7 +99,7 @@ const ShoppingCart = () => {
 
                                                  <em className="fas fa-trash"
                                                         onClick={() => {
-                                                            if (window.confirm("Are you sure you want to delete this food item?")) {
+                                                            if (window.confirm("Are you sure you want to remove this item from cart?")) {
                                                                 deleteFood(cart._id)
                                                             }
                                                             ;
