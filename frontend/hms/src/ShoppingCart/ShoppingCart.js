@@ -21,7 +21,7 @@ const ShoppingCart = () => {
         }
 
         getCart();
-    }, []);
+    }, [Cart]);
 
 
     const deleteFood = (id) =>{
@@ -31,6 +31,20 @@ const ShoppingCart = () => {
             alert(err);
         })
     };
+
+
+    const updateFood = (id, UserID, Name, Price, quantity, val) => {
+        const updatedFood = {
+            UserID: UserID,
+            Name: Name,
+            Price:Price,
+            Quantity: quantity + val,
+        };
+        axios.put('http://localhost:8070/cart/updateOne/' + id, updatedFood).then(() => {
+        }).catch((err) => {
+            alert(err);
+        })
+    }
 
 
      const totPrice = (Price) =>{
@@ -51,8 +65,7 @@ const ShoppingCart = () => {
                     <div className="row1">
                         <div className="col-12">
                             <div className="">
-                                <table className="cartTable  table-bordered"
-                                       id="ipi-table">
+                                <table className="cartTable  ">
                                     <thead className="">
                                     <tr>
                                         <th className="text-center ">Name</th>
@@ -64,14 +77,20 @@ const ShoppingCart = () => {
 
                                     </tr>
                                     </thead>
-                                    <tbody className="text-center">
+                                    <tbody className="table-bordered cartbody text-center">
                                     {Cart.map((cart) => {
                                         return (
                                             <tr>
                                                 <td>{cart.Name}</td>
                                                 {/*<td><img width="200px "src={food.Image} /></td>*/}
                                                 <td>Rs. {cart.Price}.00</td>
-                                                <td>{cart.Quantity}</td>
+                                                <td>
+                                                    <div className="row">
+                                                        <div className="col-md-4"> <em className="fa fa-minus "  onClick={()=>{updateFood(cart._id, cart.UserID, cart.Name, cart.Price, cart.Quantity, -1)}}/> </div>
+                                                        <div className="col-md-4">{cart.Quantity}</div>
+                                                        <div className="col-md-4"> <em className="fa fa-plus" onClick={()=>{updateFood(cart._id, cart.UserID, cart.Name, cart.Price, cart.Quantity, 1)}}/> </div>
+                                                    </div>
+                                                </td>
                                                 <td>Rs. {cart.Quantity * cart.Price}.00</td>
                                                 <br />
                                                 <br /> <a style={{color: "#e60000"}} id="icon">
