@@ -32,7 +32,7 @@ const CustomerReport = () => {
 
     const genaratePDF=()=>{
         let doc =new jsPDF('p','pt','a1');
-        doc.html(document.querySelector('#root'),{
+        doc.html(document.querySelector('#body'),{
             callback:function (doc) {
                 doc.save('CustomerReport.pdf');
             },
@@ -45,9 +45,10 @@ const CustomerReport = () => {
 
 
     return (
-        <div className="row1">
+        <div>
+        <div className="row1" id={'body'}>
 
-            <div className="container">
+            <div className="container" >
                 <br></br>
 
                 <div><label> Fortune Inn & Suites </label>
@@ -103,12 +104,14 @@ const CustomerReport = () => {
                     </div></div>
 
             </div>
-            <Link className="btn btn-success btngena" role="button" id={"generate"}onClick={genaratePDF}>
-                Generate Report&nbsp;&nbsp;
-                <em className="fa fa-file-pdf-o" id="icon"></em>
-            </Link>
+
 
         </div>
+    <Link className="btn btn-success btngena" role="button" id={"generate"}onClick={genaratePDF}>
+        Generate Report&nbsp;&nbsp;
+        <em className="fa fa-file-pdf-o" id="icon"></em>
+    </Link>
+</div>
 
     )
 }
