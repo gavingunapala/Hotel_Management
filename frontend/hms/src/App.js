@@ -40,14 +40,6 @@ import PaymentView from "./Payment/ViewAllPayment";
 
 
 
-
-
-
-
-
-
-
-
 function App() {
   return (
 
@@ -96,8 +88,6 @@ function App() {
           <Route exact path="/ViewAllRooms" component={ViewAllRooms}/>
           <Route exact path="/ViewOneRoom/:id" component={ViewOneRoom}/>
           <Route exact path="/PaymentView" component={PaymentView}/>
-
-
 
       </Router>
         <Footer/>

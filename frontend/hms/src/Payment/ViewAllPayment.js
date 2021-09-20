@@ -49,13 +49,13 @@ const PaymentView = () => {
                 {/*<Search/>*/}
                 <div className="col-xs-6">
                     <div className="searchBar">
-                        <input type="search" className="form-control" placeholder="Search Name or NIC NUMBER" onChange={event =>{setSearchWord(event.target.value)}}/>
+                        <input type="search" className="form-control" placeholder="Search Name or Type" onChange={event =>{setSearchWord(event.target.value)}}/>
                     </div>
                 </div>
                 {/*end*/}
                 <div className="">
                     <div className="row1">
-
+<h1>All Payments</h1>
                         <div className="col-12 col-sm-6 col-md-6">
                         </div>
                         <span className="counter pull-right"></span>
@@ -79,6 +79,8 @@ const PaymentView = () => {
                                         <th className="text-center">EX date</th>
                                         <th className="text-center">Total price</th>
                                         <th className="text-center">Type</th>
+                                        <th className="text-center">ACTIONS</th>
+
 
                                     </tr>
                                     </thead>
