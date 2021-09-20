@@ -37,6 +37,9 @@ app.use("/customer",customerRouter);
 //Food
 const foodRouter = require("./routes/FoodRoute.js");
 app.use("/food",foodRouter);
+//Cart
+const cartRouter = require("./routes/CartRoute.js");
+app.use("/cart",cartRouter);
 //Employee
 const EmployeeRouter = require("./routes/EmployeeRoute.js");
 app.use("/Employee",EmployeeRouter);
@@ -46,6 +49,9 @@ app.use("/Room",RoomRouter);
 //BookRooms
 const RoomBookingRouter = require("./routes/RoomBookingRoute");
 app.use("/RoomBooking",RoomBookingRouter);
+//Payment
+const PaymentRouter = require("./routes/PaymentRoute.js");
+app.use("/Payment",PaymentRouter);
 
 
 //run the app using port

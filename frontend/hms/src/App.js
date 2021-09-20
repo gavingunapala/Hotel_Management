@@ -35,6 +35,8 @@ import ViewAllRooms from "./RoomBookingManagement/ViewAllRooms";
 import ViewOneRoom from "./RoomBookingManagement/ViewOneRoom"
 import CustomerReport from "./Customer/CustomerReport";
 import PayPaymentsRooms from "./Payment/PayPaymentsRooms";
+import ShoppingCart from "./ShoppingCart/ShoppingCart";
+import PaymentView from "./Payment/ViewAllPayment";
 
 
 
@@ -51,6 +53,7 @@ function App() {
             <Route exact path="/customerViewFood" component={CustomerViewFood}/>
             <Route exact path="/foodManagement" component={FoodManagement}/>
             <Route exact path="/updateFood/:id" component={UpdateFood}/>
+            <Route exact path="/shoppingCart" component={ShoppingCart}/>
 
           <Route path="/a" component={CustomerRegistration}/>
 
@@ -79,11 +82,13 @@ function App() {
           <Route exact path="/EmployeeView" component={EmployeeView}/>
           <Route exact path="/AdminSideNav" component={AdminSideNav}/>
           <Route exact path="/BookRooms" component={BookRooms}/>
-          <Route exact path="/ViewBookedRooms" component={ViewBookedRooms}/>
-          <Route exact path="/UpdateBookedRooms" component={UpdateBookedRooms}/>
+          <Route exact path="/ViewBookedRooms/:id" component={ViewBookedRooms}/>
+          <Route exact path="/UpdateBookedRooms/:id" component={UpdateBookedRooms}/>
           <Route exact path="/RoomBookingDashboard" component={RoomBookingDashboard}/>
           <Route exact path="/ViewAllRooms" component={ViewAllRooms}/>
-          <Route exact path="/ViewOneRoom" component={ViewOneRoom}/>
+          <Route exact path="/ViewOneRoom/:id" component={ViewOneRoom}/>
+          <Route exact path="/PaymentView" component={PaymentView}/>
+
       </Router>
         <Footer/>
 </div>

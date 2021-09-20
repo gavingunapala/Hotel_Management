@@ -17,6 +17,10 @@ const RoomBookingSchema = new Schema({
     CheckOutDate : {
         type : Date,
         required : true
+    },
+    CurrentPrice : {
+        type : Number,
+        required : true
     }
 })
 

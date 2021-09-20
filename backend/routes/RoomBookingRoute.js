@@ -9,12 +9,14 @@ router.route("/add").post((req,res)=>{
     const NoOfPeople = req.body.NoOfPeople;
     const CheckInDate = req.body.CheckInDate;
     const CheckOutDate = req.body.CheckOutDate;
+    const CurrentPrice = req.body.CurrentPrice;
 
     const newRoomBooking = new RoomBookingModel({
         RoomType,
         NoOfPeople,
         CheckInDate,
-        CheckOutDate
+        CheckOutDate,
+        CurrentPrice
     })
 
     newRoomBooking.save().then(()=>{
@@ -38,12 +40,13 @@ router.route("/").get((req,res)=>{
 //http://localhost:8070/RoomBooking/update/:id
 router.route("/update/:id").put(async (req,res)=>{
     let roomBookingId = req.params.id;
-    const {RoomType,NoOfPeople,CheckInDate,CheckOutDate} = req.body;
+    const {RoomType,NoOfPeople,CheckInDate,CheckOutDate,CurrentPrice} = req.body;
     const updateRoomBooking = {
         RoomType,
         NoOfPeople,
         CheckInDate,
-        CheckOutDate
+        CheckOutDate,
+        CurrentPrice
     }
 
     const update = await RoomBookingModel.findByIdAndUpdate(roomBookingId,updateRoomBooking).then(()=>{
@@ -86,6 +89,7 @@ router.route("/updateOne/:id").put(async (req, res) => {
         NoOfPeople: req.body.NoOfPeople || roombooking.NoOfPeople,
         CheckInDate: req.body.CheckInDate || roombooking.CheckInDate,
         CheckOutDate: req.body.CheckOutDate || roombooking.CheckOutDate,
+        CurrentPrice: req.body.CurrentPrice || roombooking.CurrentPrice,
 
     };
     roombooking = await RoomBookingModel.findByIdAndUpdate(req.params.id, data, { new: true });
