@@ -10,6 +10,7 @@ const CustomerViewFood = () => {
     // const [price, setPrice] = useState("")
     const name = useState("");
     const price = useState("");
+    const [SearchWord, setSearchWord] = useState('');
 
     const quantitySetter = (e) => {
         setQuantity(e.target.value);
@@ -72,12 +73,23 @@ const CustomerViewFood = () => {
                 <i className="fa fa-home" style={{fontWeight: "bold"}}>
                 </i> Home
             </a>
-            <Search />
+            <div className="col-xs-6">
+                <div className="searchBar">
+                    <i className="fa fa-search"></i>
+                    <input type="search" className="form-control" placeholder="Search..." onChange={event =>{setSearchWord(event.target.value)}}/>
+                </div>
+            </div>
             <a className="foodPrices " href={"/shoppingCart"} style={{float: "right", marginRight:"120px"}}>
                 Cart <i className="fa fa-shopping-cart foodPrices"></i>
             </a>
             <br/><br />
-            {food?.map((food) => (
+            {food?.filter((val)=>{
+                if(SearchWord ==""){
+                    return val
+                }else if(val.Name.toLowerCase().includes(SearchWord.toLowerCase())) {
+                    return val
+                }
+            }).map((food) => (
                 <div className="viewFoodCard " key={food._id}>
                     <div className="foodLabels" >{food.Name}</div>
                     <embed src={food.Image}
