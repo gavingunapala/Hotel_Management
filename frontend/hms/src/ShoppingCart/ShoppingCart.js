@@ -86,9 +86,9 @@ const ShoppingCart = () => {
                                                 <td>Rs. {cart.Price}.00</td>
                                                 <td>
                                                     <div className="row">
-                                                        <div className="col-md-4"> <em className=" fa fa-minus "  onClick={()=>{updateFood(cart._id, cart.UserID, cart.Name, cart.Price, cart.Quantity, -1)}}/> </div>
-                                                        <div className="col-md-4">{cart.Quantity}</div>
-                                                        <div className="col-md-4"> <em className="fa fa-plus" onClick={()=>{updateFood(cart._id, cart.UserID, cart.Name, cart.Price, cart.Quantity, 1)}}/> </div>
+                                                        <div className="col-md-5"> <em className=" fa fa-minus qtyRemove "  onClick={()=>{updateFood(cart._id, cart.UserID, cart.Name, cart.Price, cart.Quantity, -1)}}/> </div>
+                                                        <div className="col-md-2">{cart.Quantity}</div>
+                                                        <div className="col-md-5"> <em className="fa fa-plus qtyAdd" onClick={()=>{updateFood(cart._id, cart.UserID, cart.Name, cart.Price, cart.Quantity, 1)}}/> </div>
                                                     </div>
                                                 </td>
                                                 <td>Rs. {cart.Quantity * cart.Price}.00</td>
@@ -111,12 +111,15 @@ const ShoppingCart = () => {
 
                                     </tbody>
                                 </table>
-<div>Sub Total Rs. {subTotal}.00</div>
+<div className="subTot">Sub Total = Rs. {subTotal}.00</div>
+                                <br /> <br /> <br />
+                                <button className="cartOrder">CHECKOUT
+                                </button>
+
                                 <br/>
                             </div>
                         </div>
                     </div>
-{/*<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />*/}
         </div>
     )
 }

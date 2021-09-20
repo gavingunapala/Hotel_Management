@@ -170,3 +170,51 @@ input[type="file"] {
 .cartbody{
   padding: 2px;
 }
+.cartOrder{
+  display: inline-block;
+  padding: 10px;
+  background: #1a2639;
+  color: #dddddd;
+  margin-right: 140px;
+  opacity: 85%;
+  float: right;
+  font-weight: bold;
+}
+.cartOrder:hover{
+  opacity: 100%;
+  color: #dddddd;
+}
+
+.subTot{
+  display: inline-block;
+  background: #dde3e3;
+  float: right;
+  margin-right: 140px;
+  font-size: large;
+  font-weight: bold;
+  padding: 10px;
+}
+.qtyAdd{
+  display: inline-block;
+  padding: 7px;
+  background: #1a2639;
+  color: #dddddd;
+  font-weight: bold;
+  opacity: 85%;
+}
+.qtyAdd:hover{
+  opacity: 100%;
+  color: #dddddd;
+}
+.qtyRemove{
+  display: inline-block;
+  padding: 7px;
+  background: #b5acac;
+  color: #1a2639;
+  opacity: 85%;
+}
+.qtyRemove:hover{
+  opacity: 100%;
+}
+
+

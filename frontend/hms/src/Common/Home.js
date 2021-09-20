@@ -16,7 +16,7 @@ const Home = () => {
                                      width="560" border='20'/>
                                      <br /><br />
                                      <div className='text-center'>
-                                    <h3 className='btn btn-primary'>Book Rooms</h3>
+                                    <h3 className='btn qtyAdd'>BOOK ROOMS</h3>
                                      </div>
                             </div>
                         </div>
@@ -30,7 +30,7 @@ const Home = () => {
                                      width="560" border='20'/>
                                      <br /><br />
                                 <div className='text-center'>
-                                     <h3 className='btn btn-primary'>Order Food</h3>
+                                     <h3 className='btn qtyAdd'>ORDER FOOD</h3>
                                 </div>
                             </div>
                         </div>

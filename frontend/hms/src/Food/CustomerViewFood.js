@@ -69,7 +69,8 @@ const CustomerViewFood = () => {
         <div>
             <br />
             <a className="foodPrices" href={"/"} >
-                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
+                <i className="fa fa-home" style={{fontWeight: "bold"}}>
+                    Home</i>
             </a>
             <Search />
             <a className="foodPrices " href={"/shoppingCart"} style={{float: "right", marginRight:"120px"}}>
@@ -90,9 +91,10 @@ const CustomerViewFood = () => {
                     <input className="foodQuantity" type="Number" defaultValue="1" onChange={quantitySetter}></input>
                     <div className="p-2 ">
                         <div className="text-center" >
-                            <button className={"btn btn-primary btn-large"} onClick={()=>onSubmit(food.Name, food.Price)} >
+                            <button className={"btn qtyAdd btn-large"} onClick={()=>onSubmit(food.Name, food.Price)} >
                                 ADD TO CART
                             </button>
+                            <br />
 
                         </div>
                         <br/>
