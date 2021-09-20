@@ -39,7 +39,7 @@
   .homeCard{
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-right: 25x;
+    padding-right: 25px;
     padding-left: 25px;
   }
 
@@ -67,6 +67,13 @@ input[type="file"] {
   background: url("Images/addFood.png");
   background-size: cover;
 }
+.shoppingCart{
+  background: url("Images/shoppingCart.png");
+  background-size: 1200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 350px;
+}
 
 .mylabel1 {
   color: #103eb5;
@@ -88,17 +95,7 @@ input[type="file"] {
   margin-top: 20px;
 }
 
-.blog-card {
 
-  background: #dde3e3;
-  display: inline-block;
-  width: 400px;
-  text-align: center;
-  cursor: pointer;
-  padding: 8px;
-  /*box-shadow: 2px 0px 13px 7px rgba(25, 12, 255, 0.2);*/
-  margin: 40px;
-}
 .foodLabels{
   font-size: xx-large;
   font-weight: bolder;
@@ -121,4 +118,52 @@ input[type="file"] {
 .searchBar{
  margin-right: 25rem;
  margin-left: 25rem;
+}
+
+.cartTable {
+  --bs-table-bg: transparent;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: #212529;
+  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+  --bs-table-active-color: #212529;
+  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+  --bs-table-hover-color: #212529;
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+
+
+}
+.cartRow {
+
+  background: #dde3e3;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px;
+  /*box-shadow: 2px 0px 13px 7px rgba(25, 12, 255, 0.2);*/
+  margin: 40px;
+}
+.viewFoodCard {
+  background: #dde3e3;
+  display: inline-block;
+  width: 400px;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px;
+  /*box-shadow: 2px 0px 13px 7px rgba(25, 12, 255, 0.2);*/
+  margin: 40px;
+}
+.blog-card {
+  background: #dde3e3;
+  display: inline-block;
+  width: 400px;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px;
+  /*box-shadow: 2px 0px 13px 7px rgba(25, 12, 255, 0.2);*/
+  margin: 40px;
 }

@@ -7,7 +7,7 @@ import axios from "axios";
 const UpdateBookedRooms = ({match}) => {
     console.log(match.params.id);
     const id = match.params.id;
-    console.log(id)
+
     let his = useHistory();
 
     const [RoomBooking, setRoomBooking] = useState([]);
@@ -59,7 +59,6 @@ const UpdateBookedRooms = ({match}) => {
         }).catch((err) => {
             alert(err);
         })
-        his.push('/RoomBookingDashboard');
     }
 
 
@@ -86,7 +85,7 @@ const UpdateBookedRooms = ({match}) => {
                                         <div><label for="type">Room Type</label>
                                             <select className="form-control"
                                                     name="type"
-                                                    id="type" onChange={roomtypeSetter}>
+                                                    id="type" onChange={roomtypeSetter} value={RoomBooking.RoomType}>
                                                 <option>Choose</option>
                                                 <option>Premium Double Room</option>
                                                 <option>Cilantro Suite</option>
@@ -95,9 +94,9 @@ const UpdateBookedRooms = ({match}) => {
                                                 <option>Superior King Room</option>
                                             </select>
                                         </div>
-                                        <div><label>No Of People</label><input id='left' className="form-control" type="number" onChange={noofpeopleSetter}/></div>
-                                        <div><label>Check In Date</label><input className="form-control" type="date" onChange={checkindateSetter} /></div>
-                                        <div><label>Check Out Date</label><input className="form-control" type="date" onChange={checkoutdateSetter} /></div>
+                                        <div><label>No Of People</label><input id='left' className="form-control" type="number" placeholder={RoomBooking.NoOfPeople} onChange={noofpeopleSetter} /></div>
+                                        <div><label>Check In Date</label><input className="form-control" type="" placeholder={RoomBooking.CheckInDate} onChange={checkindateSetter} /></div>
+                                        <div><label>Check Out Date</label><input className="form-control" type="" placeholder={RoomBooking.CheckOutDate} onChange={checkoutdateSetter} /></div>
 
                                         <br/>
                                         <button className="btn btn-warning" type="submit" id="addrooms" onClick={onSubmit} >&nbsp;Update</button>&nbsp;&nbsp;

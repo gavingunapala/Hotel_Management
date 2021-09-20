@@ -65,6 +65,7 @@ const UpdateRooms = ({match}) => {
 
         function getRoom() {
             axios.get("http://localhost:8070/Room/get/" + id).then((res) => {
+                console.log(url);
                 setRoom(res.data);
                 console.log(res.data);
             }).catch((err) => {
@@ -115,7 +116,7 @@ const UpdateRooms = ({match}) => {
                                         <div><label htmlFor="type">Room Type</label>
                                             <select className="form-control"
                                                     name="type"
-                                                    id="type" onChange={roomtypeSetter} placeholder={Room.RoomType}>
+                                                    id="type" onChange={roomtypeSetter} value={Room.RoomType}>
                                                 <option>Choose</option>
                                                 <option>Premium Double Room</option>
                                                 <option>Cilantro Suite</option>
@@ -128,8 +129,11 @@ const UpdateRooms = ({match}) => {
                                             <div>
                                                 <label className={"mylabel"}>
                                                     <input type="file" onChange={handleChange} />
-                                                    <span>+</span>
+                                                    <i id="image" className="fa fa-plus-circle" size="large" style={{marginLeft:"146px",color:"#2d6cdf"}} />
                                                 </label>
+                                            </div>
+                                                <div className="text-center" >
+                                                    <img width="400px " src={url} /></div>
                                                 <div className="output">
                                                     {error && <div className="error">{ error }</div>}
                                                     {file && <div>{ file.name }</div> }
@@ -137,10 +141,10 @@ const UpdateRooms = ({match}) => {
                                                     {file && <div> {file.url}</div>}
                                                 </div>
                                             </div>
-                                        </div>
+
                                         <div><label>Sleeps</label><input class="form-control" type="number" onChange={sleepsSetter} placeholder={Room.Sleeps} /></div>
                                         <div><label>Current Price</label><input class="form-control" type="number" onChange={currentpriceSetter} placeholder={Room.CurrentPrice} /></div>
-                                        <div><label>Facilities</label><input class="form-control" type="text" onChange={facilitiesSetter} placeholder={Room.Facilities} /></div>
+                                        <div><label>Facilities</label><textarea id="w3review" class="form-control" rows="4" cols="50" onChange={facilitiesSetter} placeholder={Room.Facilities} /></div>
                                         <div><label>Description</label><textarea id="w3review" className="form-control" rows="4" cols="50" onChange={descriptionSetter} placeholder={Room.Description} /></div>
                                         <br/>
                                         <button className="btn btn-warning" type="submit" id="updaterooms" onClick={onSubmit}>&nbsp;Update Room</button>&nbsp;&nbsp;
