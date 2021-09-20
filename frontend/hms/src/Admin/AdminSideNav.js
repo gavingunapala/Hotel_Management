@@ -27,7 +27,7 @@ const AdminSideNav = () => {
                         <a href="/UpdateBookedRooms">Update Booked Room</a>
                         <a href="/ManageRoomsDashboard">Rooms Dashboard</a>
                         <a href="/RoomBookingDashboard">Room Bookings Dashboard</a>
-                        <a href="/ManageUsers">Payments</a>
+                        <a href="/PaymentView">Payments</a>
 
                     </li>
                     <li>

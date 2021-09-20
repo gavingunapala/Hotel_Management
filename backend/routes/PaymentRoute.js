@@ -13,14 +13,13 @@ router.route("/add").post((req,res)=>{
     const NICNumber = req.body.NICNumber;
     const CardNumber = req.body.CardNumber;
     const CVV = req.body.CVV;
-    const ExpierDate = req.body.CVV;
-    const TotlePrice = req.body.CVV;
-    const Type = req.body.CVV;
+    const ExpierDate = req.body.ExpierDate;
+    const TotlePrice = req.body.TotlePrice;
+    const Type = req.body.Type;
 
     const newPayment = new PaymentModel({
         Id,
         Name,
-        Address,
         PhoneNumber,
         NICNumber,
         CardNumber,

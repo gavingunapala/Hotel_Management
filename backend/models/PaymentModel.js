@@ -27,7 +27,7 @@ const PaymentSchema = new Schema({
         required: true
     },
     ExpierDate: {
-        type : String,
+        type : Date,
         required: true
     },
     TotlePrice: {
