@@ -70,7 +70,7 @@ const CustomerViewFood = () => {
             <br />
             <a className="foodPrices" href={"/"} >
                 <i className="fa fa-home" style={{fontWeight: "bold"}}>
-                    Home</i>
+                </i> Home
             </a>
             <Search />
             <a className="foodPrices " href={"/shoppingCart"} style={{float: "right", marginRight:"120px"}}>

@@ -10,6 +10,7 @@ const FoodManagement = () => {
 
     let his = useHistory();
     const [Food, setFood] = useState([]);
+    const [SearchWord, setSearchWord] = useState('');
 
     useEffect(() => {
 
@@ -40,7 +41,12 @@ const FoodManagement = () => {
         <div className="row1">
             <div className="col-2"> <AdminSideNav/></div>
             <div className="col-10"> <br/>
-                <Search/>
+                <div className="col-xs-6">
+                    <div className="searchBar">
+                        <i className="fa fa-search"></i>
+                        <input type="search" className="form-control" placeholder="Search..." onChange={event =>{setSearchWord(event.target.value)}}/>
+                    </div>
+                </div>
                 <div className="">
                     <div className="row1">
 
@@ -68,19 +74,25 @@ const FoodManagement = () => {
                                         <th className="text-center">Code</th>
                                         <th className="text-center ">Name</th>
                                         <th className="text-center col-lg-4">Image</th>
-                                        <th className="text-center">Price (Rs)</th>
+                                        <th className="text-center">Price</th>
                                         <th className="text-center">Actions</th>
 
                                     </tr>
                                     </thead>
                                     <tbody className="text-center">
-                                    {Food.map((food) => {
+                                    {Food.filter((val)=>{
+                                        if(SearchWord ==""){
+                                        return val
+                                    }else if(val.Name.toLowerCase().includes(SearchWord.toLowerCase())) {
+                                            return val
+                                        }
+                                    }).map((food) => {
                                         return (
                                             <tr>
                                                 <td>{food.Code}</td>
                                                 <td>{food.Name}</td>
                                                 <td><img width="200px "src={food.Image} /></td>
-                                                <td>{food.Price}.00</td>
+                                                <td>Rs. {food.Price}.00</td>
                                                 <br />
                                                 <br />
 
