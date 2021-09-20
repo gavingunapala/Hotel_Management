@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 
 const ViewAllRooms = () => {
     const [Room, setRoom] = useState([]);
+    const [SearchWord, setSearchWord] = useState('');
 
     useEffect(() => {
         const getRooms = async () => {
@@ -24,11 +25,22 @@ const ViewAllRooms = () => {
             <a className="btn btn-default foodPrices" href={"/RoomBookingDashboard"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
             </a>
-            <Search />
+            {/*<Search />*/}
+            <div className="col-xs-6">
+                <div className="searchBar">
+                    <input type="search" className="form-control" placeholder="Search by typing here.." onChange={event =>{setSearchWord(event.target.value)}}/>
+                </div>
+            </div>
             <br/><br />
 
             <div className="center" id="all" style={{marginLeft: "200px"}} >
-                {Room?.map((Room) => (
+                {Room.filter((val)=>{
+                    if(SearchWord ==""){
+                        return val
+                    }else if(val.RoomType.toLowerCase().includes(SearchWord.toLowerCase())){
+                        return val
+                    }
+                }).map((Room) => (
                 <div className="blog-card" key={Room._id} >
                     <div className="roomLabels"></div>
                     <Link class="" role="button" to={`/ViewOneRoom/${Room._id}`} >
