@@ -4,6 +4,7 @@ import axios from "axios";
 import AdminSideNav from "../Admin/AdminSideNav";
 import '../CSS/Admin/tableEmployee.css';
 import Search from "../Common/Search";
+import jsPDF from "jspdf";
 
 
 const FoodManagement = () => {
@@ -37,6 +38,19 @@ const FoodManagement = () => {
         // his.push(path);
     }
 
+    const generatePDF=()=>{
+        let doc =new jsPDF('p','pt','a1');
+        doc.html(document.querySelector('#body'),{
+            callback:function (doc) {
+                doc.save('abc.pdf');
+            },
+            margin:[60,60,60,60],
+            x:32,
+            y:32
+        });
+
+    }
+
     return (
         <div className="row1">
             <div className="col-2"> <AdminSideNav/></div>
@@ -60,13 +74,13 @@ const FoodManagement = () => {
                     <a href="/addFood" className="btn btn-primary" role="button" style={{fontWeight: "bold"}}>
                         <i className="fa fa-plus"></i> Add New Food
                     </a>
-                    <button className="btn btn-success btngena" type="submit" style={{fontWeight: "bold"}} >Generate Report</button>
+                    <button className="btn btn-success btngena" type="submit" style={{fontWeight: "bold"}} onClick={generatePDF} >Generate Report</button>
 
 
                     <br /><br />
                     <div className="row1">
                         <div className="col-12">
-                            <div className="table-responsive">
+                            <div id="body"  className="table-responsive">
                                 <table className="table1  table-hover table-bordered table-striped  tablesorter"
                                        id="ipi-table">
                                     <thead className="thead-dark">
