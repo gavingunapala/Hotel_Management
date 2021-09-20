@@ -49,6 +49,9 @@ app.use("/Room",RoomRouter);
 //BookRooms
 const RoomBookingRouter = require("./routes/RoomBookingRoute");
 app.use("/RoomBooking",RoomBookingRouter);
+//Payment
+const PaymentRouter = require("./routes/PaymentRoute.js");
+app.use("/Payment",PaymentRouter);
 
 
 //run the app using port

@@ -6,106 +6,57 @@ import {Link} from "react-router-dom";
 
 
 const ViewAllRooms = () => {
+    const [Room, setRoom] = useState([]);
+    const [SearchWord, setSearchWord] = useState('');
+
+    useEffect(() => {
+        const getRooms = async () => {
+            const res = await fetch(`http://localhost:8070/Room/`);
+            const data = await res.json();
+            setRoom(data);
+        };
+        getRooms();
+    }, []);
+
+    console.log(Room)
 
     return (
         <div>
             <a className="btn btn-default foodPrices" href={"/RoomBookingDashboard"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
             </a>
-            <Search />
+            {/*<Search />*/}
+            <div className="col-xs-6">
+                <div className="searchBar">
+                    <input type="search" className="form-control" placeholder="Search by typing here.." onChange={event =>{setSearchWord(event.target.value)}}/>
+                </div>
+            </div>
             <br/><br />
 
-            <div className="center" style={{marginLeft: "100px"}} >
-                <div className="blog-card" >
+            <div className="center" id="all" style={{marginLeft: "200px"}} >
+                {Room.filter((val)=>{
+                    if(SearchWord ==""){
+                        return val
+                    }else if(val.RoomType.toLowerCase().includes(SearchWord.toLowerCase())){
+                        return val
+                    }
+                }).map((Room) => (
+                <div className="blog-card" key={Room._id} >
                     <div className="roomLabels"></div>
-                    <Link class="" role="button" to="/ViewOneRoom" >
-                    <embed src={img} href=""
+                    <Link class="" role="button" to={`/ViewOneRoom/${Room._id}`} >
+                    <embed src={Room.avatar} href=""
                            alt="img" width={"100%"}
-                           height={150} width={"auto"}/>
+                           height={150} width={200}/>
                     </Link>
                     <br/>
-                    <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
+                    <div><label htmlFor="type">{Room.RoomType}</label></div>
+
+                    <div><label htmlFor="type">LKR {Room.CurrentPrice}</label></div>
                     <div className="p-2 ">
                         <br/>
                     </div>
                 </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
-            <div className="blog-card" >
-                <div className="roomLabels"></div>
-                <embed src={img} href=""
-                       alt="img" width={"100%"}
-                       height={150} width={"auto"}/>
-                <br/>
-                <div><label htmlFor="type">Superior Twin - LKR 18000</label></div>
-                <div className="p-2 ">
-                    <br/>
-                </div>
-            </div>
+                ))}
             </div>
 
         </div>

@@ -1,8 +1,99 @@
-import React from 'react';
-import img from '../Images/undraw_logic_n6th.png';
+import React,{useEffect, useState} from 'react';
 import '../CSS/payment/payment.css';
+import axios from "axios";
 
 const PayPayments = () => {
+    const [Cart, setCart] = useState([]);
+    var subTotal = useState(0);
+
+
+    useEffect(() => {
+
+        function getCart() {
+            axios.get("http://localhost:8070/cart" ).then((res) => {
+                setCart(res.data);
+            }).catch((err) => {
+            })
+        }
+
+        getCart();
+    }, []);
+
+    console.log(Cart)
+    const totPrice = (Price) =>{
+        subTotal = parseInt(subTotal, 10) + parseInt(Price, 10);
+
+
+    }
+
+    {Cart.map((cart) => {
+        return (
+            <tr>
+                {totPrice(cart.Quantity * cart.Price)}
+                {console.log(subTotal)}
+            </tr>
+        );
+    })}
+
+
+
+
+    // add to payment table
+    const[Id, setid] = useState('12343456789006');
+    const[Name, setName] = useState("");
+    const[PhoneNumber, setPhoneNumber] = useState("");
+    const[NICNumber, setNICNumber] = useState("");
+    const[CardNumber, setCardNumber] = useState("");
+    const[CVV, setCVV] = useState("");
+    const[ExpierDate, setExpierDate] = useState("");
+    const[Type, setType] = useState('Food');
+
+    const NameSetter = (e) => {
+        setName(e.target.value);
+    }
+    const PhoneNumberSetter = (e) => {
+        setPhoneNumber(e.target.value);
+    }
+    const NICNumberSetter = (e) => {
+        setNICNumber(e.target.value);
+    }
+    const CardNumberSetter = (e) => {
+        setCardNumber(e.target.value);
+    }
+
+    const CVVSetter = (e) => {
+        setCVV(e.target.value);
+    }
+    const ExpierDateSetter = (e) => {
+        setExpierDate(e.target.value);
+    }
+
+
+
+    const onSubmit = () => {
+
+        const newpayment = {
+            Id: Id,
+            Name: Name,
+            PhoneNumber: PhoneNumber,
+            NICNumber: NICNumber,
+            CardNumber: CardNumber,
+            CVV: CVV,
+            ExpierDate: ExpierDate,
+            TotlePrice: subTotal,
+            Type: Type
+        };
+        axios.post('http://localhost:8070/Payment/add', newpayment).then(() => {
+            alert("newpayment added");
+            // history.push('/EmployeeView');
+        }).catch((err) => {
+            alert(err);
+        })
+    }
+
+
+
+
     return (
         <div className={'background-image'}>
             <div className="row1">
@@ -16,27 +107,26 @@ const PayPayments = () => {
                                 <h2 class="text-center">Payment</h2>
                                 <br />
                                 <div className="container   ">
-                                    <div><label>Name On Credit Card</label><input class="form-control" type="text"/>
+                                    <div><label>Name On Credit Card</label><input class="form-control" type="text" onChange={NameSetter}/>
                                     </div>
-                                        <div><label>Phone Number</label><br/><input class="form-control" type="number"/></div>
-                                        <div><label>NIC Number</label><input class="form-control" type="text"/></div>
-                                        <div><label>Phone Number</label><br/><input className="form-control" type="number"/></div>
+                                        <div><label>Phone Number</label><br/><input class="form-control" type="number" onChange={PhoneNumberSetter}/></div>
+                                        <div><label>NIC Number</label><input class="form-control" type="text"onChange={NICNumberSetter}/></div>
                                         <div className={"row"}>
                                             <div className="col-sm-7">
-                                                <label>Card Number</label><br/><input className="form-control" type="number"/>
+                                                <label>Card Number</label><br/><input className="form-control" type="number"onChange={CardNumberSetter}/>
                                             </div>
                                             <div className="col-sm-4">
-                                                <label>CVV Number</label><br/><input className="form-control" type="number"/>
+                                                <label>CVV Number</label><br/><input className="form-control" type="number"onChange={CVVSetter}/>
                                             </div>
                                         </div>
-                                        <div><label>Expire Date</label><input class="form-control" type="date"/></div>
+                                        <div><label>Expire Date</label><input class="form-control" type="date"onChange={ExpierDateSetter}/></div>
                                         <br/>
                                         <div className={"row"}>
                                             <div className="col-sm-7">
-                                                <label>Totle price</label><br/><input className="form-control" type="number" />
+                                                <label>Totle price</label><br/><input className="form-control" type="number" value={subTotal}/>
                                             </div>
                                                 <div className="col-sm-2 pad">
-                                                   <center><button type="button " className="btn btn-primary btn-pay">Pay</button></center>
+                                                   <center><button type="button " className="btn btn-primary btn-pay" onClick={onSubmit}>Pay</button></center>
                                                 </div>
                                         </div>
                                 </div>
@@ -45,11 +135,7 @@ const PayPayments = () => {
                     </div>
                 </div>
                 <div className="col-sm-5 image">
-                    {/*<img src={img} loading="auto" alt="center" height="500"*/}
-                    {/*     width="600"/>*/}
                 </div>
-
-
             </div>
         </div>
     )

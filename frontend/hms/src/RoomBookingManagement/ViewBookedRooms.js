@@ -48,7 +48,7 @@ const ViewBookedRooms = ({match}) => {
                         <div>
                             <form method="post" className="card" id="room">
                                 <br/>
-                                <h2 className="text-center">Book Rooms</h2>
+                                <h2 className="text-center">View Booked Rooms</h2>
                                 <br/>
                                 <div className="container   ">
                                     <div className="" id='group'>
@@ -58,11 +58,11 @@ const ViewBookedRooms = ({match}) => {
                                             <li className="form-control">{Roombooking.RoomType}</li>
                                         </div>
                                         <div><label>No Of People</label><input id='left' className="form-control" type="number" placeholder={Roombooking.NoOfPeople} /></div>
-                                        <div><label>Check In Date</label><input className="form-control" type="date" placeholder={Roombooking.CheckInDate}/></div>
-                                        <div><label>Check Out Date</label><input className="form-control" type="date" placeholder={Roombooking.CheckOutDate}/></div>
+                                        <div><label>Check In Date</label><input className="form-control" type="" placeholder={Roombooking.CheckInDate}/></div>
+                                        <div><label>Check Out Date</label><input className="form-control" type="" placeholder={Roombooking.CheckOutDate}/></div>
 
                                         <br/>
-                                        <a href={"/UpdateBookedRooms"} className="btn btn-warning" id='war' type="reset">Update</a>
+                                        <a href={`/UpdateBookedRooms/${Roombooking._id}`} className="btn btn-warning" id='war' type="reset">Update</a>
                                         <button className="btn btn-danger" type="reset" id='danger' onClick={() => {
                                             if (window.confirm("Are you sure you want to delete this booking?")) {
                                                 deleteRoomBooking()
