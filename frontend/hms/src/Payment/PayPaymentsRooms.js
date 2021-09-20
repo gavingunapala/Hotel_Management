@@ -76,7 +76,6 @@ console.log(difference)
                                     </div>
                                     <div><label>Phone Number</label><br/><input class="form-control" type="number"/></div>
                                     <div><label>NIC Number</label><input class="form-control" type="text"/></div>
-                                    <div><label>Phone Number</label><br/><input className="form-control" type="number"/></div>
                                     <div className={"row"}>
                                         <div className="col-sm-7">
                                             <label>Card Number</label><br/><input className="form-control" type="number"/>
