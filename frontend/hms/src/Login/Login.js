@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react"
 import {useHistory} from "react-router-dom";
 import axios from "axios";
-// import img from '../Images/undraw_logic_n6th.png';
 import '../../src/CSS/Login/Login1.css'
 
 const Login = () => {
