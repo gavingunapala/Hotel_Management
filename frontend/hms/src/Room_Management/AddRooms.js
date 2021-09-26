@@ -87,7 +87,7 @@ const AddRooms = () => {
                     <div><strong></strong><label></label></div>
                     <div className=" justify-content-center align-items-center">
                         <div>
-                            <form method="post" className="card" id="room">
+                            <form method="post" className="card" id="room" style={{opacity: '0.95'}}>
                                 <br/>
                                 <h2 className="text-center">Add Rooms</h2>
                                 <br/>
@@ -136,7 +136,7 @@ const AddRooms = () => {
                     </div>
                 </div>
                 <div className="col-sm-6 image">
-                    <img src={img} loading="auto" alt="center" height="500" width="500"/>
+                    <img src={img} loading="auto" style={{marginLeft: "-53px", marginTop: "179px" }} height="653px" width="609px"/>
                 </div>
             </div>
         </div>

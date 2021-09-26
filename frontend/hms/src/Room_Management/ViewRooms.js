@@ -91,7 +91,7 @@ const ViewRooms = ({match}) => {
                     <div><strong></strong><label></label></div>
                     <div className=" justify-content-center align-items-center">
                         <div>
-                            <form method="post" className="card" id="room">
+                            <form method="post" className="card" id="room" style={{opacity: '0.95'}}>
                                 <br/>
                                 <h2 className="text-center">View Room</h2>
                                 <br/>
