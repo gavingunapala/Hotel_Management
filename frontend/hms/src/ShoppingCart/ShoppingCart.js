@@ -21,16 +21,30 @@ const ShoppingCart = () => {
         }
 
         getCart();
-    }, []);
+    }, [Cart]);
 
 
     const deleteFood = (id) =>{
-        axios.delete('http://localhost:8070/food/delete/' + id).then(()=>{
-            alert("Food item deleted successfully!!");
+        axios.delete('http://localhost:8070/cart/delete/' + id).then(()=>{
+            alert("Cart item deleted successfully!!");
         }).catch((err)=>{
             alert(err);
         })
     };
+
+
+    const updateFood = (id, UserID, Name, Price, quantity, val) => {
+        const updatedFood = {
+            UserID: UserID,
+            Name: Name,
+            Price:Price,
+            Quantity: quantity + val,
+        };
+        axios.put('http://localhost:8070/cart/updateOne/' + id, updatedFood).then(() => {
+        }).catch((err) => {
+            alert(err);
+        })
+    }
 
 
      const totPrice = (Price) =>{
@@ -51,8 +65,7 @@ const ShoppingCart = () => {
                     <div className="row1">
                         <div className="col-12">
                             <div className="">
-                                <table className="cartTable  table-bordered"
-                                       id="ipi-table">
+                                <table className="cartTable  ">
                                     <thead className="">
                                     <tr>
                                         <th className="text-center ">Name</th>
@@ -64,14 +77,20 @@ const ShoppingCart = () => {
 
                                     </tr>
                                     </thead>
-                                    <tbody className="text-center">
+                                    <tbody className="table-bordered cartbody text-center">
                                     {Cart.map((cart) => {
                                         return (
                                             <tr>
                                                 <td>{cart.Name}</td>
                                                 {/*<td><img width="200px "src={food.Image} /></td>*/}
                                                 <td>Rs. {cart.Price}.00</td>
-                                                <td>{cart.Quantity}</td>
+                                                <td>
+                                                    <div className="row">
+                                                        <div className="col-md-5"> <em className=" fa fa-minus qtyRemove "  onClick={()=>{updateFood(cart._id, cart.UserID, cart.Name, cart.Price, cart.Quantity, -1)}}/> </div>
+                                                        <div className="col-md-2">{cart.Quantity}</div>
+                                                        <div className="col-md-5"> <em className="fa fa-plus qtyAdd" onClick={()=>{updateFood(cart._id, cart.UserID, cart.Name, cart.Price, cart.Quantity, 1)}}/> </div>
+                                                    </div>
+                                                </td>
                                                 <td>Rs. {cart.Quantity * cart.Price}.00</td>
                                                 <br />
                                                 <br /> <a style={{color: "#e60000"}} id="icon">
@@ -80,7 +99,7 @@ const ShoppingCart = () => {
 
                                                  <em className="fas fa-trash"
                                                         onClick={() => {
-                                                            if (window.confirm("Are you sure you want to delete this food item?")) {
+                                                            if (window.confirm("Are you sure you want to remove this item from cart?")) {
                                                                 deleteFood(cart._id)
                                                             }
                                                             ;
@@ -92,12 +111,15 @@ const ShoppingCart = () => {
 
                                     </tbody>
                                 </table>
-<div>Sub Total Rs. {subTotal}.00</div>
+<div className="subTot">Sub Total = Rs. {subTotal}.00</div>
+                                <br /> <br /> <br />
+                                <button className="cartOrder">CHECKOUT
+                                </button>
+
                                 <br/>
                             </div>
                         </div>
                     </div>
-{/*<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />*/}
         </div>
     )
 }

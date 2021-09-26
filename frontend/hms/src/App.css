@@ -129,24 +129,17 @@ input[type="file"] {
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
   --bs-table-hover-color: #212529;
   --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
-  width: 100%;
+  background: #dde3e3;
+  width: 95%;
   margin-bottom: 1rem;
   color: #212529;
+  margin-left: 35px;
+  opacity: 85%;
+  font-size: large;
   vertical-align: top;
 
-
 }
-.cartRow {
 
-  background: #dde3e3;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
-  padding: 8px;
-  /*box-shadow: 2px 0px 13px 7px rgba(25, 12, 255, 0.2);*/
-  margin: 40px;
-}
 .viewFoodCard {
   background: #dde3e3;
   display: inline-block;
@@ -167,3 +160,61 @@ input[type="file"] {
   /*box-shadow: 2px 0px 13px 7px rgba(25, 12, 255, 0.2);*/
   margin: 40px;
 }
+.cartQuantity:focus{
+  outline: none;
+}
+.cartQuantity{
+  outline: none;
+}
+
+.cartbody{
+  padding: 2px;
+}
+.cartOrder{
+  display: inline-block;
+  padding: 10px;
+  background: #1a2639;
+  color: #dddddd;
+  margin-right: 140px;
+  opacity: 85%;
+  float: right;
+  font-weight: bold;
+}
+.cartOrder:hover{
+  opacity: 100%;
+  color: #dddddd;
+}
+
+.subTot{
+  display: inline-block;
+  background: #dde3e3;
+  float: right;
+  margin-right: 140px;
+  font-size: large;
+  font-weight: bold;
+  padding: 10px;
+}
+.qtyAdd{
+  display: inline-block;
+  padding: 7px;
+  background: #1a2639;
+  color: #dddddd;
+  font-weight: bold;
+  opacity: 85%;
+}
+.qtyAdd:hover{
+  opacity: 100%;
+  color: #dddddd;
+}
+.qtyRemove{
+  display: inline-block;
+  padding: 7px;
+  background: #b5acac;
+  color: #1a2639;
+  opacity: 85%;
+}
+.qtyRemove:hover{
+  opacity: 100%;
+}
+
+
