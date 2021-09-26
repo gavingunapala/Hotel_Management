@@ -16,9 +16,6 @@ const CustomerReport = () => {
 
     //get logged Customer
     useEffect(() => {
-        // const loggedInUser = localStorage.getItem("user");
-        // console.log(loggedInUser);
-
         function getCustomer() {
             axios.get("http://localhost:8070/customer" ).then((res) => {
                 setCustomer(res.data);
@@ -26,7 +23,6 @@ const CustomerReport = () => {
             }).catch((err) => {
             })
         }
-
         getCustomer();
     }, []);
 
@@ -40,26 +36,27 @@ const CustomerReport = () => {
             x:32,
             y:32
         });
-
     }
-
 
     return (
         <div>
+            <br></br>
+            <div className="col-12 col-sm-6 col-md-6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/AdminPanelCustomers" className="btn btn-primary" role="button">
+                    Back to Admin Panel
+                </a>
+            </div>
         <div className="row1" id={'body'}>
-
             <div className="container" >
                 <br></br>
-
                 <div><label> Fortune Inn & Suites </label>
                 </div>
                 <div><label>{dateTime} </label>
                 </div>
-
                 <div className="col-11"> <br/>
                 <div className="">
                     <div className="row1">
-
                         <div className="col-12 col-sm-6 col-md-6">
                         </div>
                         <span className="counter pull-right"></span>
@@ -77,7 +74,6 @@ const CustomerReport = () => {
                                         <th className="text-center">Phone number</th>
                                         <th className="text-center">NIC Number</th>
                                         <th className="text-center">Email</th>
-
                                     </tr>
                                     </thead>
                                     <tbody className="text-center">
@@ -90,29 +86,23 @@ const CustomerReport = () => {
                                                 <td>{customer.NICNumber}</td>
                                                 <td>{customer.Email}</td>
                                                 <br />
-
                                                 <br /><br />
                                             </tr>
                                         );
                                     })}
-
                                     </tbody>
                                 </table>
                                 <br/>
                             </div>
                         </div>
                     </div></div>
-
             </div>
-
-
         </div>
     <Link className="btn btn-success btngena" role="button" id={"generate"}onClick={genaratePDF}>
         Generate Report&nbsp;&nbsp;
         <em className="fa fa-file-pdf-o" id="icon"></em>
     </Link>
 </div>
-
     )
 }
 export default CustomerReport;
