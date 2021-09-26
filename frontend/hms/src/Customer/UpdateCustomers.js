@@ -19,9 +19,6 @@ const CustomerProfile = ({match}) => {
 
     //get logged Customer
     useEffect(() => {
-        // const loggedInUser = localStorage.getItem("user");
-        // console.log(loggedInUser);
-
         function getCustomer() {
             axios.get("http://localhost:8070/customer/get/" + id).then((res) => {
                 setCustomer(res.data);
@@ -29,7 +26,6 @@ const CustomerProfile = ({match}) => {
             }).catch((err) => {
             })
         }
-
         getCustomer();
     }, []);
 
@@ -52,7 +48,6 @@ const CustomerProfile = ({match}) => {
     const PasswordSetter = (e) => {
         setPassword(e.target.value);
     }
-
     const onSubmit = () => {
         const UpdateCustomer = {
             Name: Name,
@@ -63,17 +58,12 @@ const CustomerProfile = ({match}) => {
             Password: Password,
         };
         his.push('/AdminPanelCustomers');
-        // const loggedInUser = localStorage.getItem("user");
-        // console.log(loggedInUser);
         axios.put('http://localhost:8070/customer/updateOne/' + id, UpdateCustomer).then(() => {
-
             alert("Customer Updated successfully!!!");
         }).catch((err) => {
             alert(err);
         })
     }
-
-
 
     return (
         <div>
@@ -97,11 +87,8 @@ const CustomerProfile = ({match}) => {
                         <div>
                             <form method="post" class="card">
                                 <br />
-                                {/*<h2 class="text-center">Student Registration</h2>*/}
                                 <br />
                                 <div className="container   ">
-                                    {/*<div><label>Enter First Name</label><input class="form-control" type="text"/>*/}
-                                    {/*</div>*/}
                                     <div class="form-group">
                                         <div><label>Name</label><input class="form-control" type="text" placeholder={Customer.Name} onChange={NameSetter} placeholder={Customer.Name}/>
                                         </div>
@@ -120,7 +107,6 @@ const CustomerProfile = ({match}) => {
                                         <button className="btn btn-warning" type="submit" onClick={onSubmit}>&nbsp;Update</button>
                                         <br />
                                         <br />
-
                                     </div>
                                 </div>
                             </form>
@@ -131,8 +117,6 @@ const CustomerProfile = ({match}) => {
                     <img src={img} loading="auto" alt="center" height="500"
                          width="500"/>
                 </div>
-
-
             </div>
         </div>
     )
