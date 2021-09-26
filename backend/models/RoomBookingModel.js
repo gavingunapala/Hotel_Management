@@ -20,7 +20,7 @@ const RoomBookingSchema = new Schema({
     },
     CurrentPrice : {
         type : Number,
-        required : true
+        required : false
     }
 })
 
