@@ -3,8 +3,6 @@ import {useHistory} from "react-router-dom";
 import axios from "axios";
 import img from '../Images/undraw_logic_n6th.png';
 
-
-
 //customer
 const CustomerRegistration = () => {
     const history = useHistory();
@@ -53,7 +51,6 @@ const CustomerRegistration = () => {
         })
     }
 
-
     return (
             <div>
                 <div className="row">
@@ -84,7 +81,6 @@ const CustomerRegistration = () => {
                                                     <button className="btn btn-primary" type="submit" onClick={onSubmit}>&nbsp;Register</button>
                                                     <br />
                                                     <br />
-
                                                 </div>
                                             </div>
                                     </form>
@@ -95,8 +91,6 @@ const CustomerRegistration = () => {
                             <img src={img} loading="auto" alt="center" height="600"
                                                                       width="500"/>
                         </div>
-
-
                 </div>
             </div>
     )
