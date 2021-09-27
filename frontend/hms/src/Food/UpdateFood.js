@@ -116,7 +116,7 @@ const UpdateFood = () => {
                                         </div>
 
                                         <div><label>Name</label><input class="form-control" placeholder={food.Name} type="text" onChange={nameSetter}/></div>
-                                        <div><label>Price(Rs)</label><input class="form-control" placeholder={food.Price} type="text" onChange={priceSetter}/></div>
+                                        <div><label>Price(Rs)</label><input class="form-control" placeholder={food.Price} min="0" type="Number" onChange={priceSetter}/></div>
                                         <br/>
                                         <button class="btn  btn-warning" type="submit" style={{fontWeight: "bold"}} onClick={onSubmit}>&nbsp;Update Food</button>
                                         <button className="btn-del btn btn-danger " style={{fontWeight: "bold"}} type="submit" onClick={() => {

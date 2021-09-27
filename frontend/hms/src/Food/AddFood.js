@@ -93,7 +93,7 @@ const AddFood = () => {
                                         </div>
 
                                         <div><label>Name</label><input class="form-control" type="text" onChange={nameSetter}/></div>
-                                        <div><label>Price(Rs)</label><input class="form-control" type="text" onChange={priceSetter}/></div>
+                                        <div><label>Price(Rs)</label><input class="form-control" min="0" type="Number" onChange={priceSetter}/></div>
                                         <br/>
                                         <button class="btn btn-primary" type="submit" onClick={onSubmit}>&nbsp;Add Food</button>
                                         <br />
