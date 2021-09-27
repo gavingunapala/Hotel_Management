@@ -40,6 +40,12 @@ const CustomerProfile = () => {
 
     return (
         <div>
+            <br />
+            <a className="foodPrices" href={"/"} >
+                <i className="fa fa-home" style={{fontWeight: "bold"}}>
+                </i> Home
+            </a>
+            <button onClick={Logout} className="btn qtyAdd profileButton" type="submit">Logout</button>
             <br></br>
             <h2 className="text-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -48,8 +54,7 @@ const CustomerProfile = () => {
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button onClick={Logout} className="btn btn-success form-btn" type="submit">Logout
-                </button></h2>
+            </h2>
             <div className="row">
                 <div className="col-sm-2"></div>
                 <div className=" col-sm-3">
