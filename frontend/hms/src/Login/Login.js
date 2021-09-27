@@ -36,7 +36,13 @@ const Login = () => {
 
     return (
         <div>
+
             <div id="login-one" className="login-one">
+                <br /><br />
+                <a className="foodPrices" href={"/"} >
+                    <i className="fa fa-home" style={{fontWeight: "bold"}}>
+                    </i> Home
+                </a>
                 <form className="login-one-form">
                     <div className="col">
                         <div className="login-one-ico"><i className="fa fa-unlock-alt" id="lockico"></i></div>
