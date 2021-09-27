@@ -20,11 +20,8 @@ const AdminSideNav = () => {
                 <ul className="list-unstyled components">
                     <li>
                         <a href="/foodManagement">Foods</a>
-                        <a href="/ViewAllRooms">Rooms</a>
                         <a href="/AdminPanelCustomers">Customers</a>
                         <a href="/EmployeeView">Employee</a>
-                        <a href="/BookRooms">Book Room</a>
-                        <a href="/UpdateBookedRooms">Update Booked Room</a>
                         <a href="/ManageRoomsDashboard">Rooms Dashboard</a>
                         <a href="/RoomBookingDashboard">Room Bookings Dashboard</a>
                         <a href="/PaymentView">Payments</a>

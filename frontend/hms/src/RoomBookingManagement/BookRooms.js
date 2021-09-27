@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../CSS/RoomBookingManagement/BookRooms.css';
 import img from "../Images/undraw_My_documents_re_13dc.png";
 import {useHistory, useParams} from 'react-router-dom';
@@ -7,17 +7,39 @@ import ProgressBar from "../comps/ProgressBar.js";
 import '../CSS/ProgressBar/ProgressBar.css'
 
 
-const BookRooms = () => {
+const BookRooms = ({match}) => {
+
+    console.log(match.params.id);
+    const id = match.params.id;
     const history = useHistory();
-    const [RoomType, setRoomType] = useState("");
+
+    const [Room, setRoom] = useState([]);
+
+    useEffect(() => {
+        function getRoom() {
+            axios.get("http://localhost:8070/Room/get/" + id).then((res) => {
+                setRoom(res.data);
+                console.log(res.data);
+            }).catch((err) => {
+            })
+        }
+
+        getRoom();
+    }, []);
+
+
+
+
+
+    // const [RoomType, setRoomType] = useState("");
     const [NoOfPeople, setNoOfPeople] = useState("");
     const [CheckInDate, setCheckInDate] = useState("");
     const [CheckOutDate, setCheckOutDate] = useState("");
 
-
-    const roomtypeSetter = (e) => {
-        setRoomType(e.target.value);
-    }
+    const price = Room.CurrentPrice
+    // const roomtypeSetter = (e) => {
+    //     setRoomType(e.target.value);
+    // }
     const noofpeopleSetter = (e) => {
         setNoOfPeople(e.target.value);
     }
@@ -31,7 +53,7 @@ const BookRooms = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         const newRoomBooking = {
-            RoomType: RoomType,
+            RoomType: Room.RoomType,
             NoOfPeople: NoOfPeople,
             CheckInDate: CheckInDate,
             CheckOutDate: CheckOutDate
@@ -39,7 +61,7 @@ const BookRooms = () => {
         };
         axios.post('http://localhost:8070/RoomBooking/add', newRoomBooking).then(() => {
             alert("New Room Booked successfully!");
-            history.push('/');
+            history.push({pathname:'/PayPaymentsRooms', state : {CheckInDate: CheckInDate, CheckOutDate: CheckOutDate,price:price},});
         }).catch((err) => {
             alert(err);
         })
@@ -65,16 +87,12 @@ const BookRooms = () => {
                                     <div className="" id='group'>
                                         <br/>
                                         <div><label for="type">Room Type</label>
-                                            <select className="form-control"
+                                            <input className="form-control"
                                                     name="type"
-                                                    id="type" onChange={roomtypeSetter}>
-                                                <option>Choose</option>
-                                                <option>Premium Double Room</option>
-                                                <option>Cilantro Suite</option>
-                                                <option>Executive Room with Lounge Access</option>
-                                                <option>Superior Twin Room</option>
-                                                <option>Superior King Room</option>
-                                            </select>
+                                                   value={Room.RoomType}
+                                                    id="type"
+                                            >
+                                            </input>
                                         </div>
                                         <div><label>No Of People</label><input id='left' className="form-control" type="number" onChange={noofpeopleSetter}  /></div>
                                         <div><label>Check In Date</label><input className="form-control" type="date" onChange={checkindateSetter} /></div>

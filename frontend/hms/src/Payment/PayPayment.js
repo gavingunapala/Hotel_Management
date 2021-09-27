@@ -1,11 +1,12 @@
 import React,{useEffect, useState} from 'react';
 import '../CSS/payment/payment.css';
 import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 const PayPayments = () => {
     const [Cart, setCart] = useState([]);
     var subTotal = useState(0);
-
+    let his = useHistory();
 
     useEffect(() => {
 

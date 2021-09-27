@@ -90,9 +90,9 @@ const RoomBookingDashboard = () => {
                                             <td>{Roombooking.CheckInDate.split('T')[0]}</td>
                                             <td>{Roombooking.CheckOutDate.split('T')[0]}</td>
                                             <br />
-                                            <Link class="btn btn-primary" role="button" to={`/ViewBookedRooms/${Roombooking._id}`}>
-                                                <em className="fa fa-eye"  id="icon"></em>
-                                            </Link>
+                                            {/*<Link class="btn btn-primary" role="button" to={`/ViewBookedRooms/${Roombooking._id}`}>*/}
+                                            {/*    <em className="fa fa-eye"  id="icon"></em>*/}
+                                            {/*</Link>*/}
                                             <Link class="btn btn-success" role="button" to={`/UpdateBookedRooms/${Roombooking._id}`}>
                                                 <em className="fa fa-edit" id="icon"></em>
                                             </Link>
