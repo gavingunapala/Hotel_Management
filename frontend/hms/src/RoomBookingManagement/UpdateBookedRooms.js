@@ -4,6 +4,7 @@ import img from "../Images/undraw_Browsing_online_re_umsa.png";
 import {useHistory} from "react-router-dom";
 import axios from "axios";
 
+
 const UpdateBookedRooms = ({match}) => {
     console.log(match.params.id);
     const id = match.params.id;
@@ -64,8 +65,7 @@ const UpdateBookedRooms = ({match}) => {
 
     return (
         <div>
-            <br>
-            </br>
+
             <a className="btn btn-default foodPrices" href={"/RoomBookingDashboard"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
             </a>

@@ -24,7 +24,7 @@ const RoomBookingSchema = new Schema({
     },
     UserID :{
         type : String,
-        required: true
+        // required: true
     },
 })
 

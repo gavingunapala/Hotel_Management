@@ -50,15 +50,16 @@ const RoomManagementReport = () => {
     return (
         <div>
             <div className="row1" id={'body'}>
-
+                <br></br>
                 <div className="container" >
                     <br></br>
-
                     <div><label> Fortune Inn & Suites </label>
                     </div>
                     <div><label>{dateTime} </label>
                     </div>
-
+                    <a className="btn btn-default foodPrices" href={"/ViewAllRooms"} >
+                        <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
+                    </a>
                     <div className="col-11"> <br/>
                         <div className="">
                             <div className="row1">

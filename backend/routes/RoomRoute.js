@@ -100,4 +100,35 @@ router.route("/updateOne/:id").put(async (req, res) => {
     res.json(room);
 });
 
+//sort Rooms
+router.get("/sort", async (req, res) =>{
+
+    let query;
+    const reqQuery = { ...req.query};
+    const removeFields = ["sort"];
+    removeFields.forEach(params => delete reqQuery[params]);
+
+    let queryStr = JSON.stringify(reqQuery);
+
+    queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, (match) => `$${match}`);
+
+    console.log(queryStr);
+    try {
+
+        const items = await RoomModel.find(JSON.parse(queryStr));
+        res.status(200).json({
+            status: 'success',
+            data: {
+                items
+            }
+        });
+    }catch (err) {
+        res.status(404).json({
+            status: 'fail',
+            message: err
+        });
+
+    }});
+
+
 module.exports = router;

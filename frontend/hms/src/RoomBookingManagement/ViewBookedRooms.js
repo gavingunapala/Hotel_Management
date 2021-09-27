@@ -3,6 +3,7 @@ import img from '../Images/undraw_Booked_re_vtod.png';
 import '../CSS/RoomBookingManagement/ViewBookedRooms.css';
 import axios from "axios";
 import {useHistory} from "react-router-dom";
+import Greeting from "../Login/Greeting";
 
 const ViewBookedRooms = ({match}) => {
 
@@ -36,7 +37,9 @@ const ViewBookedRooms = ({match}) => {
 
     return (
         <div>
-            <br></br>
+            <br />
+
+            <br />
             <a className="btn btn-default foodPrices" href={"/RoomBookingDashboard"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
             </a>

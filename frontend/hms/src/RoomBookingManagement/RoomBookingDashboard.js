@@ -45,7 +45,7 @@ const RoomBookingDashboard = () => {
 
                     <div class="col-12 col-sm-6 col-md-6">
                         <a className="btn btn-default foodPrices" href={"/"} >
-                            <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
+                            <i className="fa fa-home" style={{fontWeight: "bold"}}> </i> Home
                         </a>
                     </div>
                     <div className="form-group pull-right col-lg-4">
