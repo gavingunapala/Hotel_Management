@@ -217,4 +217,15 @@ input[type="file"] {
   opacity: 100%;
 }
 
+.loginButton{
+  float:right;
+  margin-right: 120px;
+
+}
+
+.profileButton{
+  float:right;
+  margin-right: 20px;
+
+}
 

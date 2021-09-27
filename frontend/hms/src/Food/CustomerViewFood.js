@@ -1,17 +1,22 @@
 import React, {useState, useEffect} from "react";
 import Search from "../Common/Search";
 import axios from "axios";
+import {useHistory} from "react-router-dom";
+import LogoutNav from "../Login/Greeting";
+import Greeting from "../Login/Greeting";
+
 
 const CustomerViewFood = () => {
 
     const [food, setFood] = useState();
     const [quantity, setQuantity] = useState(1);
-    // const [name, setName] = useState("");
-    // const [price, setPrice] = useState("")
     const name = useState("");
     const price = useState("");
     const [SearchWord, setSearchWord] = useState('');
-    const[userId, setUserId] = useState('temp');
+    const[userId, setUserId] = useState('');
+    const[isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const his = useHistory();
 
     const quantitySetter = (e) => {
         setQuantity(e.target.value);
@@ -21,6 +26,7 @@ const CustomerViewFood = () => {
         const loggedInUser = localStorage.getItem("user");
         if(loggedInUser != null){
             setUserId(loggedInUser);
+            setIsLoggedIn(true);
         }
 
         const fetchFood = async () => {
@@ -33,45 +39,30 @@ const CustomerViewFood = () => {
 
     console.log(food)
 
-    const AddToCart = (e) => {
-        // nameSetter(e);
-        // priceSetter(e);
-        const newFood = {
-            UserID: userId,
-            Name: name,
-            Price: price,
-            Quantity: quantity
-        };
-        axios.post('http://localhost:8070/cart/add', newFood).then(() => {
-            alert("Item added to cart");
-        }).catch((err) => {
-            alert(err);
-        })
-    }
-
 
     const onSubmit = (name, price)  => {
-
-        const newFood = {
-            UserID: userId,
-            Name: name,
-            Price: price,
-            Quantity: quantity
-        };
-        axios.post('http://localhost:8070/cart/add', newFood).then(() => {
-            alert("Item added to cart");
-        }).catch((err) => {
-            alert(err);
-        })
-        //
-        // this.props.addItem(newItem, this.props.history);
+        if(userId != '') {
+            const newFood = {
+                UserID: userId,
+                Name: name,
+                Price: price,
+                Quantity: quantity
+            };
+            axios.post('http://localhost:8070/cart/add', newFood).then(() => {
+                alert("Item added to cart");
+            }).catch((err) => {
+                alert(err);
+            })
+        }
+        else{
+            his.push('/Login');
+        }
     }
-
-
-
 
     return (
         <div>
+            <br />
+            <Greeting isLoggedIn={isLoggedIn} />
             <br />
             <a className="foodPrices" href={"/"} >
                 <i className="fa fa-home" style={{fontWeight: "bold"}}>

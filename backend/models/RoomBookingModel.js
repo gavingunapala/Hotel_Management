@@ -21,7 +21,11 @@ const RoomBookingSchema = new Schema({
     CurrentPrice : {
         type : Number,
         required : false
-    }
+    },
+    UserID :{
+        type : String,
+        required: true
+    },
 })
 
 // table and path

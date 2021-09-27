@@ -95,14 +95,23 @@ const PayPayments = () => {
         };
         axios.post('http://localhost:8070/Payment/add', newpayment).then(() => {
             alert("newpayment added");
+            deleteFood(loggedInUser);
             his.push('/customerViewFood');
         }).catch((err) => {
             alert(err);
-        })
+        });
+
+
     }
 
 
-
+    const deleteFood = (id) =>{
+        console.log(id);
+        axios.delete('http://localhost:8070/cart/deleteSorted/'+ id).then(()=>{
+        }).catch((err)=>{
+            alert(err);
+        })
+    };
 
     return (
         <div className={'background-image'}>
