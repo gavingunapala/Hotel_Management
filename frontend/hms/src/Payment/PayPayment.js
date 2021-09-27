@@ -128,14 +128,14 @@ const PayPayments = () => {
                                 <div className="container   ">
                                     <div><label>Name On Credit Card</label><input class="form-control" type="text" onChange={NameSetter}/>
                                     </div>
-                                        <div><label>Phone Number</label><br/><input class="form-control" type="number" onChange={PhoneNumberSetter}/></div>
+                                        <div><label>Phone Number</label><br/><input class="form-control" type="number"  min='0' onChange={PhoneNumberSetter}/></div>
                                         <div><label>NIC Number</label><input class="form-control" type="text"onChange={NICNumberSetter}/></div>
                                         <div className={"row"}>
                                             <div className="col-sm-7">
-                                                <label>Card Number</label><br/><input className="form-control" type="number"onChange={CardNumberSetter}/>
+                                                <label>Card Number</label><br/><input className="form-control" type="number" min='0' onChange={CardNumberSetter}/>
                                             </div>
                                             <div className="col-sm-4">
-                                                <label>CVV Number</label><br/><input className="form-control" type="number"onChange={CVVSetter}/>
+                                                <label>CVV Number</label><br/><input className="form-control" type="number" min='0' onChange={CVVSetter}/>
                                             </div>
                                         </div>
                                         <div><label>Expire Date</label><input class="form-control" type="date"onChange={ExpierDateSetter}/></div>
