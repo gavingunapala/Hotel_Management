@@ -42,17 +42,22 @@ const CustomerViewFood = () => {
 
     const onSubmit = (name, price)  => {
         if(userId != '') {
-            const newFood = {
-                UserID: userId,
-                Name: name,
-                Price: price,
-                Quantity: quantity
-            };
-            axios.post('http://localhost:8070/cart/add', newFood).then(() => {
-                alert("Item added to cart");
-            }).catch((err) => {
-                alert(err);
-            })
+            if(quantity >= 1) {
+                const newFood = {
+                    UserID: userId,
+                    Name: name,
+                    Price: price,
+                    Quantity: quantity
+                };
+                axios.post('http://localhost:8070/cart/add', newFood).then(() => {
+                    alert("Item added to cart");
+                }).catch((err) => {
+                    alert(err);
+                })
+            }
+            else {
+                alert("At least one item must be added");
+            }
         }
         else{
             his.push('/Login');
@@ -95,7 +100,7 @@ const CustomerViewFood = () => {
                     <div className="foodPrices"
                     >Rs. {food.Price}.00</div>
 
-                    <input className="foodQuantity" type="Number" defaultValue="1" onChange={quantitySetter}></input>
+                    <input className="foodQuantity" type="Number" min="1" defaultValue="1" onChange={quantitySetter}></input>
                     <div className="p-2 ">
                         <div className="text-center" >
                             <button className={"btn qtyAdd btn-large"} onClick={()=>onSubmit(food.Name, food.Price)} >
