@@ -34,22 +34,6 @@ const FoodManagement = () => {
         })
     };
 
-    const editFood = (id, path) => {
-        // his.push(path);
-    }
-
-    const generatePDF=()=>{
-        let doc =new jsPDF('p','pt','a1');
-        doc.html(document.querySelector('#body'),{
-            callback:function (doc) {
-                doc.save('abc.pdf');
-            },
-            margin:[60,60,60,60],
-            x:32,
-            y:32
-        });
-
-    }
 
     return (
         <div className="row1">
@@ -74,7 +58,7 @@ const FoodManagement = () => {
                     <a href="/addFood" className="btn btn-primary" role="button" style={{fontWeight: "bold"}}>
                         <i className="fa fa-plus"></i> Add New Food
                     </a>
-                    <button className="btn btn-success btngena" type="submit" style={{fontWeight: "bold"}} onClick={generatePDF} >Generate Report</button>
+                    <a href={"/FoodReport"} className="btn btn-success btngena" type="submit" style={{fontWeight: "bold"}} >Generate Report</a>
 
 
                     <br /><br />

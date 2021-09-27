@@ -39,6 +39,7 @@ import ShoppingCart from "./ShoppingCart/ShoppingCart";
 import PaymentView from "./Payment/ViewAllPayment";
 import RoomManagementReport from "./Room_Management/RoomManagementReport";
 import RoomBookingManagementReport from "./RoomBookingManagement/RoomBookingManagementReport";
+import GenerateFoodReport from "./Food/GenerateFoodReport";
 
 
 
@@ -56,6 +57,7 @@ function App() {
             <Route exact path="/foodManagement" component={FoodManagement}/>
             <Route exact path="/updateFood/:id" component={UpdateFood}/>
             <Route exact path="/shoppingCart" component={ShoppingCart}/>
+            <Route exact path="/FoodReport" component={GenerateFoodReport}/>
 
           <Route path="/a" component={CustomerRegistration}/>
 
