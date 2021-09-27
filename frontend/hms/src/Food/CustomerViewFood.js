@@ -1,17 +1,19 @@
 import React, {useState, useEffect} from "react";
 import Search from "../Common/Search";
 import axios from "axios";
+import {useHistory} from "react-router-dom";
+
 
 const CustomerViewFood = () => {
 
     const [food, setFood] = useState();
     const [quantity, setQuantity] = useState(1);
-    // const [name, setName] = useState("");
-    // const [price, setPrice] = useState("")
     const name = useState("");
     const price = useState("");
     const [SearchWord, setSearchWord] = useState('');
-    const[userId, setUserId] = useState('temp');
+    const[userId, setUserId] = useState('');
+
+    const his = useHistory();
 
     const quantitySetter = (e) => {
         setQuantity(e.target.value);
@@ -33,38 +35,24 @@ const CustomerViewFood = () => {
 
     console.log(food)
 
-    const AddToCart = (e) => {
-        // nameSetter(e);
-        // priceSetter(e);
-        const newFood = {
-            UserID: userId,
-            Name: name,
-            Price: price,
-            Quantity: quantity
-        };
-        axios.post('http://localhost:8070/cart/add', newFood).then(() => {
-            alert("Item added to cart");
-        }).catch((err) => {
-            alert(err);
-        })
-    }
-
 
     const onSubmit = (name, price)  => {
-
-        const newFood = {
-            UserID: userId,
-            Name: name,
-            Price: price,
-            Quantity: quantity
-        };
-        axios.post('http://localhost:8070/cart/add', newFood).then(() => {
-            alert("Item added to cart");
-        }).catch((err) => {
-            alert(err);
-        })
-        //
-        // this.props.addItem(newItem, this.props.history);
+        if(userId != '') {
+            const newFood = {
+                UserID: userId,
+                Name: name,
+                Price: price,
+                Quantity: quantity
+            };
+            axios.post('http://localhost:8070/cart/add', newFood).then(() => {
+                alert("Item added to cart");
+            }).catch((err) => {
+                alert(err);
+            })
+        }
+        else{
+            his.push('/Login');
+        }
     }
 
 
