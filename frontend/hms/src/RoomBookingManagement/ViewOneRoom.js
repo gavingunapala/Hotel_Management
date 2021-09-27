@@ -99,7 +99,7 @@ const ViewOneRoom = ({match}) => {
 
                                     <div className="">
                                             <br/>
-                                            <a href={"/BookRooms"} style={{marginLeft:"300px"}}>
+                                            <a href={`/BookRooms/${Room._id}`} style={{marginLeft:"300px"}}>
                                                 <h3 className='btn btn-primary'>Book Rooms</h3>
                                             </a>
                                     </div>
