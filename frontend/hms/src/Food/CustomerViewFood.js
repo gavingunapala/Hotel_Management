@@ -11,14 +11,18 @@ const CustomerViewFood = () => {
     const name = useState("");
     const price = useState("");
     const [SearchWord, setSearchWord] = useState('');
+    const[userId, setUserId] = useState('temp');
 
     const quantitySetter = (e) => {
         setQuantity(e.target.value);
     }
 
-
-
     useEffect(() => {
+        const loggedInUser = localStorage.getItem("user");
+        if(loggedInUser != null){
+            setUserId(loggedInUser);
+        }
+
         const fetchFood = async () => {
             const res = await fetch(`http://localhost:8070/food/`);
             const data = await res.json();
@@ -33,7 +37,7 @@ const CustomerViewFood = () => {
         // nameSetter(e);
         // priceSetter(e);
         const newFood = {
-            UserID: "userID",
+            UserID: userId,
             Name: name,
             Price: price,
             Quantity: quantity
@@ -49,7 +53,7 @@ const CustomerViewFood = () => {
     const onSubmit = (name, price)  => {
 
         const newFood = {
-            UserID: "xfxf",
+            UserID: userId,
             Name: name,
             Price: price,
             Quantity: quantity
