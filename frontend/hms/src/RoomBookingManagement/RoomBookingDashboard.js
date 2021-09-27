@@ -39,8 +39,8 @@ const RoomBookingDashboard = () => {
     return (
         <div className="row1">
             <div className="col-2"> <AdminSideNav/></div>
-
             <div class="col-10">
+                <br />
                 <div class="">
                     <div className="searchBar">
                         <input type="search" className="form-control" placeholder="Search..." onChange={event =>{setSearchWord(event.target.value)}}/>

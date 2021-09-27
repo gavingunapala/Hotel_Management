@@ -55,11 +55,9 @@ const PaymentView = () => {
                 {/*end*/}
                 <div className="">
                     <div className="row1">
-<h1>All Payments</h1>
                         <div className="col-12 col-sm-6 col-md-6">
                         </div>
-                        <span className="counter pull-right"></span>
-                        <br/><br/>
+
                     </div>
 
                     <br /><br />
@@ -122,11 +120,6 @@ const PaymentView = () => {
                                 {/*<button className="btn btn-primary">*/}
                                 {/*    <Link to="/">+ Back to Home</Link>*/}
                                 {/*</button>*/}
-                                <div className="col-12 col-sm-6 col-md-6">
-                                    <a href="/" className="btn btn-primary" role="button">
-                                        <i className="fa fa-plus"></i>Back to Home
-                                    </a>
-                                </div>
                                 <br/>
                             </div>
                         </div>

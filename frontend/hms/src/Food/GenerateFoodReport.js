@@ -48,7 +48,6 @@ const GenerateFoodReport = () => {
             </a>
             <br />
             <div className="searchBar">
-                <i className="fa fa-search"></i>
                 <input type="search" className="form-control" placeholder="Search..." onChange={event =>{setSearchWord(event.target.value)}}/>
             </div>
             <div className="row1" id={'body'}>

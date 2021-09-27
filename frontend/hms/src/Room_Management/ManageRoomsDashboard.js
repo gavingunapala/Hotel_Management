@@ -47,7 +47,6 @@ const ManageRoomsDashboard = () => {
             <div className="col-10"> <br/>
                 <div className="col-xs-6">
             <div className="searchBar">
-                <i className="fa fa-search"></i>
                 <input type="search" className="form-control" placeholder="Search..." onChange={event =>{setSearchWord(event.target.value)}}/>
             </div>
                 </div>
