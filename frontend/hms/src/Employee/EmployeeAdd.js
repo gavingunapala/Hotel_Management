@@ -60,6 +60,9 @@ const EmployeeAdd = () => {
 
     return (
         <div>
+            <a className="btn btn-default foodPrices" href={"/EmployeeView"} >
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> </i> Back
+            </a>
             <div className="row1">
                 <div className="col-sm-2"></div>
                 <div class=" col-sm-3">
@@ -85,7 +88,7 @@ const EmployeeAdd = () => {
                                         <div><label>Salary</label><input className="form-control"
                                                                             type="number" min='0' onChange={SalarySetter}/></div>
                                         <br/><center>
-                                        <button class="btn btn-primary " type="submit" onClick={onSubmit}>ADD EMPLOYEE</button></center>
+                                        <button class="btn btn-primary " type="submit" onClick={onSubmit}>Add Employee</button></center>
                                         <br />
                                         <br />
 

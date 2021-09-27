@@ -63,7 +63,7 @@ function App() {
 
                 <Route path="/EmployeeAdd" component={EmployeeAdd}/>
                 <Route path="/AdminEmployeeUpdate/:id" component={AdminEmployeeUpdate}/>
-                <Route path="/EmployeeReport" component={EmployeeReport}/>
+                <Route path="/EmployeeReport/:id" component={EmployeeReport}/>
 
 
                 <Route path="/PayPayments" component={PayPayments}/>

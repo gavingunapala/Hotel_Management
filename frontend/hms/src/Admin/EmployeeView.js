@@ -64,10 +64,8 @@ const EmployeeView = () => {
 
 
                             <a href="/EmployeeAdd" className="btn btn-primary" role="button">
-                                <i className="fa fa-plus"></i>Add New Employee
+                                <i className="fa fa-plus"></i> Add New Employee
                             </a>
-                                    <button className="btn btn-success btngena" type="submit" >Generate Report</button>
-
 
                         <br /><br />
                         <div className="row1">
@@ -104,7 +102,7 @@ const EmployeeView = () => {
                                                     <td>{employee.Jobtitle}</td>
                                                     <td>{employee.Salary}</td>
                                                     <br />
-                                                    <Link class="btn btn-success" role="button"  to={`/EmployeeReport`}> bonus<br />
+                                                    <Link class="btn btn-primary" role="button"  to={`/EmployeeReport/${employee._id}`}>
                                                         <em className="fa fa-calculator" id="icon"></em>
                                                     </Link>
                                                     <Link class="btn btn-success" role="button" to={`AdminEmployeeUpdate/${employee._id}`}>
@@ -128,11 +126,7 @@ const EmployeeView = () => {
                                     {/*<button className="btn btn-primary">*/}
                                     {/*    <Link to="/">+ Back to Home</Link>*/}
                                     {/*</button>*/}
-                                    <div className="col-12 col-sm-6 col-md-6">
-                                        <a href="/" className="btn btn-primary" role="button">
-                                            <i className="fa fa-plus"></i>Back to Home
-                                        </a>
-                                    </div>
+
                                     <br/>
                                 </div>
                             </div>

@@ -79,6 +79,9 @@ const AdminEmployeeUpdate = ({match}) => {
 
     return (
         <div className={"bodyyy"}>
+            <a className="btn btn-default foodPrices" href={"/EmployeeView"} >
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> </i> Back
+            </a>
             <div className={"col-sm-4"} style={{marginLeft: '550px', marginTop: '100px'}} >
                     <div class=" justify-content-center align-items-center ">
                             <form method="post" class="cardUpdate">

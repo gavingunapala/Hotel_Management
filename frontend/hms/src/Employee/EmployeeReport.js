@@ -5,8 +5,9 @@ import {Link} from "react-router-dom";
 import jsPDF from "jspdf";
 
 
-const EmployeeReport = () => {
-    const id = '611f3d814fa93940d035a83e';
+const EmployeeReport = ({match}) => {
+    const id = match.params.id;
+    console.log(id);
     let valueofcal;
     let calc;
 
@@ -58,7 +59,7 @@ const genaratePDF=()=>{
         let doc =new jsPDF('p','pt','a1');
         doc.html(document.querySelector('#body'),{
             callback:function (doc) {
-                doc.save('abc.pdf');
+                doc.save('Employee Report.pdf');
             },
             margin:[60,60,60,60],
             x:32,
@@ -68,6 +69,10 @@ const genaratePDF=()=>{
 }
 
     return (
+        <div>
+        <a className="btn btn-default foodPrices" href={"/EmployeeView"} >
+            <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> </i> Back
+        </a>
         <div className={'body'} >
         <div className={"container "}>
             <br />
@@ -128,7 +133,7 @@ const genaratePDF=()=>{
             </Link>
         </div>
 
-
+        </div>
         </div>
     )
 }
