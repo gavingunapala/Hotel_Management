@@ -3,13 +3,22 @@ import Search from "../Common/Search";
 import img from '../Images/christopher-jolly-GqbU78bdJFM-unsplash.jpg'
 import '../CSS/RoomBookingManagement/ViewAllRooms.css'
 import {Link} from "react-router-dom";
+import Greeting from "../Login/Greeting";
 
 
 const ViewAllRooms = () => {
     const [Room, setRoom] = useState([]);
     const [SearchWord, setSearchWord] = useState('');
+    const[isLoggedIn, setIsLoggedIn] = useState(false);
+    const[userId, setUserId] = useState('');
 
     useEffect(() => {
+        const loggedInUser = localStorage.getItem("user");
+        if(loggedInUser != null){
+            setUserId(loggedInUser);
+            setIsLoggedIn(true);
+        }
+
         const getRooms = async () => {
             const res = await fetch(`http://localhost:8070/Room/`);
             const data = await res.json();
@@ -22,8 +31,11 @@ const ViewAllRooms = () => {
 
     return (
         <div>
+            <br />
+            <Greeting isLoggedIn={isLoggedIn} />
+            <br />
             <a className="btn btn-default foodPrices" href={"/"} >
-                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
+                <i className="fa fa-home" style={{fontWeight: "bold"}}> Home</i>
             </a>
             {/*<Search />*/}
             <div className="col-xs-6">

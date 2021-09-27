@@ -1,6 +1,6 @@
 .login-one-form {
     transform: translate(-50%, -50%);
-    top: 50%;
+    top: 46%;
     max-width: 350px;
     width: 350px;
     left: 50%;
@@ -14,7 +14,7 @@
 }
 
 .login-one {
-    background-image: url("../../Images/LoginPic.jpg");
+    background-image: url("../../Images/loginbg.png");
     min-height: 100%;
     height: 1000px;
     background-size: cover;

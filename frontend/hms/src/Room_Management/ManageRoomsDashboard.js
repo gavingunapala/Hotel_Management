@@ -37,32 +37,35 @@ const ManageRoomsDashboard = () => {
     }, [Room]);
 
     return (
+        <div>
+
+
+
+
         <div className="row1">
             <div className="col-2"> <AdminSideNav/></div>
-
-            <div class="col-10">
-                <div class="">
-
-                    <div class="col-12 col-sm-6 col-md-6">
-                        <a className="btn btn-default foodPrices" href={"/"} >
-                            <i className="fa fa-home" style={{fontWeight: "bold"}}> Home</i>
-                        </a>
-                    </div>
-                    <div className="form-group pull-right col-lg-4">
-                        <input type="text" id='search' className="search form-control" placeholder="Search by typing here.."/>
-                    </div>
-                    <span className="counter pull-right"></span>
-                    <br/> <br/><br/>
+            <div className="col-10"> <br/>
+                <div className="col-xs-6">
+            <div className="searchBar">
+                <input type="search" className="form-control" placeholder="Search..." onChange={event =>{setSearchWord(event.target.value)}}/>
+            </div>
                 </div>
 
-                    <div class="card-header">
+                {/*<div class="">*/}
+
+                {/*    <div class="col-12 col-sm-6 col-md-6">*/}
+                {/*    </div>*/}
+
+                {/*</div>*/}
+
+                    {/*<div class="card-header">*/}
 
                             <a href="/AddRooms" className="btn btn-primary" role="button">
                                 <i className="fa fa-plus"></i>&nbsp;Add New Room
                             </a>
                         <a href={"/RoomManagementReport"} className="btn btn-success btngenarate" >Generate Report</a>
 
-                    </div>
+                    <br /><br />
 
                 <div class="row1">
                     <div class="col-12">
@@ -116,7 +119,9 @@ const ManageRoomsDashboard = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
+        </div>
         </div>
     )
 }

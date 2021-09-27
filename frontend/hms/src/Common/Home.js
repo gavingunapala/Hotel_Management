@@ -1,11 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import food from "../Images/homeFood.jpg";
 import bed from "../Images/homeRoom.jpg";
+import Greeting from "../Login/Greeting";
 
 const Home = () => {
+    const[isLoggedIn, setIsLoggedIn] = useState(false);
+    const[userId, setUserId] = useState('');
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem("user");
+        if(loggedInUser != null){
+            setUserId(loggedInUser);
+            setIsLoggedIn(true);
+        }
+    }, []);
     return (
         <div>
-            <br /><br />
+            <br />
+            <Greeting isLoggedIn={isLoggedIn} />
+            <br /><br /><br />
             <div className='container'>
                 <div className='row'>
                     <div className="col-md-6">

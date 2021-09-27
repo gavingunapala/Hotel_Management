@@ -50,7 +50,7 @@ const AdminPanelCustomers = () => {
                         <br/><br/>
                     </div>
                     <a href="/" className="btn btn-primary" role="button">
-                         Back to Home
+                         Customer Home
                     </a>
                     <a href={"/CustomerReport"} className="btn btn-success btngena" type="submit">Generate Report</a>
                     <br /><br />

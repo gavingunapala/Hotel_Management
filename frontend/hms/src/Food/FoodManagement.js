@@ -41,7 +41,6 @@ const FoodManagement = () => {
             <div className="col-10"> <br/>
                 <div className="col-xs-6">
                     <div className="searchBar">
-                        <i className="fa fa-search"></i>
                         <input type="search" className="form-control" placeholder="Search..." onChange={event =>{setSearchWord(event.target.value)}}/>
                     </div>
                 </div>
@@ -81,7 +80,7 @@ const FoodManagement = () => {
                                     {Food.filter((val)=>{
                                         if(SearchWord ==""){
                                         return val
-                                    }else if(val.Name.toLowerCase().includes(SearchWord.toLowerCase())) {
+                                    }else if(val.Name.toLowerCase().includes(SearchWord.toLowerCase()) || val.Code.toLowerCase().includes(SearchWord.toLowerCase())) {
                                             return val
                                         }
                                     }).map((food) => {

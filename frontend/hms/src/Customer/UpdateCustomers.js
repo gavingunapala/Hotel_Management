@@ -70,8 +70,8 @@ const CustomerProfile = ({match}) => {
             <br></br>
             <div className="col-12 col-sm-6 col-md-6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="/AdminPanelCustomers" className="btn btn-primary" role="button">
-                     Back to Admin Panel
+                <a className="btn btn-default foodPrices" href={"/AdminPanelCustomers"} >
+                    <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> </i> Back
                 </a>
             </div>
             <br></br>

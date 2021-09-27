@@ -51,8 +51,8 @@ const ViewOneRoom = ({match}) => {
             <br />
             <Greeting isLoggedIn={isLoggedIn} />
             <br />
-            <a className="btn btn-default " href={"/ViewAllRooms"} >
-                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
+            <a className="foodPrices " href={"/ViewAllRooms"} >
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
             </a>
             <div className="container profile profile-view" id="profile">
                 {/*<div className="row">*/}

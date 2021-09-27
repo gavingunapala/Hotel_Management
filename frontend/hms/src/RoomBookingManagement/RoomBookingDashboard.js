@@ -39,20 +39,12 @@ const RoomBookingDashboard = () => {
     return (
         <div className="row1">
             <div className="col-2"> <AdminSideNav/></div>
-
             <div class="col-10">
+                <br />
                 <div class="">
-
-                    <div class="col-12 col-sm-6 col-md-6">
-                        <a className="btn btn-default foodPrices" href={"/"} >
-                            <i className="fa fa-home" style={{fontWeight: "bold"}}> </i> Home
-                        </a>
+                    <div className="searchBar">
+                        <input type="search" className="form-control" placeholder="Search..." onChange={event =>{setSearchWord(event.target.value)}}/>
                     </div>
-                    <div className="form-group pull-right col-lg-4">
-                        <input type="text" id='search' className="search form-control" placeholder="Search by typing here.." onChange={event =>{setSearchWord(event.target.value)}}/>
-                    </div>
-                    <span className="counter pull-right"></span>
-                    <br/> <br/><br/>
                 </div>
 
                 <div class="card-header">
