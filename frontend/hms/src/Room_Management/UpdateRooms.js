@@ -133,7 +133,7 @@ const UpdateRooms = ({match}) => {
                                                 </label>
                                             </div>
                                                 <div className="text-center" >
-                                                    <img width="400px " src={url} /></div>
+                                                    <img width="320px " src={url} /></div>
                                                 <div className="output">
                                                     {error && <div className="error">{ error }</div>}
                                                     {file && <div>{ file.name }</div> }

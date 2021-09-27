@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import '../CSS/RoomBookingManagement/BookRooms.css';
-import img from "../Images/undraw_Sync_files_re_ws4c.png";
+import img from "../Images/undraw_Browsing_online_re_umsa.png";
 import {useHistory} from "react-router-dom";
 import axios from "axios";
 
@@ -75,7 +75,7 @@ const UpdateBookedRooms = ({match}) => {
                     <div><strong></strong><label></label></div>
                     <div className=" justify-content-center align-items-center">
                         <div>
-                            <form method="post" className="card" id="room">
+                            <form method="post" className="card" id="room" style={{opacity: '0.95'}}>
                                 <br/>
                                 <h2 className="text-center">Update Booked Rooms</h2>
                                 <br/>

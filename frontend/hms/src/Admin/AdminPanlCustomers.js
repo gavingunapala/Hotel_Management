@@ -3,22 +3,17 @@ import {Link, useHistory} from "react-router-dom";
 import axios from "axios";
 import AdminSideNav from "./AdminSideNav";
 import '../CSS/Admin/tableEmployee.css';
-import Search from "../Common/Search";
-
 
 const AdminPanelCustomers = () => {
-
 
     let his = useHistory();
     const [Customer, setCustomer] = useState([]);
     const [SearchWord, setSearchWord] = useState('');
 
-
     //get logged Customer
     useEffect(() => {
         // const loggedInUser = localStorage.getItem("user");
         // console.log(loggedInUser);
-
         function getCustomer() {
             axios.get("http://localhost:8070/customer" ).then((res) => {
                 setCustomer(res.data);
@@ -26,7 +21,6 @@ const AdminPanelCustomers = () => {
             }).catch((err) => {
             })
         }
-
         getCustomer();
     }, [Customer]);
     const deleteCustomer = (id) =>{
@@ -36,10 +30,6 @@ const AdminPanelCustomers = () => {
             alert(err);
         })
     };
-
-
-
-
 
     return (
         <div className="row1">
@@ -60,14 +50,10 @@ const AdminPanelCustomers = () => {
                         <span className="counter pull-right"></span>
                         <br/><br/>
                     </div>
-
-
                     <a href="/" className="btn btn-primary" role="button">
                          Back to Home
                     </a>
                     <a href={"/CustomerReport"} className="btn btn-success btngena" type="submit">Generate Report</a>
-
-
                     <br /><br />
                     <div className="row1">
                         <div className="col-12">
@@ -83,7 +69,6 @@ const AdminPanelCustomers = () => {
                                         <th className="text-center">Email</th>
                                         <th className="text-center">Password</th>
                                         <th className="text-center">Actions</th>
-
                                     </tr>
                                     </thead>
                                     <tbody className="text-center">
@@ -103,10 +88,6 @@ const AdminPanelCustomers = () => {
                                                 <td>{customer.Email}</td>
                                                 <td>{customer.Password}</td>
                                                 <br />
-                                                {/*<Link class="btn btn-warning" role="button"    to={`UpdateCustomers/${customer._id}`}>*/}
-
-                                                {/*    <em className="fa fa-eye" id="icon"></em>*/}
-                                                {/*</Link>*/}
                                                 <Link class="btn btn-success" role="button" to={`UpdateCustomers/${customer._id}`}>
                                                     <em className="fa fa-edit" id="icon"></em>
                                                 </Link>
@@ -125,14 +106,6 @@ const AdminPanelCustomers = () => {
 
                                     </tbody>
                                 </table>
-                                {/*<button className="btn btn-primary">*/}
-                                {/*    <Link to="/">+ Back to Home</Link>*/}
-                                {/*</button>*/}
-                                {/*<div className="col-12 col-sm-6 col-md-6">*/}
-                                {/*    <a href="/" className="btn btn-primary" role="button">*/}
-                                {/*        <i className="fa fa-plus"></i>Back to Home*/}
-                                {/*    </a>*/}
-                                {/*</div>*/}
                                 <br/>
                             </div>
                         </div>
