@@ -49,6 +49,9 @@ const RoomManagementReport = () => {
 
     return (
         <div>
+            <a className="btn btn-default foodPrices" href={"/ManageRoomsDashboard"} >
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
+            </a>
             <div className="row1" id={'body'}>
                 <br></br>
                 <div className="container" >
@@ -57,9 +60,7 @@ const RoomManagementReport = () => {
                     </div>
                     <div><label>{dateTime} </label>
                     </div>
-                    <a className="btn btn-default foodPrices" href={"/ViewAllRooms"} >
-                        <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
-                    </a>
+
                     <div className="col-11"> <br/>
                         <div className="">
                             <div className="row1">

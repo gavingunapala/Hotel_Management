@@ -98,7 +98,7 @@ const UpdateRooms = ({match}) => {
         <div>
             <br></br>
             <a className="btn btn-default foodPrices" href={"/ManageRoomsDashboard"} >
-                <i className="fa fa-home" style={{fontWeight: "bold"}}> Back</i>
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
             </a>
             <div className="row">
                 <div className="col-sm-2"></div>
