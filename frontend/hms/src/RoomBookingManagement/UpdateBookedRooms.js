@@ -54,7 +54,7 @@ const UpdateBookedRooms = ({match}) => {
             CheckOutDate: CheckOutDate
 
         };
-        his.push('/ViewBookedRooms');
+        his.push('/RoomBookingDashboard');
         axios.put('http://localhost:8070/RoomBooking/updateOne/' + id, updateRoomBooking).then(() => {
             alert("Room details Updated successfully!!!");
         }).catch((err) => {
