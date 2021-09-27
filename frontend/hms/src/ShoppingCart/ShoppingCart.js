@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import axios from "axios";
+import Greeting from "../Login/Greeting";
 
 const ShoppingCart = () => {
 
@@ -8,9 +9,13 @@ const ShoppingCart = () => {
     const [Cart, setCart] = useState([]);
     var subTotal = useState(0);
     const loggedInUser = localStorage.getItem("user");
+    const[isLoggedIn, setIsLoggedIn] = useState(false);
 
 
     useEffect(() => {
+        if(loggedInUser != null){
+            setIsLoggedIn(true);
+        }
         const fetchData = async () => {
             try{
                 let query = `?UserID[in]=${loggedInUser}`;
@@ -57,6 +62,8 @@ const ShoppingCart = () => {
 
     return (
         <div className="shoppingCart">
+            <br />
+            <Greeting isLoggedIn={isLoggedIn} />
             <br />
             <a className="foodPrices" href={"/customerViewFood"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
