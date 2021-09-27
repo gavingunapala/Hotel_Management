@@ -40,7 +40,7 @@ const BookRooms = () => {
         };
         axios.post('http://localhost:8070/RoomBooking/add', newRoomBooking).then(() => {
             alert("New Room Booked successfully!");
-            history.push('/RoomBookingDashboard');
+            history.push('/PayPaymentsRooms');
         }).catch((err) => {
             alert(err);
         })
