@@ -61,6 +61,7 @@ const CustomerViewFood = () => {
 
     return (
         <div>
+            <br />
             <Greeting isLoggedIn={isLoggedIn} />
             <br />
             <a className="foodPrices" href={"/"} >

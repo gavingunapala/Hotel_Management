@@ -217,4 +217,9 @@ input[type="file"] {
   opacity: 100%;
 }
 
+.loginButton{
+  float:right;
+  margin-right: 120px;
+
+}
 

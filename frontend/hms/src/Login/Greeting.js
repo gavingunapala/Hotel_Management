@@ -1,20 +1,26 @@
 import React from "react"
 import '../../src/CSS/Login/Login1.css'
 
-    function UserGreeting(props) {
-        return <h1>Welcome back!</h1>;
-    }
+function Logout  () {
+    localStorage.clear();
+};
 
-    function GuestGreeting(props) {
-        return <h1>Please sign up.</h1>;
+function UserGreeting() {
+    return (<a href="/Login" className="btn qtyAdd loginButton" onClick={Logout}>Logout</a>);
+}
+
+
+function GuestGreeting() {
+    return (<a href="/Login" className="qtyAdd loginButton">Login</a>);
+}
+
+function Greeting(props) {
+    const isLoggedIn = props.isLoggedIn;
+    if (isLoggedIn) {
+        return <UserGreeting/>;
     }
-    function Greeting(props) {
-        const isLoggedIn = props.isLoggedIn;
-        if (isLoggedIn) {
-            return <UserGreeting />;
-        }
-        return <GuestGreeting />;
-    }
+    return <GuestGreeting/>;
+}
 
 
 export default Greeting;
