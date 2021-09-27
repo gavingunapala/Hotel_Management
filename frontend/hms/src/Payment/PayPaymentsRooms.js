@@ -1,16 +1,18 @@
 import React,{useEffect, useState} from 'react';
 import '../CSS/payment/payment.css';
 import axios from "axios";
+import {useHistory,useLocation} from "react-router-dom";
 
 
 const PayPaymentsRooms = () => {
 
-    const id ="6144f176789c4c0728b51885";
+    // const id ="61515b7df0a05a19a07b8cb2";
     let TotlePrice;
     // const price = 30000;
+    let his = useHistory();
 
+    let a =  useLocation()
 
-    // console.log(id);
 
     const [Roombooking, setRoomBooking] = useState([]);
     const [indate, setindate] = useState();
@@ -20,20 +22,28 @@ const PayPaymentsRooms = () => {
 
 
     useEffect(() => {
-        function getEmployee() {
-            axios.get("http://localhost:8070/RoomBooking/get/"+ id).then((res) => {
-                setRoomBooking(res.data);
-                setindate(res.data.CheckInDate);
-                setoutdate(res.data.CheckOutDate);
-                setprice(res.data.CurrentPrice);
-                console.log(res.data);
-            }).catch((err) => {
-            })
+        // function getEmployee() {
+        //     axios.get("http://localhost:8070/RoomBooking/get/"+ id).then((res) => {
+        //         setRoomBooking(res.data);
+        //         setindate(res.data.CheckInDate);
+        //         setoutdate(res.data.CheckOutDate);
+        //         setprice(res.data.CurrentPrice);
+        //         console.log(res.data);
+        //     }).catch((err) => {
+        //     })
+        //
+        //
+        // }
+        // getEmployee();
+        console.log(a.state.CheckInDate);
+        console.log(a.state.CheckOutDate);
+        console.log(a.state.price);
 
+        setindate(a.state.CheckInDate);
+        setoutdate(a.state.CheckOutDate);
+        setprice(a.state.price);
 
-        }
-        getEmployee();
-    }, []);
+    },[a]);
 
 
 //calc total date
@@ -96,10 +106,10 @@ console.log(difference)
 
 
 
-    const onSubmit = () => {
-
+    const onSubmit = (e) => {
+        e.preventDefault()
         const newpayment = {
-            Id: id,
+            // Id: id,
             Name: Name,
             PhoneNumber: PhoneNumber,
             NICNumber: NICNumber,
@@ -111,7 +121,7 @@ console.log(difference)
         };
         axios.post('http://localhost:8070/Payment/add', newpayment).then(() => {
             alert("newpayment added");
-            // history.push('/EmployeeView');
+            his.push('/ViewAllRooms');
         }).catch((err) => {
             alert(err);
         })
@@ -147,7 +157,7 @@ console.log(difference)
                                     <br/>
                                     <div className={"row"}>
                                         <div className="col-sm-7">
-                                            <label>Totle price</label><br/><input className="form-control" type="number" value={calcTotle()}/>
+                                            <label>Total price</label><br/><input className="form-control" type="number" value={calcTotle()}/>
                                         </div>
                                         <div className="col-sm-2 pad">
                                             <center><button type="button " className="btn btn-primary btn-pay" onClick={onSubmit}>Pay</button></center>

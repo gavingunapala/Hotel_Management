@@ -9,7 +9,8 @@
     border-radius: 5px;
     position: relative;
     box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
-    opacity: 0.75;
+    opacity: 0.85;
+
 }
 
 .login-one {
@@ -47,9 +48,14 @@
 #button {
     width: 100%;
     margin: 2px;
+
 }
 
 #heading {
     padding-bottom: 10px;
 }
 
+#signupbutton{
+    color: #103eb5;
+    float: right;
+}

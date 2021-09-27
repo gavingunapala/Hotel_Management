@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const PaymentSchema = new Schema({
     Id : {
         type : String,
-        required: true
+        required: false
     },
     Name: {
         type: String,

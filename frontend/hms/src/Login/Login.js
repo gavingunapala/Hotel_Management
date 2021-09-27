@@ -50,8 +50,8 @@ const Login = () => {
                             <div><label><b>Password</b></label>
                             </div>
                             <input className="form-control" type="password" id="input" placeholder=" " onChange={PasswordSetter} /><br></br>
-                            <button className="btn btn-primary" id="button" type="submit" onClick={onSubmit} >Log in</button>
-                            <a href={"/CustomerRegistration"} type="submit"><center>&nbsp;Sign Up</center></a>
+                            <button className="btn btn-primary" id="button" type="submit"  onClick={onSubmit} >Log in</button>
+                            <a href={"/CustomerRegistration"} type="submit" id={"signupbutton"}><center><b><u>Sign Up</ u></b></center></a><br />
                         </div>
                     </div>
                 </form>
