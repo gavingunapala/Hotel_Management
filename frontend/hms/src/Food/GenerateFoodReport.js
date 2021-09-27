@@ -43,6 +43,9 @@ const GenerateFoodReport = () => {
 
     return (
         <div>
+            <a className="btn btn-default foodPrices" href={"/foodManagement"} >
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> </i> Back
+            </a>
             <br />
             <div className="searchBar">
                 <i className="fa fa-search"></i>

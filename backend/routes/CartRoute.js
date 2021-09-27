@@ -112,6 +112,19 @@ router.get("/sort", async (req, res) =>{
 
     }});
 
+//sort delete items
+router.route("/deleteSorted/:id").delete(async (req, res)=>{
+    let cartId = req.params.id;
+
+    await Cart.deleteMany({UserID: cartId}).then(()=>{
+        res.status(200).send({status: "Cart item deleted"});
+    }).catch((err)=>{
+        console.log(err);
+    })
+});
+
+
+
 
 
 //Update one field only
