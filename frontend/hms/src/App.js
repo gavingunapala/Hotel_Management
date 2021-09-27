@@ -41,64 +41,63 @@ import RoomManagementReport from "./Room_Management/RoomManagementReport";
 import RoomBookingManagementReport from "./RoomBookingManagement/RoomBookingManagementReport";
 import GenerateFoodReport from "./Food/GenerateFoodReport";
 
+
 function App() {
-  return (
+    return (
 
 
-      <div>
-        <Router>
-          <div className="App" />
+        <div>
+            <Router>
+                <div className="App"/>
+                <Header/>
+                <Route exact path="/" component={Home}/>
+                <Route exact path="/addFood" component={AddFood}/>
+                <Route exact path="/customerViewFood" component={CustomerViewFood}/>
+                <Route exact path="/foodManagement" component={FoodManagement}/>
+                <Route exact path="/updateFood/:id" component={UpdateFood}/>
+                <Route exact path="/shoppingCart" component={ShoppingCart}/>
+                <Route exact path="/FoodReport" component={GenerateFoodReport}/>
 
-          <Header/>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/addFood" component={AddFood}/>
-            <Route exact path="/customerViewFood" component={CustomerViewFood}/>
-            <Route exact path="/foodManagement" component={FoodManagement}/>
-            <Route exact path="/updateFood/:id" component={UpdateFood}/>
-            <Route exact path="/shoppingCart" component={ShoppingCart}/>
-            <Route exact path="/FoodReport" component={GenerateFoodReport}/>
-
-          <Route path="/a" component={CustomerRegistration}/>
-
-
-            <Route path="/EmployeeAdd" component={EmployeeAdd}/>
-            <Route path="/AdminEmployeeUpdate/:id" component={AdminEmployeeUpdate}/>
-          <Route path="/EmployeeReport" component={EmployeeReport}/>
+                <Route path="/a" component={CustomerRegistration}/>
 
 
-
-            <Route path="/PayPayments" component={PayPayments}/>
-          <Route path="/CustomerReport" component={CustomerReport}/>
-          <Route exact path="/PayPaymentsRooms" component={PayPaymentsRooms}/>
-
-            <Route path="/CustomerProfile" component={CustomerProfile}/>
-          <Route path="/CustomerProfileUpdate" component={CustomerProfileUpdate}/>
-          <Route path="/CustomerRegistration" component={CustomerRegistration}/>
-          <Route path="/UpdateCustomers/:id" component={UpdateCustomers}/>
-            <Route path="/Login" component={Login}/>
-          <Route path="/AdminPanelCustomers" component={AdminPanelCustomers}/>
-
-          <Route exact path="/AddRooms" component={AddRooms}/>
-          <Route exact path="/ViewRooms/:id" component={ViewRooms}/>
-          <Route exact path="/UpdateRooms/:id" component={UpdateRooms}/>
-          <Route exact path="/ManageRoomsDashboard" component={ManageRoomsDashboard}/>
-          <Route exact path="/EmployeeView" component={EmployeeView}/>
-          <Route exact path="/AdminSideNav" component={AdminSideNav}/>
-          <Route exact path="/BookRooms/:id" component={BookRooms}/>
-          <Route exact path="/ViewBookedRooms/:id" component={ViewBookedRooms}/>
-          <Route exact path="/UpdateBookedRooms/:id" component={UpdateBookedRooms}/>
-          <Route exact path="/RoomBookingDashboard" component={RoomBookingDashboard}/>
-          <Route exact path="/ViewAllRooms" component={ViewAllRooms}/>
-          <Route exact path="/ViewOneRoom/:id" component={ViewOneRoom}/>
-          <Route exact path="/PaymentView" component={PaymentView}/>
-          <Route path="/RoomManagementReport" component={RoomManagementReport}/>
-          <Route path="/RoomBookingManagementReport" component={RoomBookingManagementReport}/>
+                <Route path="/EmployeeAdd" component={EmployeeAdd}/>
+                <Route path="/AdminEmployeeUpdate/:id" component={AdminEmployeeUpdate}/>
+                <Route path="/EmployeeReport" component={EmployeeReport}/>
 
 
-      </Router>
-        <Footer/>
-</div>
-);
+                <Route path="/PayPayments" component={PayPayments}/>
+                <Route path="/CustomerReport" component={CustomerReport}/>
+                <Route exact path="/PayPaymentsRooms" component={PayPaymentsRooms}/>
+
+                <Route path="/CustomerProfile" component={CustomerProfile}/>
+                <Route path="/CustomerProfileUpdate" component={CustomerProfileUpdate}/>
+                <Route path="/CustomerRegistration" component={CustomerRegistration}/>
+                <Route path="/UpdateCustomers/:id" component={UpdateCustomers}/>
+                <Route path="/Login" component={Login}/>
+                <Route path="/AdminPanelCustomers" component={AdminPanelCustomers}/>
+
+                <Route exact path="/AddRooms" component={AddRooms}/>
+                <Route exact path="/ViewRooms/:id" component={ViewRooms}/>
+                <Route exact path="/UpdateRooms/:id" component={UpdateRooms}/>
+                <Route exact path="/ManageRoomsDashboard" component={ManageRoomsDashboard}/>
+                <Route exact path="/EmployeeView" component={EmployeeView}/>
+                <Route exact path="/AdminSideNav" component={AdminSideNav}/>
+                <Route exact path="/BookRooms/:id" component={BookRooms}/>
+                <Route exact path="/ViewBookedRooms/:id" component={ViewBookedRooms}/>
+                <Route exact path="/UpdateBookedRooms/:id" component={UpdateBookedRooms}/>
+                <Route exact path="/RoomBookingDashboard" component={RoomBookingDashboard}/>
+                <Route exact path="/ViewAllRooms" component={ViewAllRooms}/>
+                <Route exact path="/ViewOneRoom/:id" component={ViewOneRoom}/>
+                <Route exact path="/PaymentView" component={PaymentView}/>
+                <Route path="/RoomManagementReport" component={RoomManagementReport}/>
+                <Route path="/RoomBookingManagementReport" component={RoomBookingManagementReport}/>
+
+
+            </Router>
+            <Footer/>
+        </div>
+    );
 }
 
 
