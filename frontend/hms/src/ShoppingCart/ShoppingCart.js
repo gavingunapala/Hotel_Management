@@ -1,31 +1,35 @@
 import React,{useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import axios from "axios";
-// import '../CSS/Admin/tableEmployee.css';
-
-
 
 const ShoppingCart = () => {
 
     let his = useHistory();
     const [Cart, setCart] = useState([]);
     var subTotal = useState(0);
+    const loggedInUser = localStorage.getItem("user");
+
 
     useEffect(() => {
+        const fetchData = async () => {
+            try{
+                let query = `?UserID[in]=${loggedInUser}`;
 
-        function getCart() {
-            axios.get("http://localhost:8070/cart" ).then((res) => {
-                setCart(res.data);
-            }).catch((err) => {
-            })
-        }
+                const {data} = await axios({
+                    method: "GET",
+                    url: `http://localhost:8070/cart/sort${query}`,
+                });
+                setCart(data.data.items);
+            }catch (error){
+                console.log(error.response.data);
 
-        getCart();
+            }        };
+        fetchData();
     }, [Cart]);
 
 
     const deleteFood = (id) =>{
-        axios.delete('http://localhost:8070/cart/delete/' + id).then(()=>{
+        axios.delete('http://localhost:8070/cart/delete/'+ id).then(()=>{
             alert("Cart item deleted successfully!!");
         }).catch((err)=>{
             alert(err);
@@ -95,7 +99,7 @@ const ShoppingCart = () => {
                                                 <br />
                                                 <br /> <a style={{color: "#e60000"}} id="icon">
                                                 {totPrice(cart.Quantity * cart.Price)}
-                                                {console.log(subTotal)}
+
 
                                                  <em className="fas fa-trash"
                                                         onClick={() => {
