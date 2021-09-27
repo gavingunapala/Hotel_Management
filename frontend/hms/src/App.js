@@ -41,8 +41,6 @@ import RoomManagementReport from "./Room_Management/RoomManagementReport";
 import RoomBookingManagementReport from "./RoomBookingManagement/RoomBookingManagementReport";
 import GenerateFoodReport from "./Food/GenerateFoodReport";
 
-
-
 function App() {
   return (
 
@@ -50,6 +48,7 @@ function App() {
       <div>
         <Router>
           <div className="App" />
+
           <Header/>
             <Route exact path="/" component={Home}/>
             <Route exact path="/addFood" component={AddFood}/>
