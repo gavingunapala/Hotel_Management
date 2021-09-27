@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import '../CSS/RoomBookingManagement/BookRooms.css';
-import img from "../Images/undraw_Sync_files_re_ws4c.png";
-import {useHistory} from 'react-router-dom';
+import img from "../Images/undraw_My_documents_re_13dc.png";
+import {useHistory, useParams} from 'react-router-dom';
 import axios from "axios";
 import ProgressBar from "../comps/ProgressBar.js";
 import '../CSS/ProgressBar/ProgressBar.css'
@@ -9,7 +9,6 @@ import '../CSS/ProgressBar/ProgressBar.css'
 
 const BookRooms = () => {
     const history = useHistory();
-
     const [RoomType, setRoomType] = useState("");
     const [NoOfPeople, setNoOfPeople] = useState("");
     const [CheckInDate, setCheckInDate] = useState("");
@@ -40,7 +39,7 @@ const BookRooms = () => {
         };
         axios.post('http://localhost:8070/RoomBooking/add', newRoomBooking).then(() => {
             alert("New Room Booked successfully!");
-            history.push('/PayPaymentsRooms');
+            history.push('/');
         }).catch((err) => {
             alert(err);
         })
@@ -49,7 +48,7 @@ const BookRooms = () => {
     return (
         <div>
             <br></br>
-            <a className="btn btn-default foodPrices" href={"/RoomBookingDashboard"} >
+            <a className="btn btn-default foodPrices" href={"/ViewAllRooms"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
             </a>
             <div className="row">
@@ -58,7 +57,7 @@ const BookRooms = () => {
                     <div><strong></strong><label></label></div>
                     <div className=" justify-content-center align-items-center">
                         <div>
-                            <form method="post" className="card" id="room">
+                            <form method="post" className="card" id="room" style={{opacity: '0.95'}}>
                                 <br/>
                                 <h2 className="text-center">Book Rooms</h2>
                                 <br/>

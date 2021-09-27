@@ -5,38 +5,6 @@ import {useHistory} from "react-router-dom";
 
 const CustomerProfile = () => {
 
-    // const id ="611d45fbee6c741e4c0d4e83";
-    // console.log(id)
-    // let his = useHistory();
-    // const [Customer, setCustomer] = useState([]);
-
-    // // get logged Customer
-    // useEffect(() => {
-    //     // const loggedInUser = localStorage.getItem("user");
-    //     // console.log(loggedInUser);
-    //
-    //     function getCustomer() {
-    //         axios.get("http://localhost:8070/customer/get/" + id).then((res) => {
-    //             setCustomer(res.data);
-    //             console.log(res.data);
-    //         }).catch((err) => {
-    //         })
-    //     }
-    //
-    //     getCustomer();
-    // }, []);
-    //
-    // function deleteCustomer() {
-    //     // const loggedInUser = localStorage.getItem("user");
-    //     // console.log(loggedInUser);
-    //     axios.delete('http://localhost:8070/customer/delete/' + id).then(() => {
-    //         localStorage.clear();
-    //         his.push('/Login');
-    //     }).catch((err) => {
-    //         alert(err);
-    //     })
-    // }
-
     const [Customer, setCustomer] = useState([]);
     const history = useHistory();
 
@@ -49,7 +17,6 @@ const CustomerProfile = () => {
     useEffect(() => {
         const loggedInUser = localStorage.getItem("user");
         console.log(loggedInUser);
-
         function getCustomer() {
             axios.get("http://localhost:8070/customer/get/" + loggedInUser).then((res) => {
                 setCustomer(res.data);
@@ -57,7 +24,6 @@ const CustomerProfile = () => {
             }).catch((err) => {
             })
         }
-
         getCustomer();
     }, []);
 
@@ -92,11 +58,8 @@ const CustomerProfile = () => {
                         <div>
                             <form method="post" className="card">
                                 <br />
-                                {/*<h2 class="text-center">Student Registration</h2>*/}
                                 <br />
                                 <div className="container   ">
-                                    {/*<div><label>Enter First Name</label><input class="form-control" type="text"/>*/}
-                                    {/*</div>*/}
                                     <div className="form-group">
                                         <div><label>Name</label><input className="form-control" type="text" placeholder={Customer.Name}/>
                                         </div>
@@ -120,7 +83,6 @@ const CustomerProfile = () => {
                                         <a href={"/CustomerProfileUpdate"} className="btn btn-warning" type="reset">&nbsp;Update</a>
                                         <br />
                                         <br />
-
                                     </div>
                                 </div>
                             </form>
@@ -131,8 +93,6 @@ const CustomerProfile = () => {
                     <img src={img} loading="auto" alt="center" height="500"
                          width="500"/>
                 </div>
-
-
             </div>
         </div>
     )

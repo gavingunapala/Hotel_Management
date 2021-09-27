@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import img from '../Images/undraw_Sync_files_re_ws4c.png';
+import img from '../Images/undraw_Booked_re_vtod.png';
 import '../CSS/RoomBookingManagement/ViewBookedRooms.css';
 import axios from "axios";
 import {useHistory} from "react-router-dom";
@@ -46,7 +46,7 @@ const ViewBookedRooms = ({match}) => {
                     <div><strong></strong><label></label></div>
                     <div className=" justify-content-center align-items-center">
                         <div>
-                            <form method="post" className="card" id="room">
+                            <form method="post" className="card" id="room" style={{opacity: '0.95'}}>
                                 <br/>
                                 <h2 className="text-center">View Booked Rooms</h2>
                                 <br/>

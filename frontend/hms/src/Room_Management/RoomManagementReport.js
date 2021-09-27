@@ -76,11 +76,10 @@ const RoomManagementReport = () => {
                                         <thead className="thead-dark">
                                         <tr>
                                             <th className="text-center col-lg-2">Room Type</th>
-                                            <th className="text-center col-lg-3">Room Image</th>
-                                            <th className="text-center ">Sleeps</th>
+                                            <th className="text-center col-lg-2">Sleeps</th>
                                             <th className="text-center col-lg-2">Current Price</th>
-                                            <th className="text-center col-lg-2">Facilities</th>
-                                            <th className="text-center col-lg-2">Description</th>
+                                            <th className="text-center col-lg-3">Facilities</th>
+                                            <th className="text-center col-lg-3">Description</th>
                                         </tr>
                                         </thead>
                                         <tbody className="text-center">
@@ -88,7 +87,6 @@ const RoomManagementReport = () => {
                                             return (
                                                 <tr>
                                                     <td>{Room.RoomType}</td>
-                                                    <td><img width="200px" height="150px" src={Room.avatar} /></td>
                                                     <td>{Room.Sleeps}</td>
                                                     <td>{Room.CurrentPrice}</td>
                                                     <td>{Room.Facilities}</td>

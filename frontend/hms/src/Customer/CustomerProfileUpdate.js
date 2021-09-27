@@ -5,9 +5,6 @@ import axios from "axios";
 
 const CustomerProfile = () => {
 
-    // const id ="611d45fbee6c741e4c0d4e83";
-    // console.log(id)
-
     let his = useHistory();
     const [Customer, setCustomer] = useState([]);
     const [Name, setName] = useState("");
@@ -21,7 +18,6 @@ const CustomerProfile = () => {
     useEffect(() => {
         const loggedInUser = localStorage.getItem("user");
         console.log(loggedInUser);
-
         function getCustomer() {
             axios.get("http://localhost:8070/customer/get/" + loggedInUser).then((res) => {
                 setCustomer(res.data);
@@ -29,11 +25,8 @@ const CustomerProfile = () => {
             }).catch((err) => {
             })
         }
-
         getCustomer();
     }, []);
-
-
 
         //customer
     const NameSetter = (e) => {
@@ -54,7 +47,6 @@ const CustomerProfile = () => {
     const PasswordSetter = (e) => {
         setPassword(e.target.value);
     }
-
     const onSubmit = () => {
         const UpdateCustomer = {
             Name: Name,
@@ -64,7 +56,6 @@ const CustomerProfile = () => {
             Email: Email,
             Password: Password,
         };
-
         const loggedInUser = localStorage.getItem("user");
         console.log(loggedInUser);
         axios.put('http://localhost:8070/customer/updateOne/' + loggedInUser, UpdateCustomer).then(() => {
@@ -75,81 +66,15 @@ const CustomerProfile = () => {
         his.push('/CustomerProfile');
     }
 
-
-
-
-
-    // let his = useHistory();
-    //
-    // const [Customer, setCustomer] = useState([]);
-    //
-    // //get logged admin
-    // useEffect(() => {
-    //     const loggedInUser = localStorage.getItem("user");
-    //     console.log(loggedInUser);
-    //
-    //     function getCustomer() {
-    //         axios.get("http://localhost:8070/customer/get/" + loggedInUser).then((res) => {
-    //             setCustomer(res.data);
-    //             console.log(res.data);
-    //         }).catch((err) => {
-    //         })
-    //     }
-    //
-    //     getCustomer();
-    // }, []);
-    //
-    // //updateOne
-    // const [Name, setName] = useState("");
-    // const [Address, setAddress] = useState("");
-    // const [PhoneNumber, setPhoneNumber] = useState("");
-    // const [NICNumber, setNICNumber] = useState("");
-    // const [Email, setEmail] = useState("");
-    // const [Password, setPassword] = useState("");
-    //
-    //     //customer
-    // const NameSetter = (e) => {
-    //     setName(e.target.value);
-    // }
-    // const AddressSetter = (e) => {
-    //     setAddress(e.target.value);
-    // }
-    // const PhoneNumberSetter = (e) => {
-    //     setPhoneNumber(e.target.value);
-    // }
-    // const NICNumberSetter = (e) => {
-    //     setNICNumber(e.target.value);
-    // }
-    // const EmailSetter = (e) => {
-    //     setEmail(e.target.value);
-    // }
-    // const PasswordSetter = (e) => {
-    //     setPassword(e.target.value);
-    // }
-    //
-    // const onSubmit = () => {
-    //     const newCustomer = {
-    //         Name: Name,
-    //         Address: Address,
-    //         PhoneNumber: PhoneNumber,
-    //         NICNumber: NICNumber,
-    //         Email: Email,
-    //         Password: Password,
-    //     };
-    //
-    //     const loggedInUser = localStorage.getItem("user");
-    //     console.log(loggedInUser);
-    //     axios.put('http://localhost:8070/customer/updateOne/' + loggedInUser, newCustomer).then(() => {
-    //         alert("Updated successfully!!!");
-    //         his.push('/CustomerProfile')
-    //
-    //     }).catch((err) => {
-    //         alert(err);
-    //     })
-    // }
-
     return (
         <div>
+            <br></br>
+            <div className="col-12 col-sm-6 col-md-6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/CustomerProfile" className="btn btn-primary" role="button">
+                Back to Profile
+            </a>
+            </div>
             <br></br>
             <h2 className="text-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -162,11 +87,7 @@ const CustomerProfile = () => {
                         <div>
                             <form method="post" class="card">
                                 <br />
-                                {/*<h2 class="text-center">Customer Registration</h2>*/}
-
                                 <div className="container   ">
-                                    {/*<div><label>Enter First Name</label><input class="form-control" type="text"/>*/}
-                                    {/*</div>*/}
                                     <div className="form-group">
                                         <div><label>Full Name</label><input className="form-control" type="text" onChange={NameSetter} placeholder={Customer.Name}/>
                                         </div>
@@ -185,7 +106,6 @@ const CustomerProfile = () => {
                                         <button className="btn btn-warning" type="submit" onClick={onSubmit}>&nbsp;Update</button>
                                         <br />
                                         <br />
-
                                     </div>
                                 </div>
                             </form>
@@ -196,8 +116,6 @@ const CustomerProfile = () => {
                     <img src={img} loading="auto" alt="center" height="500"
                          width="500"/>
                 </div>
-
-
             </div>
         </div>
     )
