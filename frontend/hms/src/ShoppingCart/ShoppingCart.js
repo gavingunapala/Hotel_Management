@@ -117,8 +117,8 @@ const ShoppingCart = () => {
                                 </table>
 <div className="subTot">Sub Total = Rs. {subTotal}.00</div>
                                 <br /> <br /> <br />
-                                <button className="cartOrder">CHECKOUT
-                                </button>
+                               <a  className="cartOrder" href={'/PayPayments'}>CHECKOUT
+                                </a>
 
                                 <br/>
                             </div>

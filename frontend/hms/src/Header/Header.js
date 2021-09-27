@@ -20,8 +20,9 @@ const Header = () => {
                             <li className="nav-item"><a className="nav-link" id='log' href="/Login">             </a></li>
                             <li className="nav-item"><a className="nav-link" id='log' href="/Login">             </a></li>
                             <li className="nav-item"><a className="nav-link" id='log' href="/Login">             </a></li>
-                            <li className="nav-item"><a className="nav-link" id='log' href="/Login">Login</a></li>
-                            <li className="nav-item"><a className="nav-link" id='sign' href="/CustomerRegistration">Sign Up</a></li>
+                            <li className="nav-item"><a className="nav-link" id='log' href="/Login">LOGIN</a></li>
+                            <li className="nav-item"><a className="nav-link" id='sign' href="/">HOME</a></li>
+
                         </ul>
                     </div>
                 </div>

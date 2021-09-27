@@ -1,22 +1,31 @@
 import React,{useEffect, useState} from 'react';
 import '../CSS/payment/payment.css';
 import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 const PayPayments = () => {
     const [Cart, setCart] = useState([]);
     var subTotal = useState(0);
+    let his = useHistory();
 
+    const loggedInUser = localStorage.getItem("user");
 
     useEffect(() => {
+        const fetchData = async () => {
+            try{
+                let query = `?UserID[in]=${loggedInUser}`;
 
-        function getCart() {
-            axios.get("http://localhost:8070/cart" ).then((res) => {
-                setCart(res.data);
-            }).catch((err) => {
-            })
-        }
+                const {data} = await axios({
+                    method: "GET",
+                    url: `http://localhost:8070/cart/sort${query}`,
+                });
+                setCart(data.data.items);
+            }catch (error){
+                console.log(error.response.data);
 
-        getCart();
+            }        };
+        fetchData();
+
     }, []);
 
     console.log(Cart)
@@ -39,7 +48,7 @@ const PayPayments = () => {
 
 
     // add to payment table
-    const[Id, setid] = useState('12343456789006');
+    const[Id, setid] = useState(loggedInUser);
     const[Name, setName] = useState("");
     const[PhoneNumber, setPhoneNumber] = useState("");
     const[NICNumber, setNICNumber] = useState("");
@@ -70,7 +79,8 @@ const PayPayments = () => {
 
 
 
-    const onSubmit = () => {
+    const onSubmit = (e) => {
+        e.preventDefault()
 
         const newpayment = {
             Id: Id,
@@ -85,7 +95,7 @@ const PayPayments = () => {
         };
         axios.post('http://localhost:8070/Payment/add', newpayment).then(() => {
             alert("newpayment added");
-            // history.push('/EmployeeView');
+            his.push('/customerViewFood');
         }).catch((err) => {
             alert(err);
         })
