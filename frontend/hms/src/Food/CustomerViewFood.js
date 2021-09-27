@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import Search from "../Common/Search";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
+import LogoutNav from "../Login/Greeting";
+import Greeting from "../Login/Greeting";
 
 
 const CustomerViewFood = () => {
@@ -12,6 +14,7 @@ const CustomerViewFood = () => {
     const price = useState("");
     const [SearchWord, setSearchWord] = useState('');
     const[userId, setUserId] = useState('');
+    const[isLoggedIn, setIsLoggedIn] = useState(false);
 
     const his = useHistory();
 
@@ -23,6 +26,7 @@ const CustomerViewFood = () => {
         const loggedInUser = localStorage.getItem("user");
         if(loggedInUser != null){
             setUserId(loggedInUser);
+            setIsLoggedIn(true);
         }
 
         const fetchFood = async () => {
@@ -55,11 +59,9 @@ const CustomerViewFood = () => {
         }
     }
 
-
-
-
     return (
         <div>
+            <Greeting isLoggedIn={isLoggedIn} />
             <br />
             <a className="foodPrices" href={"/"} >
                 <i className="fa fa-home" style={{fontWeight: "bold"}}>
