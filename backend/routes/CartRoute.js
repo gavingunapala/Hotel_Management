@@ -81,6 +81,39 @@ router.route("/get/:id").get((req,res)=>{
     })
 })
 
+//sort cart items
+router.get("/sort", async (req, res) =>{
+
+    let query;
+    const reqQuery = { ...req.query};
+    const removeFields = ["sort"];
+    removeFields.forEach(params => delete reqQuery[params]);
+
+    let queryStr = JSON.stringify(reqQuery);
+
+    queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, (match) => `$${match}`);
+
+    console.log(queryStr);
+    try {
+
+        const items = await Cart.find(JSON.parse(queryStr));
+        res.status(200).json({
+            status: 'success',
+            // results: items.length,
+            data: {
+                items
+            }
+        });
+    }catch (err) {
+        res.status(404).json({
+            status: 'fail',
+            message: err
+        });
+
+    }});
+
+
+
 //Update one field only
 router.route("/updateOne/:id").put(async (req, res) => {
     let cart = await Cart.findById(req.params.id);
