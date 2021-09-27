@@ -3,6 +3,7 @@ import img from '../Images/christopher-jolly-GqbU78bdJFM-unsplash.jpg'
 import '../CSS/RoomBookingManagement/ViewOneRoom.css'
 import axios from "axios";
 import {Link, useHistory} from "react-router-dom";
+import Greeting from "../Login/Greeting";
 
 const ViewOneRoom = ({match}) => {
     console.log(match.params.id);
@@ -10,11 +11,33 @@ const ViewOneRoom = ({match}) => {
     console.log(id)
     let his = useHistory();
     const [Room, setRoom] = useState([]);
+    const[userId, setUserId] = useState('');
+    const[roomId, setId] = useState('');
+    const[isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const onSubmit = () => {
+        if(userId != '') {
+            // his.push(`BookRooms/${Room._id}`);
+            his.push({pathname:'/BookRooms', state : {userId: userId, roomId: roomId},});
+            // /BookRooms/${Room._id}
+
+        }
+        else{
+            his.push('/Login');
+        }
+    }
 
     useEffect(() => {
+        const loggedInUser = localStorage.getItem("user");
+        if(loggedInUser != null){
+            setUserId(loggedInUser);
+            setIsLoggedIn(true);
+        }
+
         function getRoom() {
             axios.get("http://localhost:8070/Room/get/" + id).then((res) => {
                 setRoom(res.data);
+                setId(res.data._id);
                 console.log(res.data);
             }).catch((err) => {
             })
@@ -25,8 +48,9 @@ const ViewOneRoom = ({match}) => {
 
     return (
         <div>
-            <br/>
-            <br></br>
+            <br />
+            <Greeting isLoggedIn={isLoggedIn} />
+            <br />
             <a className="btn btn-default " href={"/ViewAllRooms"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Home</i>
             </a>
@@ -99,9 +123,12 @@ const ViewOneRoom = ({match}) => {
 
                                     <div className="">
                                             <br/>
-                                            <a href={`/BookRooms/${Room._id}`} style={{marginLeft:"300px"}}>
-                                                <h3 className='btn btn-primary'>Book Rooms</h3>
-                                            </a>
+                                        <button className={"btn btn-primary"} style={{marginLeft:"300px"}} onClick={()=>onSubmit()} >
+                                            Book Rooms
+                                        </button>
+                                            {/*<a href={onSubmit} style={{marginLeft:"300px"}}>*/}
+                                            {/*    <h3 className='btn btn-primary'>Book Rooms</h3>*/}
+                                            {/*</a>*/}
                                     </div>
                             <br/><br/>
                         </div>

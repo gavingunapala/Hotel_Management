@@ -8,7 +8,7 @@ const RoomBookingManagementReport = () => {
 
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var time = today.getHours() + ":" + (today.getMinutes()<10?'0':'') + today.getMinutes() + ":" + (today.getSeconds()<10?'0':'') + today.getSeconds();
     var dateTime = date+' '+time;
 
     let his = useHistory();
@@ -49,6 +49,9 @@ const RoomBookingManagementReport = () => {
 
     return (
         <div>
+            <a className="btn btn-default foodPrices" href={"/"} >
+                <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
+            </a>
             <div className="row1" id={'body'}>
 
                 <div className="container" >

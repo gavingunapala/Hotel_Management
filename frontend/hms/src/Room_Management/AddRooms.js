@@ -6,6 +6,7 @@ import axios from "axios";
 import ProgressBar from "../comps/ProgressBar.js";
 import '../CSS/ProgressBar/ProgressBar.css'
 
+
 const AddRooms = () => {
 
     const history = useHistory();
@@ -77,7 +78,7 @@ const AddRooms = () => {
 
     return (
         <div>
-            <br></br>
+
             <a className="btn btn-default foodPrices" href={"/ManageRoomsDashboard"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
             </a>

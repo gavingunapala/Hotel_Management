@@ -1,34 +1,40 @@
 import React, {useEffect, useState} from 'react';
 import '../CSS/RoomBookingManagement/BookRooms.css';
 import img from "../Images/undraw_My_documents_re_13dc.png";
-import {useHistory, useParams} from 'react-router-dom';
+import {useHistory, useParams, useLocation} from 'react-router-dom';
 import axios from "axios";
 import ProgressBar from "../comps/ProgressBar.js";
 import '../CSS/ProgressBar/ProgressBar.css'
 
+const BookRooms = () => {
 
-const BookRooms = ({match}) => {
+    // console.log(match.params.id);
+    // const id = match.params.id;
+    const[userId, setUserId] = useState('');
+    const[roomId, setId] = useState('');
 
-    console.log(match.params.id);
-    const id = match.params.id;
+    let room =  useLocation();
+
     const history = useHistory();
 
     const [Room, setRoom] = useState([]);
 
     useEffect(() => {
+        console.log(room.state.userId);
+        console.log(room.state.roomId);
+        setUserId(room.state.userId);
+        setId(room.state.roomId);
+
         function getRoom() {
-            axios.get("http://localhost:8070/Room/get/" + id).then((res) => {
+            console.log(roomId);
+            axios.get("http://localhost:8070/Room/get/" + roomId).then((res) => {
                 setRoom(res.data);
                 console.log(res.data);
             }).catch((err) => {
             })
         }
-
         getRoom();
-    }, []);
-
-
-
+    }, [roomId]);
 
 
     // const [RoomType, setRoomType] = useState("");
@@ -69,7 +75,8 @@ const BookRooms = ({match}) => {
 
     return (
         <div>
-            <br></br>
+            <br />
+            <br />
             <a className="btn btn-default foodPrices" href={"/ViewAllRooms"} >
                 <i className="fa fa-arrow-left" style={{fontWeight: "bold"}}> Back</i>
             </a>
