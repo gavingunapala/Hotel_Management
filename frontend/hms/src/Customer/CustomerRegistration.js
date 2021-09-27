@@ -51,6 +51,9 @@ const CustomerRegistration = () => {
         })
     }
 
+
+
+
     return (
             <div>
                 <div className="row">
@@ -69,8 +72,7 @@ const CustomerRegistration = () => {
                                                 <div className="form-group">
                                                     <div><label>Enter Address</label><input className="form-control" type="text" onChange={AddressSetter} />
                                                     </div>
-                                                    <div><label>Enter Phone Number</label><input className="form-control"
-                                                                                                type="text" onChange={PhoneNumberSetter} /></div>
+                                                    <div><label>Enter Phone Number</label><input className="form-control" pattern="[1-9]{1}[0-9]{9}" maxlength="10" type="Number" onChange={PhoneNumberSetter} /></div>
                                                     <div><label>Enter NIC Number</label><input className="form-control"
                                                                                                       type="text" onChange={NICNumberSetter} /></div>
                                                     <div><label>Enter Email</label><input className="form-control"
