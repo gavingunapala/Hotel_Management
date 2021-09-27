@@ -8,11 +8,12 @@ const CustomerReport = () => {
 
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var time = today.getHours() + ":" + (today.getMinutes()<10?'0':'') + today.getMinutes() + ":" + (today.getSeconds()<10?'0':'') + today.getSeconds();
     var dateTime = date+' '+time;
 
     let his = useHistory();
     const [Customer, setCustomer] = useState([]);
+    const [SearchWord, setSearchWord] = useState('');
 
     //get logged Customer
     useEffect(() => {
@@ -47,6 +48,13 @@ const CustomerReport = () => {
                     Back to Admin Panel
                 </a>
             </div>
+            {/*<Search/>*/}
+            <div className="col-xs-6">
+                <div className="searchBar">
+                    <input type="search" className="form-control" placeholder="Search Name or NIC NUMBER" onChange={event =>{setSearchWord(event.target.value)}}/>
+                </div>
+            </div>
+            {/*end*/}
         <div className="row1" id={'body'}>
             <div className="container" >
                 <br></br>
@@ -77,7 +85,13 @@ const CustomerReport = () => {
                                     </tr>
                                     </thead>
                                     <tbody className="text-center">
-                                    {Customer.map((customer) => {
+                                    {Customer.filter((val)=>{
+                                        if(SearchWord ==""){
+                                            return val
+                                        }else if(val.Name.toLowerCase().includes(SearchWord.toLowerCase())||val.NICNumber.toLowerCase().includes(SearchWord.toLowerCase()) ){
+                                            return val
+                                        }
+                                    }).map((customer) => {
                                         return (
                                             <tr>
                                                 <td>{customer.Name}</td>
@@ -86,7 +100,6 @@ const CustomerReport = () => {
                                                 <td>{customer.NICNumber}</td>
                                                 <td>{customer.Email}</td>
                                                 <br />
-                                                <br /><br />
                                             </tr>
                                         );
                                     })}

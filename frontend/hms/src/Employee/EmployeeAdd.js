@@ -77,13 +77,13 @@ const EmployeeAdd = () => {
                                         <div><label>Address</label><br/><textarea class="form-control" id="Address" name="Address" width="100% "onChange={AddressSetter}/>
                                         </div>
                                         <div><label>Phone Number</label><input class="form-control"
-                                                                                    type="number"onChange={PhoneNumberSetter}/></div>
+                                                                                    type="number" min='0' onChange={PhoneNumberSetter}/></div>
                                         <div><label>NIC Number</label><input class="form-control"
                                                                                           type="text"onChange={NICNumberSetter}/></div>
                                         <div><label>Job Title</label><input class="form-control"
                                                                                          type="text"onChange={JobtitleSetter}/></div>
                                         <div><label>Salary</label><input className="form-control"
-                                                                            type="number"onChange={SalarySetter}/></div>
+                                                                            type="number" min='0' onChange={SalarySetter}/></div>
                                         <br/><center>
                                         <button class="btn btn-primary " type="submit" onClick={onSubmit}>ADD EMPLOYEE</button></center>
                                         <br />

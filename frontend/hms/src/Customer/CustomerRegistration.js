@@ -51,6 +51,7 @@ const CustomerRegistration = () => {
         })
     }
 
+
     return (
             <div>
                 <div className="row">
@@ -70,7 +71,7 @@ const CustomerRegistration = () => {
                                                     <div><label>Enter Address</label><input className="form-control" type="text" onChange={AddressSetter} />
                                                     </div>
                                                     <div><label>Enter Phone Number</label><input className="form-control"
-                                                                                                type="text" onChange={PhoneNumberSetter} /></div>
+                                                         type="Number" onChange={PhoneNumberSetter} /></div>
                                                     <div><label>Enter NIC Number</label><input className="form-control"
                                                                                                       type="text" onChange={NICNumberSetter} /></div>
                                                     <div><label>Enter Email</label><input className="form-control"

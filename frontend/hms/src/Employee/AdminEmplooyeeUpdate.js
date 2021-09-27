@@ -94,13 +94,13 @@ const AdminEmployeeUpdate = ({match}) => {
                                                                                   onChange={AddressSetter}/>
                                         </div>
                                         <div><label>Phone Number</label><input class="form-control"
-                                                                               type="number" placeholder={Employee.PhoneNumber} onChange={PhoneNumberSetter}/></div>
+                                                                               type="number" min='0' placeholder={Employee.PhoneNumber} onChange={PhoneNumberSetter}/></div>
                                         <div><label>NIC Number</label><input class="form-control"
                                                                              type="text" placeholder={Employee.NICNumber} onChange={NICNumberSetter}/></div>
                                         <div><label>Job Title</label><input class="form-control"
                                                                             type="text" placeholder={Employee.Jobtitle} onChange={JobtitleSetter}/></div>
                                         <div><label>Salary</label><input className="form-control"
-                                                                         type="number" placeholder={Employee.Salary} onChange={SalarySetter}/></div>
+                                                                         type="number" min='0' placeholder={Employee.Salary} onChange={SalarySetter}/></div>
                                         <br/>
 
                                         <button class="btn btnwar btn-warning " type="submit" onClick={onSubmit}>UPDATE EMPLOYEE</button>

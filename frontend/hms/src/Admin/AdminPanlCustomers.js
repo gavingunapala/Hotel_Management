@@ -44,7 +44,6 @@ const AdminPanelCustomers = () => {
                 {/*end*/}
                 <div className="">
                     <div className="row1">
-
                         <div className="col-12 col-sm-6 col-md-6">
                         </div>
                         <span className="counter pull-right"></span>
@@ -103,7 +102,6 @@ const AdminPanelCustomers = () => {
                                             </tr>
                                         );
                                     })}
-
                                     </tbody>
                                 </table>
                                 <br/>
