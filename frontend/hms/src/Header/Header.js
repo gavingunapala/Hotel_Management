@@ -21,7 +21,7 @@ const Header = () => {
                             <li className="nav-item"><a className="nav-link" id='log'>             </a></li>
                             <li className="nav-item"><a className="nav-link" id='log'>             </a></li>
                             <li className="nav-item"><a className="nav-link" id='log'>             </a></li>
-                            <li className="nav-item"><a className="nav-link" id='sign' href="/">HOME</a></li>
+                            <li className="nav-item"><a className="nav-link" id='sign'>           </a></li>
 
                         </ul>
                     </div>

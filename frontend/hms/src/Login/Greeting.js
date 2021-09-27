@@ -6,9 +6,12 @@ function Logout  () {
 };
 
 function UserGreeting() {
-    return (<a href="/Login" className="btn qtyAdd loginButton" onClick={Logout}>Logout</a>);
+    return (
+        <div>
+        <a href="/Login" className="btn qtyAdd loginButton" onClick={Logout}>Logout</a>
+        <a href="/CustomerProfile" className="btn qtyAdd profileButton" >View Profile</a>
+        </div>);
 }
-
 
 function GuestGreeting() {
     return (<a href="/Login" className="qtyAdd loginButton">Login</a>);
