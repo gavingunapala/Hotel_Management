@@ -68,7 +68,7 @@ const PaymentView = () => {
                                        id="ipi-table">
                                     <thead className="thead-dark">
                                     <tr>
-                                        <th className="text-center">ID</th>
+
                                         <th className="text-center col-lg-4">Name</th>
                                         <th className="text-center">Phone number</th>
                                         <th className="text-center">Nic Number</th>
@@ -92,7 +92,6 @@ const PaymentView = () => {
                                     }).map((payment) => {
                                         return (
                                             <tr>
-                                                <td>{payment.Id}</td>
                                                 <td>{payment.Name}</td>
                                                 <td>{payment.PhoneNumber}</td>
                                                 <td>{payment.NICNumber}</td>
