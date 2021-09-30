@@ -29,7 +29,8 @@ const Login = () => {
                 history.push('/CustomerProfile');
                 localStorage.setItem('user', res.data._id);
             }).catch((err) => {
-                alert(err);
+                //
+                alert("enter valid details..");
             })
         }
     }
