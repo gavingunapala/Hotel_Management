@@ -33,8 +33,7 @@ const Footer = ()=>{
 
                     <div className="col-md-4 footer-about">
                         <h4>About the company</h4>
-                        <p> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu
-                            auctor lacus vehicula sit amet. </p>
+                        <p>  </p>
                         <div className="social-links social-icons"><a href="#"><i className="fa fa-facebook"></i></a><a
                             href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-instagram"></i></a><a
                             href="#"><i className="fa fa-whatsapp"></i></a></div>
